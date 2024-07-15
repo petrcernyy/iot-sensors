@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature and Humidity</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <style>
+        body, html {    
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+            height: 55%;
+            background-color: #fff;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+        }
+        .left-panel {
+            background: linear-gradient(to bottom, #7063e6 0%, #a34bff 100%);
+            width: 20%;
+            border-radius: 50px 0 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .option {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            width: 80%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .option-icon {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .option-text {
+            color: white;
+            font-size: 16px;
+            flex-grow: 1;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 80%;
+            padding: 5%;
+            box-sizing: border-box;
+        }
+        .top-row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 45%;
+        }
+        .main-window {
+            background: linear-gradient(to left, #7f5cec 0%, #a34bff 100%);
+            width: 50%;
+            height: 100%;
+            border-radius: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .date-window {
+            background: linear-gradient(to bottom, #7f5cec 0%, #a34bff 100%);
+            width: 40%;
+            height: 100%;
+            border-radius: 20px;
+            margin-left: 10%;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .scene-window {
+            border: 2px solid black;
+            width: 100%;
+            height: 50%;
+            border-radius: 20px;
+        }
+        .welcome-text {
+            font-size: 30px;
+            margin: 0;
+            position: relative;
+            top: -50px;
+        }
+        .name-text {
+            font-size: 40px;
+            margin: 0;
+            position: relative;
+            top: -50px;
+        }
+        .status {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            position: relative;
+            top: -30px;
+        }
+        .temp-img {
+            width: 20px;
+        }
+        .temp-hum {
+            width: 40px;
+        }
+        .picture-container {
+            position: relative;
+            top: 10px;
+            left: 250px;
+        }
+
+        .corner-image {
+            width: 50px;
+        }
+        .status div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 30px;
+        }
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .calendar img {
+            width: 20px;
+            margin-top: 5px;
+        }
+        .day-number {
+            font-size: 80px;
+            margin-right: 20px;
+            position: relative;
+            top: 20px;
+            left: -40px;
+        }
+        .calendar-text {
+            font-size: 40px;
+            position: relative;
+            top: -10px;
+            left: 0px;
+        }
+        .month-text {
+            font-size: 30px;
+            position: relative;
+            top: 15px;
+            left: 0px;
+        }
+        .date-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .image-call {
+            width: 50px;
+        }
+        .value {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .plus-sign {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border: 2px solid #7063e6;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #7063e6;
+            cursor: pointer;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .icon-list {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+
+        .icon-option {
+            width: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="option">
+                <img src="./dashboard.svg" alt="Dashboard icon" class="option-icon">
+                <span class="option-text">Dashboard</span>
+            </div>
+            <div class="option">
+                <img src="./settings.svg" alt="Settings icon" class="option-icon">
+                <span class="option-text">Settings</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top-row">
+                <div class="main-window">
+                    <div class="picture-container">
+                        <img class="corner-image" src="./sensor.svg" alt="Sensor icon">
+                    </div>
+                    <div>
+                        <p class="welcome-text">Welcome</p>
+                        <p class="name-text">Petr</p>
+                    </div>
+                    <div class="status">
+                        <img class="temp-img" src="./temperature.svg" alt="Temperature Icon">
+                        <div id="temperature-value" class="value">0.00 °C</div>
+                        <img class="temp-hum" src="./waterdrop.svg" alt="Humidity Icon" style="margin-left: 20px;">
+                        <div id="humidity-value" class="value">0.00 %</div>
+                    </div>
+                </div>
+                <div class="date-window">
+                    <div class="date-details">
+                        <div class="calendar-text">Calendar</div>
+                        <img class="image-call" src="./calendar.svg" alt="Calendar Icon">
+                        <div class="month-text" id="month"></div>
+                    </div>
+                    <div class="day-number" id="day-number"></div>
+                </div>
+            </div>
+            <div class="scene-window">
+                <div class="plus-sign" onclick="openModal()">+</div>
+            </div>
+            <div id="scene-modal" class="modal">
+                <div class="modal-content">
+                    <h3>Create New Scene</h3>
+                    <input type="text" id="scene-name" placeholder="Name of the scene">
+                    <div class="icon-list">
+                        <img src="./bathroom.svg" alt="Icon 1" onclick="selectIcon('bathroom.svg')" class="icon-option">
+                        <img src="./dishwasher.svg" alt="Icon 2" onclick="selectIcon('dishwasher.svg')" class="icon-option">
+                        <!-- Add more icons as needed -->
+                    </div>
+                    <button onclick="createScene()">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function updateDate() {
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.toLocaleString('default', { month: 'long' });
+        
+        document.getElementById('day-number').innerText = day;
+        document.getElementById('month').innerText = month;
+    }
+    updateDate();
+    const socket = io();
+
+    socket.on('temperature', function(data) {
+        updateTemperature(data);
+    })
+
+    socket.on('humidity', function(data) {
+        updateHumidity(data);
+    })
+
+    function updateTemperature(value) {
+        let numValue = parseFloat(value);
+        if (!isNaN(numValue)) {
+            document.getElementById('temperature-value').innerText = numValue.toFixed(2) + ' °C';
+        } else {
+            console.error('Invalid temperature value');
+        }
+    }
+
+    function updateHumidity(value) {
+        let numValue = parseFloat(value);
+        if (!isNaN(numValue)) {
+            document.getElementById('humidity-value').innerText = numValue.toFixed(2) + ' %';
+        } else {
+            console.error('Invalid humidity value');
+        }
+    }
+
+    function openModal() {
+        document.getElementById('scene-modal').style.display = 'block';
+    }
+
+    function selectIcon(icon) {
+        // Store selected icon globally or in a variable
+        window.selectedIcon = icon;
+    }
+
+    function createScene() {
+        const sceneName = document.getElementById('scene-name').value;
+        const sceneWindow = document.querySelector('.scene-window');
+
+        // Create the scene icon element
+        const iconElement = document.createElement('img');
+        iconElement.src = window.selectedIcon;
+        iconElement.style.width = '30px';
+        iconElement.style.margin = '5px';
+
+        // Append icon to the scene window
+        sceneWindow.appendChild(iconElement);
+        
+        // Add plus sign next to it
+        const plusSign = document.querySelector('.plus-sign');
+        sceneWindow.appendChild(plusSign);
+
+        // Close the modal
+        document.getElementById('scene-modal').style.display = 'none';
+    }
+</script>
+</html>

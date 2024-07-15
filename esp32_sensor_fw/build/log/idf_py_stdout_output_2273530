@@ -1,0 +1,3310 @@
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0x9 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe6110,len:0x186c
+load:0x4004b000,len:0x4
+load:0x4004b004,len:0xb0c
+load:0x4004f000,len:0x320c
+entry 0x4004b1cc
+[0;32mI (23) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jul 10 2024 22:47:02[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (27) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (73) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=255e0h (153056) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=00035608 vaddr=3ffc8c70 size=035b4h ( 13748) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=00038bc4 vaddr=40024000 size=07454h ( 29780) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=00040020 vaddr=40080020 size=95380h (611200) map[0m
+[0;32mI (259) esp_image: segment 4: paddr=000d53a8 vaddr=4002b454 size=0d814h ( 55316) load[0m
+[0;32mI (284) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (284) boot: Disabling RNG early entropy source...[0m
+[0;32mI (295) cpu_start: Unicore app[0m
+[0;32mI (295) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (298) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (325) cpu_start: Pro cpu start user code[0m
+[0;32mI (325) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (325) cpu_start: Application information:[0m
+[0;32mI (328) cpu_start: Project name:     mqtt_tcp[0m
+[0;32mI (333) cpu_start: App version:      1[0m
+[0;32mI (338) cpu_start: Compile time:     Jul 10 2024 23:01:00[0m
+[0;32mI (344) cpu_start: ELF file SHA256:  503e30506...[0m
+[0;32mI (349) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (354) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (359) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (364) cpu_start: Chip rev:         v0.0[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (376) heap_init: At 3FFD0950 len 0002B6B0 (173 KiB): RAM[0m
+[0;32mI (382) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (388) heap_init: At 3FF9E000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (395) spi_flash: detected chip: generic[0m
+[0;32mI (399) spi_flash: flash io: dio[0m
+[0;33mW (403) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (420) main_task: Started on CPU0[0m
+[0;32mI (420) main_task: Calling app_main()[0m
+[0;32mI (420) Main: [APP] Startup..[0m
+[0;32mI (420) Main: [APP] Free memory: 186056 bytes[0m
+[0;32mI (430) Main: [APP] IDF version: v5.2.2[0m
+[0;32mI (450) example_connect: Start example_connect.[0m
+I (460) wifi:wifi driver task: 3ffd8c00, prio:23, stack:6656, core=0
+I (460) wifi:wifi firmware version: 3e0076f
+I (460) wifi:wifi certification version: v7.0
+I (460) wifi:config NVS flash: enabled
+I (460) wifi:config nano formating: disabled
+I (470) wifi:Init data frame dynamic rx buffer num: 32
+I (470) wifi:Init static rx mgmt buffer num: 5
+I (480) wifi:Init management short buffer num: 32
+I (480) wifi:Init dynamic tx buffer num: 32
+I (490) wifi:Init static rx buffer size: 1600
+I (490) wifi:Init static rx buffer num: 10
+I (490) wifi:Init dynamic rx buffer num: 32
+[0;32mI (500) wifi_init: rx ba win: 6[0m
+[0;32mI (500) wifi_init: tcpip mbox: 32[0m
+[0;32mI (510) wifi_init: udp mbox: 6[0m
+[0;32mI (510) wifi_init: tcp mbox: 6[0m
+[0;32mI (510) wifi_init: tcp tx win: 5760[0m
+[0;32mI (520) wifi_init: tcp rx win: 5760[0m
+[0;32mI (520) wifi_init: tcp mss: 1440[0m
+[0;32mI (530) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (530) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (540) phy_init: phy_version 2500,8368a9b,Mar 21 2024,19:51:06[0m
+I (580) wifi:mode : sta (7c:df:a1:99:97:d0)
+I (580) wifi:enable tsf
+[0;32mI (580) example_connect: Connecting to PN_net...[0m
+[0;32mI (590) example_connect: Waiting for IP(s)[0m
+I (3290) wifi:new:<12,0>, old:<1,0>, ap:<255,255>, sta:<12,0>, prof:1
+I (3290) wifi:state: init -> auth (b0)
+I (3300) wifi:state: auth -> assoc (0)
+I (3300) wifi:state: assoc -> run (10)
+I (3310) wifi:<ba-add>idx:0 (ifx:0, d4:5d:64:2e:42:09), tid:0, ssn:0, winSize:64
+I (3320) wifi:connected with PN_net, aid = 10, channel 12, BW20, bssid = d4:5d:64:2e:42:09
+I (3320) wifi:security: WPA2-PSK, phy: bgn, rssi: -46
+I (3330) wifi:pm start, type: 1
+
+I (3330) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (3370) wifi:AP's beacon interval = 102400 us, DTIM period = 3
+[0;32mI (4340) esp_netif_handlers: example_netif_sta ip: 192.168.1.233, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4340) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.1.233[0m
+[0;32mI (4450) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:7edf:a1ff:fe99:97d0, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4450) example_common: Connected to example_netif_sta[0m
+[0;32mI (4460) example_common: - IPv4 address: 192.168.1.233,[0m
+[0;32mI (4460) example_common: - IPv6 address: fe80:0000:0000:0000:7edf:a1ff:fe99:97d0, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4470) MQTT: Other event id:7[0m
+[0;32mI (4480) DHT_Task: Starting DHT Task
+
+[0m
+[0;32mI (4480) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (4490) DHT_Task: Hum: 72.6 Tmp: 24.9
+[0m
+[0;32mI (4490) main_task: Returned from app_main()[0m
+[0;32mI (5030) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (5030) DHT_Task: Message published[0m
+[0;32mI (5040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1826[0m
+[0;32mI (5540) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (5540) DHT_Task: Hum: 72.4 Tmp: 25.1
+[0m
+[0;32mI (5550) DHT_Task: Message published[0m
+[0;32mI (5940) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14758[0m
+[0;32mI (6050) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (6050) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (6060) DHT_Task: Message published[0m
+[0;32mI (6060) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11476[0m
+[0;32mI (6560) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (6560) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (6570) DHT_Task: Message published[0m
+[0;32mI (6860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17860[0m
+[0;32mI (7070) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (7070) DHT_Task: Hum: 72.4 Tmp: 25.1
+[0m
+[0;32mI (7080) DHT_Task: Message published[0m
+[0;32mI (7450) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29782[0m
+[0;32mI (7580) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (7580) DHT_Task: Hum: 72.4 Tmp: 25.1
+[0m
+[0;32mI (7590) DHT_Task: Message published[0m
+[0;32mI (7780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13170[0m
+[0;32mI (8090) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (8090) DHT: Sensor Timeout
+[0m
+[0;32mI (8090) DHT_Task: Hum: 72.4 Tmp: 25.1
+[0m
+[0;32mI (8100) DHT_Task: Message published[0m
+[0;32mI (8100) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7213[0m
+[0;32mI (8600) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (8600) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (8610) DHT_Task: Message published[0m
+[0;32mI (9010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4227[0m
+[0;32mI (9110) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (9110) DHT_Task: Hum: 72.3 Tmp: 25.1
+[0m
+[0;32mI (9120) DHT_Task: Message published[0m
+[0;32mI (9120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3838[0m
+[0;32mI (9620) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (9620) DHT: Sensor Timeout
+[0m
+[0;32mI (9620) DHT_Task: Hum: 72.3 Tmp: 25.1
+[0m
+[0;32mI (9630) DHT_Task: Message published[0m
+[0;32mI (9990) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57023[0m
+[0;32mI (10130) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (10130) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (10140) DHT_Task: Message published[0m
+[0;32mI (10550) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14856[0m
+[0;32mI (10640) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (10640) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (10650) DHT_Task: Message published[0m
+[0;32mI (10860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28634[0m
+[0;32mI (11150) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (11150) DHT: Sensor Timeout
+[0m
+[0;32mI (11150) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (11160) DHT_Task: Message published[0m
+[0;32mI (11190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31785[0m
+[0;32mI (11660) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (11660) DHT_Task: Hum: 72.3 Tmp: 25.1
+[0m
+[0;32mI (11670) DHT_Task: Message published[0m
+[0;32mI (12080) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17417[0m
+[0;32mI (12170) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (12170) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (12180) DHT_Task: Message published[0m
+[0;32mI (12180) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5743[0m
+[0;32mI (12680) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (12680) DHT_Task: Hum: 72.3 Tmp: 25.1
+[0m
+[0;32mI (12690) DHT_Task: Message published[0m
+[0;32mI (12700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48524[0m
+[0;32mI (13190) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (13190) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (13200) DHT_Task: Message published[0m
+[0;32mI (13210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61689[0m
+[0;32mI (13700) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (13700) DHT_Task: Hum: 72.4 Tmp: 25.2
+[0m
+[0;32mI (13710) DHT_Task: Message published[0m
+[0;32mI (13930) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2960[0m
+[0;32mI (14210) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (14210) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (14220) DHT_Task: Message published[0m
+[0;32mI (14220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32259[0m
+[0;32mI (14720) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (14720) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (14730) DHT_Task: Message published[0m
+[0;32mI (14740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64542[0m
+[0;32mI (15230) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (15230) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (15240) DHT_Task: Message published[0m
+[0;32mI (15270) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51909[0m
+[0;32mI (15740) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (15740) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (15750) DHT_Task: Message published[0m
+[0;32mI (15770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57188[0m
+[0;32mI (16250) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (16250) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (16260) DHT_Task: Message published[0m
+[0;32mI (16280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30738[0m
+[0;32mI (16760) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (16760) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (16770) DHT_Task: Message published[0m
+[0;32mI (16790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18396[0m
+[0;32mI (17270) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (17270) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (17280) DHT_Task: Message published[0m
+[0;32mI (17310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26128[0m
+[0;32mI (17780) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (17780) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (17790) DHT_Task: Message published[0m
+[0;32mI (17820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2120[0m
+[0;32mI (18290) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (18290) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (18300) DHT_Task: Message published[0m
+[0;32mI (18330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34751[0m
+[0;32mI (18800) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (18800) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (18810) DHT_Task: Message published[0m
+[0;32mI (18930) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52265[0m
+[0;32mI (19310) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (19310) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (19320) DHT_Task: Message published[0m
+[0;32mI (19330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17150[0m
+[0;32mI (19820) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (19820) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (19830) DHT_Task: Message published[0m
+[0;32mI (19860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33500[0m
+[0;32mI (20330) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (20330) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (20340) DHT_Task: Message published[0m
+[0;32mI (20380) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55530[0m
+[0;32mI (20840) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (20840) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (20850) DHT_Task: Message published[0m
+[0;32mI (20890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56822[0m
+[0;32mI (21350) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (21350) DHT_Task: Hum: 72.3 Tmp: 25.2
+[0m
+[0;32mI (21360) DHT_Task: Message published[0m
+[0;32mI (21400) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25881[0m
+[0;32mI (21860) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (21860) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (21870) DHT_Task: Message published[0m
+[0;32mI (21920) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53882[0m
+[0;32mI (22370) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (22370) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (22380) DHT_Task: Message published[0m
+[0;32mI (22380) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36313[0m
+[0;32mI (22880) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (22880) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (22890) DHT_Task: Message published[0m
+[0;32mI (22940) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3892[0m
+[0;32mI (23390) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (23390) DHT_Task: Hum: 72.3 Tmp: 25.0
+[0m
+[0;32mI (23400) DHT_Task: Message published[0m
+[0;32mI (23450) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39207[0m
+[0;32mI (23900) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (23900) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (23910) DHT_Task: Message published[0m
+[0;32mI (24070) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46421[0m
+[0;32mI (24410) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (24410) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (24420) DHT_Task: Message published[0m
+[0;32mI (24470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26870[0m
+[0;32mI (24920) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (24920) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (24930) DHT_Task: Message published[0m
+[0;32mI (25290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19259[0m
+[0;32mI (25430) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (25430) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (25440) DHT_Task: Message published[0m
+[0;32mI (25450) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20549[0m
+[0;32mI (25940) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (25940) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (25950) DHT_Task: Message published[0m
+[0;32mI (25950) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24787[0m
+[0;32mI (26450) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (26450) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (26460) DHT_Task: Message published[0m
+[0;32mI (26840) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38877[0m
+[0;32mI (26960) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (26960) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (26970) DHT_Task: Message published[0m
+[0;32mI (26990) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48352[0m
+[0;32mI (27470) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (27470) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (27480) DHT_Task: Message published[0m
+[0;32mI (27750) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5836[0m
+[0;32mI (27980) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (27980) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (27990) DHT_Task: Message published[0m
+[0;32mI (28360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22544[0m
+[0;32mI (28490) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (28490) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (28500) DHT_Task: Message published[0m
+[0;32mI (28670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39327[0m
+[0;32mI (29000) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (29000) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (29010) DHT_Task: Message published[0m
+[0;32mI (29290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36871[0m
+[0;32mI (29510) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (29510) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (29520) DHT_Task: Message published[0m
+[0;32mI (29520) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35187[0m
+[0;32mI (30020) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (30020) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (30030) DHT_Task: Message published[0m
+[0;32mI (30030) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47954[0m
+[0;32mI (30530) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (30530) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (30540) DHT_Task: Message published[0m
+[0;32mI (30820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8541[0m
+[0;32mI (31040) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (31040) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (31050) DHT_Task: Message published[0m
+[0;32mI (31050) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62550[0m
+[0;32mI (31550) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (31550) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (31560) DHT_Task: Message published[0m
+[0;32mI (31560) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33088[0m
+[0;32mI (32060) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (32060) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (32070) DHT_Task: Message published[0m
+[0;32mI (32360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50262[0m
+[0;32mI (32570) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (32570) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (32580) DHT_Task: Message published[0m
+[0;32mI (32580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64496[0m
+[0;32mI (33080) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (33080) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (33090) DHT_Task: Message published[0m
+[0;32mI (33090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64045[0m
+[0;32mI (33590) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (33590) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (33600) DHT_Task: Message published[0m
+[0;32mI (33890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55901[0m
+[0;32mI (34100) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (34100) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (34110) DHT_Task: Message published[0m
+[0;32mI (34510) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21503[0m
+[0;32mI (34610) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (34610) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (34620) DHT_Task: Message published[0m
+[0;32mI (34830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13702[0m
+[0;32mI (35120) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (35120) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (35130) DHT_Task: Message published[0m
+[0;32mI (35430) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18109[0m
+[0;32mI (35630) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (35630) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (35640) DHT_Task: Message published[0m
+[0;32mI (36040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63440[0m
+[0;32mI (36140) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (36140) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (36150) DHT_Task: Message published[0m
+[0;32mI (36350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63517[0m
+[0;32mI (36650) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (36650) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (36660) DHT_Task: Message published[0m
+[0;32mI (36660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39314[0m
+[0;32mI (37160) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (37160) DHT_Task: Hum: 71.9 Tmp: 25.1
+[0m
+[0;32mI (37170) DHT_Task: Message published[0m
+[0;32mI (37580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15863[0m
+[0;32mI (37670) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (37670) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (37680) DHT_Task: Message published[0m
+[0;32mI (37680) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53552[0m
+[0;32mI (38180) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (38180) DHT: Sensor Timeout
+[0m
+[0;32mI (38180) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (38190) DHT_Task: Message published[0m
+[0;32mI (38690) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (38690) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (38700) DHT_Task: Message published[0m
+[0;32mI (38810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4289[0m
+[0;32mI (39120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34029[0m
+[0;32mI (39200) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (39200) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (39210) DHT_Task: Message published[0m
+[0;32mI (39220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57574[0m
+[0;32mI (39710) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (39710) DHT_Task: Hum: 71.9 Tmp: 25.1
+[0m
+[0;32mI (39720) DHT_Task: Message published[0m
+[0;32mI (39730) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37027[0m
+[0;32mI (40220) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (40220) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (40230) DHT_Task: Message published[0m
+[0;32mI (40240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2631[0m
+[0;32mI (40730) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (40730) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (40740) DHT_Task: Message published[0m
+[0;32mI (40750) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15489[0m
+[0;32mI (41240) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (41240) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (41250) DHT_Task: Message published[0m
+[0;32mI (41270) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19001[0m
+[0;32mI (41750) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (41750) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (41760) DHT_Task: Message published[0m
+[0;32mI (41780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30329[0m
+[0;32mI (42260) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (42260) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (42270) DHT_Task: Message published[0m
+[0;32mI (42290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12201[0m
+[0;32mI (42770) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (42770) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (42780) DHT_Task: Message published[0m
+[0;32mI (43120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27369[0m
+[0;32mI (43280) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (43280) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (43290) DHT_Task: Message published[0m
+[0;32mI (43340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60372[0m
+[0;32mI (43790) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (43790) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (43800) DHT_Task: Message published[0m
+[0;32mI (43820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9797[0m
+[0;32mI (44300) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (44300) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (44310) DHT_Task: Message published[0m
+[0;32mI (44340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59910[0m
+[0;32mI (44810) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (44810) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (44820) DHT_Task: Message published[0m
+[0;32mI (44850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35506[0m
+[0;32mI (45320) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (45320) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (45330) DHT_Task: Message published[0m
+[0;32mI (45360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9998[0m
+[0;32mI (45830) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (45830) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (45840) DHT_Task: Message published[0m
+[0;32mI (45880) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41325[0m
+[0;32mI (46340) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (46340) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (46350) DHT_Task: Message published[0m
+[0;32mI (46350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43875[0m
+[0;32mI (46850) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (46850) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (46860) DHT_Task: Message published[0m
+[0;32mI (46900) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14614[0m
+[0;32mI (47360) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (47360) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (47370) DHT_Task: Message published[0m
+[0;32mI (47420) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22430[0m
+[0;32mI (47870) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (47870) DHT_Task: Hum: 72.3 Tmp: 25.2
+[0m
+[0;32mI (47880) DHT_Task: Message published[0m
+[0;32mI (47920) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15792[0m
+[0;32mI (48380) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (48380) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (48390) DHT_Task: Message published[0m
+[0;32mI (48430) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32393[0m
+[0;32mI (48890) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (48890) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (48900) DHT_Task: Message published[0m
+[0;32mI (48950) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24070[0m
+[0;32mI (49400) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (49400) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (49410) DHT_Task: Message published[0m
+[0;32mI (49410) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7024[0m
+[0;32mI (49910) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (49910) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (49920) DHT_Task: Message published[0m
+[0;32mI (49970) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27704[0m
+[0;32mI (50420) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (50420) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (50430) DHT_Task: Message published[0m
+[0;32mI (50790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39476[0m
+[0;32mI (50930) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (50930) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (50940) DHT_Task: Message published[0m
+[0;32mI (50970) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58556[0m
+[0;32mI (51440) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (51440) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (51450) DHT_Task: Message published[0m
+[0;32mI (51950) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (51950) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (51950) DHT_Task: Message published[0m
+[0;32mI (52020) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62365[0m
+[0;32mI (52340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15891[0m
+[0;32mI (52450) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (52450) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (52460) DHT_Task: Message published[0m
+[0;32mI (52630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44550[0m
+[0;32mI (52960) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (52960) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (52970) DHT_Task: Message published[0m
+[0;32mI (53250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44134[0m
+[0;32mI (53470) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (53470) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (53480) DHT_Task: Message published[0m
+[0;32mI (53860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31124[0m
+[0;32mI (53980) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (53980) DHT_Task: Hum: 71.9 Tmp: 25.1
+[0m
+[0;32mI (53990) DHT_Task: Message published[0m
+[0;32mI (54170) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23318[0m
+[0;32mI (54490) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (54490) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (54500) DHT_Task: Message published[0m
+[0;32mI (54780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62891[0m
+[0;32mI (55000) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (55000) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (55010) DHT_Task: Message published[0m
+[0;32mI (55010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25996[0m
+[0;32mI (55510) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (55510) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (55520) DHT_Task: Message published[0m
+[0;32mI (55700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12408[0m
+[0;32mI (56020) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (56020) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (56030) DHT_Task: Message published[0m
+[0;32mI (56320) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14022[0m
+[0;32mI (56530) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (56530) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (56540) DHT_Task: Message published[0m
+[0;32mI (56540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49380[0m
+[0;32mI (57040) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (57040) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (57050) DHT_Task: Message published[0m
+[0;32mI (57240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25165[0m
+[0;32mI (57550) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (57550) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (57560) DHT_Task: Message published[0m
+[0;32mI (57560) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33329[0m
+[0;32mI (58060) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (58060) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (58070) DHT_Task: Message published[0m
+[0;32mI (58470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24844[0m
+[0;32mI (58570) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (58570) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (58580) DHT_Task: Message published[0m
+[0;32mI (58580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1544[0m
+[0;32mI (59080) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (59080) DHT: Sensor Timeout
+[0m
+[0;32mI (59080) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (59090) DHT_Task: Message published[0m
+[0;32mI (59400) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42773[0m
+[0;32mI (59590) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (59590) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (59600) DHT_Task: Message published[0m
+[0;32mI (59600) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33988[0m
+[0;32mI (60100) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (60100) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (60110) DHT_Task: Message published[0m
+[0;32mI (60310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11838[0m
+[0;32mI (60610) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (60610) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (60620) DHT_Task: Message published[0m
+[0;32mI (60620) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39797[0m
+[0;32mI (61120) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (61120) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (61130) DHT_Task: Message published[0m
+[0;32mI (61130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44361[0m
+[0;32mI (61630) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (61630) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (61640) DHT_Task: Message published[0m
+[0;32mI (61640) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44629[0m
+[0;32mI (62140) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (62140) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (62150) DHT_Task: Message published[0m
+[0;32mI (62180) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27260[0m
+[0;32mI (62650) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (62650) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (62660) DHT_Task: Message published[0m
+[0;32mI (62670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15691[0m
+[0;32mI (63160) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (63160) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (63170) DHT_Task: Message published[0m
+[0;32mI (63180) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49710[0m
+[0;32mI (63670) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (63670) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (63680) DHT_Task: Message published[0m
+[0;32mI (63690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61283[0m
+[0;32mI (64180) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (64180) DHT_Task: Hum: 72.2 Tmp: 25.1
+[0m
+[0;32mI (64190) DHT_Task: Message published[0m
+[0;32mI (64200) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7008[0m
+[0;32mI (64690) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (64690) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (64700) DHT_Task: Message published[0m
+[0;32mI (64720) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19930[0m
+[0;32mI (65200) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (65200) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (65210) DHT_Task: Message published[0m
+[0;32mI (65230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51214[0m
+[0;32mI (65710) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (65710) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (65720) DHT_Task: Message published[0m
+[0;32mI (65740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29037[0m
+[0;32mI (66220) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (66220) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (66230) DHT_Task: Message published[0m
+[0;32mI (66250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22676[0m
+[0;32mI (66730) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (66730) DHT_Task: Hum: 71.9 Tmp: 25.1
+[0m
+[0;32mI (66740) DHT_Task: Message published[0m
+[0;32mI (67070) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26154[0m
+[0;32mI (67240) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (67240) DHT_Task: Hum: 72.0 Tmp: 25.1
+[0m
+[0;32mI (67250) DHT_Task: Message published[0m
+[0;32mI (67280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19107[0m
+[0;32mI (67750) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (67750) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (67760) DHT_Task: Message published[0m
+[0;32mI (68000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52023[0m
+[0;32mI (68260) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (68260) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (68270) DHT_Task: Message published[0m
+[0;32mI (68300) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41710[0m
+[0;32mI (68770) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (68770) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (68780) DHT_Task: Message published[0m
+[0;32mI (69220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60104[0m
+[0;32mI (69280) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (69280) DHT: Sensor Timeout
+[0m
+[0;32mI (69280) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (69290) DHT_Task: Message published[0m
+[0;32mI (69330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=369[0m
+[0;32mI (69790) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (69790) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (69800) DHT_Task: Message published[0m
+[0;32mI (69890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43162[0m
+[0;32mI (70300) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (70300) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (70310) DHT_Task: Message published[0m
+[0;32mI (70350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64262[0m
+[0;32mI (70810) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (70810) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (70820) DHT_Task: Message published[0m
+[0;32mI (70860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29789[0m
+[0;32mI (71320) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (71320) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (71330) DHT_Task: Message published[0m
+[0;32mI (71330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1800[0m
+[0;32mI (71830) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (71830) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (71840) DHT_Task: Message published[0m
+[0;32mI (71980) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23540[0m
+[0;32mI (72340) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (72340) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (72350) DHT_Task: Message published[0m
+[0;32mI (72350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5651[0m
+[0;32mI (72850) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (72850) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (72860) DHT_Task: Message published[0m
+[0;32mI (72910) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52052[0m
+[0;32mI (73360) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (73360) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (73370) DHT_Task: Message published[0m
+[0;32mI (73420) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60566[0m
+[0;32mI (73870) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (73870) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (73880) DHT_Task: Message published[0m
+[0;32mI (74140) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3779[0m
+[0;32mI (74380) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (74380) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (74390) DHT_Task: Message published[0m
+[0;32mI (74750) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1899[0m
+[0;32mI (74890) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (74890) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (74900) DHT_Task: Message published[0m
+[0;32mI (75060) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45730[0m
+[0;32mI (75400) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (75400) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (75410) DHT_Task: Message published[0m
+[0;32mI (75420) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24504[0m
+[0;32mI (75910) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (75910) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (75920) DHT_Task: Message published[0m
+[0;32mI (76300) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52736[0m
+[0;32mI (76420) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (76420) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (76430) DHT_Task: Message published[0m
+[0;32mI (76490) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54602[0m
+[0;32mI (76930) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (76930) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (76940) DHT_Task: Message published[0m
+[0;32mI (76940) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48139[0m
+[0;32mI (77440) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (77440) DHT_Task: Hum: 72.0 Tmp: 25.3
+[0m
+[0;32mI (77450) DHT_Task: Message published[0m
+[0;32mI (77850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62333[0m
+[0;32mI (77950) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (77950) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (77960) DHT_Task: Message published[0m
+[0;32mI (78130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41772[0m
+[0;32mI (78460) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (78460) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (78470) DHT_Task: Message published[0m
+[0;32mI (78740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55849[0m
+[0;32mI (78970) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (78970) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (78980) DHT_Task: Message published[0m
+[0;32mI (79360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34264[0m
+[0;32mI (79480) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (79480) DHT_Task: Hum: 72.1 Tmp: 25.1
+[0m
+[0;32mI (79490) DHT_Task: Message published[0m
+[0;32mI (79660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19642[0m
+[0;32mI (79990) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (79990) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (80000) DHT_Task: Message published[0m
+[0;32mI (80280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32950[0m
+[0;32mI (80500) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (80500) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (80510) DHT_Task: Message published[0m
+[0;32mI (80510) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1221[0m
+[0;32mI (81010) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (81010) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (81020) DHT_Task: Message published[0m
+[0;32mI (81200) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4573[0m
+[0;32mI (81520) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (81520) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (81530) DHT_Task: Message published[0m
+[0;32mI (81820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34053[0m
+[0;32mI (82030) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (82030) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (82040) DHT_Task: Message published[0m
+[0;32mI (82040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33186[0m
+[0;32mI (82540) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (82540) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (82550) DHT_Task: Message published[0m
+[0;32mI (82740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27185[0m
+[0;32mI (83050) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (83050) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (83060) DHT_Task: Message published[0m
+[0;32mI (83090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1243[0m
+[0;32mI (83560) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (83560) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (83570) DHT_Task: Message published[0m
+[0;32mI (83970) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62702[0m
+[0;32mI (84070) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (84070) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (84080) DHT_Task: Message published[0m
+[0;32mI (84110) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8019[0m
+[0;32mI (84580) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (84580) DHT_Task: Hum: 72.2 Tmp: 25.2
+[0m
+[0;32mI (84590) DHT_Task: Message published[0m
+[0;32mI (84890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28104[0m
+[0;32mI (85090) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (85090) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (85100) DHT_Task: Message published[0m
+[0;32mI (85500) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17230[0m
+[0;32mI (85600) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (85600) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (85610) DHT_Task: Message published[0m
+[0;32mI (85810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32953[0m
+[0;32mI (86110) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (86110) DHT: Sensor Timeout
+[0m
+[0;32mI (86110) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (86120) DHT_Task: Message published[0m
+[0;32mI (86430) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43594[0m
+[0;32mI (86620) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (86620) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (86630) DHT_Task: Message published[0m
+[0;32mI (86630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63489[0m
+[0;32mI (87130) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (87130) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (87140) DHT_Task: Message published[0m
+[0;32mI (87350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43725[0m
+[0;32mI (87640) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (87640) DHT: Sensor Timeout
+[0m
+[0;32mI (87640) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (87650) DHT_Task: Message published[0m
+[0;32mI (87650) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2428[0m
+[0;32mI (88150) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (88150) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (88160) DHT_Task: Message published[0m
+[0;32mI (88160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44774[0m
+[0;32mI (88660) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (88660) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (88670) DHT_Task: Message published[0m
+[0;32mI (88680) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42722[0m
+[0;32mI (89170) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (89170) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (89180) DHT_Task: Message published[0m
+[0;32mI (89190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59001[0m
+[0;32mI (89680) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (89680) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (89690) DHT_Task: Message published[0m
+[0;32mI (89700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41590[0m
+[0;32mI (90190) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (90190) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (90200) DHT_Task: Message published[0m
+[0;32mI (90210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=696[0m
+[0;32mI (90700) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (90700) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (90710) DHT_Task: Message published[0m
+[0;32mI (91210) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (91210) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (91210) DHT_Task: Message published[0m
+[0;32mI (91350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49213[0m
+[0;32mI (91660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32098[0m
+[0;32mI (91710) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (91710) DHT: Sensor Timeout
+[0m
+[0;32mI (91710) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (91720) DHT_Task: Message published[0m
+[0;32mI (91760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30662[0m
+[0;32mI (92220) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (92220) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (92230) DHT_Task: Message published[0m
+[0;32mI (92270) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63130[0m
+[0;32mI (92730) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (92730) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (92740) DHT_Task: Message published[0m
+[0;32mI (92770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3751[0m
+[0;32mI (93240) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (93240) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (93250) DHT_Task: Message published[0m
+[0;32mI (93250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56096[0m
+[0;32mI (93750) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (93750) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (93760) DHT_Task: Message published[0m
+[0;32mI (93760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49759[0m
+[0;32mI (94260) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (94260) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (94270) DHT_Task: Message published[0m
+[0;32mI (94310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43268[0m
+[0;32mI (94770) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (94770) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (94780) DHT_Task: Message published[0m
+[0;32mI (94820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60534[0m
+[0;32mI (95280) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (95280) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (95290) DHT_Task: Message published[0m
+[0;32mI (95290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41997[0m
+[0;32mI (95790) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (95790) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (95800) DHT_Task: Message published[0m
+[0;32mI (95800) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6171[0m
+[0;32mI (96300) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (96300) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (96310) DHT_Task: Message published[0m
+[0;32mI (96310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24521[0m
+[0;32mI (96810) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (96810) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (96820) DHT_Task: Message published[0m
+[0;32mI (96870) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41985[0m
+[0;32mI (97320) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (97320) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (97330) DHT_Task: Message published[0m
+[0;32mI (97480) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57103[0m
+[0;32mI (97830) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (97830) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (97840) DHT_Task: Message published[0m
+[0;32mI (98100) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4203[0m
+[0;32mI (98340) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (98340) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (98350) DHT_Task: Message published[0m
+[0;32mI (98710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59255[0m
+[0;32mI (98850) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (98850) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (98860) DHT_Task: Message published[0m
+[0;32mI (98930) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33340[0m
+[0;32mI (99360) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (99360) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (99370) DHT_Task: Message published[0m
+[0;32mI (99630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19439[0m
+[0;32mI (99870) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (99870) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (99880) DHT_Task: Message published[0m
+[0;32mI (100250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8951[0m
+[0;32mI (100380) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (100380) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (100390) DHT_Task: Message published[0m
+[0;32mI (100550) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24373[0m
+[0;32mI (100890) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (100890) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (100900) DHT_Task: Message published[0m
+[0;32mI (101170) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16959[0m
+[0;32mI (101400) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (101400) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (101410) DHT_Task: Message published[0m
+[0;32mI (101780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39310[0m
+[0;32mI (101910) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (101910) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (101920) DHT_Task: Message published[0m
+[0;32mI (102090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21824[0m
+[0;32mI (102420) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (102420) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (102430) DHT_Task: Message published[0m
+[0;32mI (102710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34987[0m
+[0;32mI (102930) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (102930) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (102940) DHT_Task: Message published[0m
+[0;32mI (102940) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4445[0m
+[0;32mI (103440) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (103440) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (103450) DHT_Task: Message published[0m
+[0;32mI (103630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46917[0m
+[0;32mI (103950) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (103950) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (103960) DHT_Task: Message published[0m
+[0;32mI (104240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3624[0m
+[0;32mI (104460) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (104460) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (104470) DHT_Task: Message published[0m
+[0;32mI (104470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40681[0m
+[0;32mI (104970) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (104970) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (104980) DHT_Task: Message published[0m
+[0;32mI (105470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=76[0m
+[0;32mI (105480) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (105480) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (105490) DHT_Task: Message published[0m
+[0;32mI (105490) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44140[0m
+[0;32mI (105990) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (105990) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (106000) DHT_Task: Message published[0m
+[0;32mI (106000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12418[0m
+[0;32mI (106500) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (106500) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (106510) DHT_Task: Message published[0m
+[0;32mI (106510) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16105[0m
+[0;32mI (107010) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (107010) DHT: Sensor Timeout
+[0m
+[0;32mI (107010) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (107020) DHT_Task: Message published[0m
+[0;32mI (107020) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55750[0m
+[0;32mI (107520) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (107520) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (107530) DHT_Task: Message published[0m
+[0;32mI (107550) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11308[0m
+[0;32mI (108030) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (108030) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (108040) DHT_Task: Message published[0m
+[0;32mI (108230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40478[0m
+[0;32mI (108540) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (108540) DHT: Sensor Timeout
+[0m
+[0;32mI (108540) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (108550) DHT_Task: Message published[0m
+[0;32mI (108550) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18518[0m
+[0;32mI (109050) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (109050) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (109060) DHT_Task: Message published[0m
+[0;32mI (109060) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4026[0m
+[0;32mI (109560) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (109560) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (109570) DHT_Task: Message published[0m
+[0;32mI (109570) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1966[0m
+[0;32mI (110070) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (110070) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (110080) DHT_Task: Message published[0m
+[0;32mI (110390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3226[0m
+[0;32mI (110580) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (110580) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (110590) DHT_Task: Message published[0m
+[0;32mI (111000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37641[0m
+[0;32mI (111090) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (111090) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (111100) DHT_Task: Message published[0m
+[0;32mI (111100) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41200[0m
+[0;32mI (111600) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (111600) DHT: Sensor Timeout
+[0m
+[0;32mI (111600) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (111610) DHT_Task: Message published[0m
+[0;32mI (111610) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62056[0m
+[0;32mI (112110) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (112110) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (112120) DHT_Task: Message published[0m
+[0;32mI (112130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31517[0m
+[0;32mI (112620) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (112620) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (112630) DHT_Task: Message published[0m
+[0;32mI (112630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30393[0m
+[0;32mI (113130) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (113130) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (113140) DHT_Task: Message published[0m
+[0;32mI (113150) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24367[0m
+[0;32mI (113640) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (113640) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (113650) DHT_Task: Message published[0m
+[0;32mI (113660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52507[0m
+[0;32mI (114150) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (114150) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (114160) DHT_Task: Message published[0m
+[0;32mI (114160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23289[0m
+[0;32mI (114660) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (114660) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (114670) DHT_Task: Message published[0m
+[0;32mI (114690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48401[0m
+[0;32mI (115170) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (115170) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (115180) DHT_Task: Message published[0m
+[0;32mI (115210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42631[0m
+[0;32mI (115680) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (115680) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (115690) DHT_Task: Message published[0m
+[0;32mI (115710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48669[0m
+[0;32mI (116190) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (116190) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (116200) DHT_Task: Message published[0m
+[0;32mI (116220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42624[0m
+[0;32mI (116700) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (116700) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (116710) DHT_Task: Message published[0m
+[0;32mI (116730) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1161[0m
+[0;32mI (117210) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (117210) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (117220) DHT_Task: Message published[0m
+[0;32mI (117250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7974[0m
+[0;32mI (117720) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (117720) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (117730) DHT_Task: Message published[0m
+[0;32mI (117760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50751[0m
+[0;32mI (118230) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (118230) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (118240) DHT_Task: Message published[0m
+[0;32mI (118270) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38728[0m
+[0;32mI (118740) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (118740) DHT_Task: Hum: 71.5 Tmp: 25.1
+[0m
+[0;32mI (118750) DHT_Task: Message published[0m
+[0;32mI (118780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52359[0m
+[0;32mI (119250) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (119250) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (119260) DHT_Task: Message published[0m
+[0;32mI (119260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59128[0m
+[0;32mI (119760) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (119760) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (119770) DHT_Task: Message published[0m
+[0;32mI (119810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51122[0m
+[0;32mI (120270) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (120270) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (120280) DHT_Task: Message published[0m
+[0;32mI (120280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54726[0m
+[0;32mI (120780) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (120780) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (120790) DHT_Task: Message published[0m
+[0;32mI (120790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50259[0m
+[0;32mI (121290) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (121290) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (121300) DHT_Task: Message published[0m
+[0;32mI (121340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5071[0m
+[0;32mI (121800) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (121800) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (121810) DHT_Task: Message published[0m
+[0;32mI (121850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64949[0m
+[0;32mI (122310) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (122310) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (122320) DHT_Task: Message published[0m
+[0;32mI (122370) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60931[0m
+[0;32mI (122820) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (122820) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (122830) DHT_Task: Message published[0m
+[0;32mI (122850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33405[0m
+[0;32mI (123330) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (123330) DHT_Task: Hum: 71.8 Tmp: 25.1
+[0m
+[0;32mI (123340) DHT_Task: Message published[0m
+[0;32mI (123390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48014[0m
+[0;32mI (123840) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (123840) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (123850) DHT_Task: Message published[0m
+[0;32mI (123860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25417[0m
+[0;32mI (124350) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (124350) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (124360) DHT_Task: Message published[0m
+[0;32mI (124520) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47601[0m
+[0;32mI (124860) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (124860) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (124870) DHT_Task: Message published[0m
+[0;32mI (124870) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52727[0m
+[0;32mI (125370) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (125370) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (125380) DHT_Task: Message published[0m
+[0;32mI (125740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50800[0m
+[0;32mI (125880) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (125880) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (125880) DHT_Task: Message published[0m
+[0;32mI (126360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59625[0m
+[0;32mI (126380) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (126380) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (126390) DHT_Task: Message published[0m
+[0;32mI (126670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5989[0m
+[0;32mI (126890) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (126890) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (126900) DHT_Task: Message published[0m
+[0;32mI (127290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17237[0m
+[0;32mI (127400) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (127400) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (127410) DHT_Task: Message published[0m
+[0;32mI (127410) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43672[0m
+[0;32mI (127910) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (127910) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (127920) DHT_Task: Message published[0m
+[0;32mI (127920) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19129[0m
+[0;32mI (128420) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (128420) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (128430) DHT_Task: Message published[0m
+[0;32mI (128820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51295[0m
+[0;32mI (128930) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (128930) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (128940) DHT_Task: Message published[0m
+[0;32mI (129130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36415[0m
+[0;32mI (129440) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (129440) DHT_Task: Hum: 71.9 Tmp: 25.1
+[0m
+[0;32mI (129450) DHT_Task: Message published[0m
+[0;32mI (129800) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2090[0m
+[0;32mI (129950) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (129950) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (129960) DHT_Task: Message published[0m
+[0;32mI (130350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57242[0m
+[0;32mI (130460) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (130460) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (130470) DHT_Task: Message published[0m
+[0;32mI (130470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40158[0m
+[0;32mI (130970) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (130970) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (130980) DHT_Task: Message published[0m
+[0;32mI (131280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2948[0m
+[0;32mI (131480) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (131480) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (131490) DHT_Task: Message published[0m
+[0;32mI (131890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7579[0m
+[0;32mI (131990) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (131990) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (132000) DHT_Task: Message published[0m
+[0;32mI (132000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6044[0m
+[0;32mI (132500) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (132500) DHT: Sensor Timeout
+[0m
+[0;32mI (132500) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (132510) DHT_Task: Message published[0m
+[0;32mI (132510) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42241[0m
+[0;32mI (133010) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (133010) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (133020) DHT_Task: Message published[0m
+[0;32mI (133420) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39897[0m
+[0;32mI (133520) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (133520) DHT: Sensor Timeout
+[0m
+[0;32mI (133520) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (133530) DHT_Task: Message published[0m
+[0;32mI (133530) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52794[0m
+[0;32mI (134030) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (134030) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (134040) DHT_Task: Message published[0m
+[0;32mI (134040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2356[0m
+[0;32mI (134540) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (134540) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (134550) DHT_Task: Message published[0m
+[0;32mI (134960) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5701[0m
+[0;32mI (135050) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (135050) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (135060) DHT_Task: Message published[0m
+[0;32mI (135060) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39683[0m
+[0;32mI (135560) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (135560) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (135570) DHT_Task: Message published[0m
+[0;32mI (135580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48478[0m
+[0;32mI (136070) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (136070) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (136080) DHT_Task: Message published[0m
+[0;32mI (136080) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48897[0m
+[0;32mI (136580) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (136580) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (136590) DHT_Task: Message published[0m
+[0;32mI (137090) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (137090) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (137100) DHT_Task: Message published[0m
+[0;32mI (137110) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7776[0m
+[0;32mI (137420) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59109[0m
+[0;32mI (137600) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (137600) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (137610) DHT_Task: Message published[0m
+[0;32mI (137610) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58028[0m
+[0;32mI (138110) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (138110) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (138120) DHT_Task: Message published[0m
+[0;32mI (138140) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63915[0m
+[0;32mI (138620) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (138620) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (138630) DHT_Task: Message published[0m
+[0;32mI (138630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3852[0m
+[0;32mI (139130) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (139130) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (139140) DHT_Task: Message published[0m
+[0;32mI (139170) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2659[0m
+[0;32mI (139640) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (139640) DHT_Task: Hum: 72.1 Tmp: 25.2
+[0m
+[0;32mI (139650) DHT_Task: Message published[0m
+[0;32mI (139670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20603[0m
+[0;32mI (140150) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (140150) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (140160) DHT_Task: Message published[0m
+[0;32mI (140160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50074[0m
+[0;32mI (140660) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (140660) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (140670) DHT_Task: Message published[0m
+[0;32mI (140800) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38660[0m
+[0;32mI (141170) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (141170) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (141180) DHT_Task: Message published[0m
+[0;32mI (141180) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28694[0m
+[0;32mI (141680) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (141680) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (141690) DHT_Task: Message published[0m
+[0;32mI (141690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17597[0m
+[0;32mI (142190) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (142190) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (142200) DHT_Task: Message published[0m
+[0;32mI (142200) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50999[0m
+[0;32mI (142700) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (142700) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (142710) DHT_Task: Message published[0m
+[0;32mI (142710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25402[0m
+[0;32mI (143210) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (143210) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (143220) DHT_Task: Message published[0m
+[0;32mI (143220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47809[0m
+[0;32mI (143720) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (143720) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (143730) DHT_Task: Message published[0m
+[0;32mI (143770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64678[0m
+[0;32mI (144230) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (144230) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (144240) DHT_Task: Message published[0m
+[0;32mI (144240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23330[0m
+[0;32mI (144740) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (144740) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (144750) DHT_Task: Message published[0m
+[0;32mI (144790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43849[0m
+[0;32mI (145250) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (145250) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (145260) DHT_Task: Message published[0m
+[0;32mI (145260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8804[0m
+[0;32mI (145760) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (145760) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (145770) DHT_Task: Message published[0m
+[0;32mI (145810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46130[0m
+[0;32mI (146270) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (146270) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (146280) DHT_Task: Message published[0m
+[0;32mI (146280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52369[0m
+[0;32mI (146780) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (146780) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (146790) DHT_Task: Message published[0m
+[0;32mI (146790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12214[0m
+[0;32mI (147290) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (147290) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (147300) DHT_Task: Message published[0m
+[0;32mI (147580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13367[0m
+[0;32mI (147800) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (147800) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (147810) DHT_Task: Message published[0m
+[0;32mI (147840) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1474[0m
+[0;32mI (148310) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (148310) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (148320) DHT_Task: Message published[0m
+[0;32mI (148480) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11140[0m
+[0;32mI (148820) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (148820) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (148830) DHT_Task: Message published[0m
+[0;32mI (149090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28419[0m
+[0;32mI (149330) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (149330) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (149340) DHT_Task: Message published[0m
+[0;32mI (149340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65411[0m
+[0;32mI (149840) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (149840) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (149850) DHT_Task: Message published[0m
+[0;32mI (150010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47700[0m
+[0;32mI (150350) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (150350) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (150360) DHT_Task: Message published[0m
+[0;32mI (150360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57357[0m
+[0;32mI (150860) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (150860) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (150870) DHT_Task: Message published[0m
+[0;32mI (151240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39436[0m
+[0;32mI (151370) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (151370) DHT_Task: Hum: 72.0 Tmp: 25.2
+[0m
+[0;32mI (151380) DHT_Task: Message published[0m
+[0;32mI (151550) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29576[0m
+[0;32mI (151880) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (151880) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (151890) DHT_Task: Message published[0m
+[0;32mI (152170) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31368[0m
+[0;32mI (152390) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (152390) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (152400) DHT_Task: Message published[0m
+[0;32mI (152780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57033[0m
+[0;32mI (152900) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (152900) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (152910) DHT_Task: Message published[0m
+[0;32mI (153090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48639[0m
+[0;32mI (153410) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (153410) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (153420) DHT_Task: Message published[0m
+[0;32mI (153700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46504[0m
+[0;32mI (153920) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (153920) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (153930) DHT_Task: Message published[0m
+[0;32mI (154310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29099[0m
+[0;32mI (154430) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (154430) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (154440) DHT_Task: Message published[0m
+[0;32mI (154470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52584[0m
+[0;32mI (154940) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (154940) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (154950) DHT_Task: Message published[0m
+[0;32mI (155250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63895[0m
+[0;32mI (155450) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (155450) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (155460) DHT_Task: Message published[0m
+[0;32mI (155470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10440[0m
+[0;32mI (155960) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (155960) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (155970) DHT_Task: Message published[0m
+[0;32mI (156470) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (156470) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (156470) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15237[0m
+[0;32mI (156480) DHT_Task: Message published[0m
+[0;32mI (156770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25392[0m
+[0;32mI (156980) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (156980) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (156990) DHT_Task: Message published[0m
+[0;32mI (157390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30333[0m
+[0;32mI (157490) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (157490) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (157500) DHT_Task: Message published[0m
+[0;32mI (157500) MQTT: MQTT_EVENT_PUBLISHED, msg_id=705[0m
+[0;32mI (158000) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (158000) DHT: Sensor Timeout
+[0m
+[0;32mI (158000) DHT_Task: Hum: 71.9 Tmp: 25.2
+[0m
+[0;32mI (158010) DHT_Task: Message published[0m
+[0;32mI (158310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61962[0m
+[0;32mI (158510) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (158510) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (158520) DHT_Task: Message published[0m
+[0;32mI (158520) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65074[0m
+[0;32mI (159020) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (159020) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (159030) DHT_Task: Message published[0m
+[0;32mI (159230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19177[0m
+[0;32mI (159530) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (159530) DHT: Sensor Timeout
+[0m
+[0;32mI (159530) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (159540) DHT_Task: Message published[0m
+[0;32mI (159540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21310[0m
+[0;32mI (160040) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (160040) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (160050) DHT_Task: Message published[0m
+[0;32mI (160050) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42138[0m
+[0;32mI (160550) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (160550) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (160560) DHT_Task: Message published[0m
+[0;32mI (160770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8812[0m
+[0;32mI (161060) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (161060) DHT: Sensor Timeout
+[0m
+[0;32mI (161060) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (161070) DHT_Task: Message published[0m
+[0;32mI (161070) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56860[0m
+[0;32mI (161570) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (161570) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (161580) DHT_Task: Message published[0m
+[0;32mI (161590) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49321[0m
+[0;32mI (162080) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (162080) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (162090) DHT_Task: Message published[0m
+[0;32mI (162090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33819[0m
+[0;32mI (162590) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (162590) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (162600) DHT_Task: Message published[0m
+[0;32mI (162600) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22238[0m
+[0;32mI (163100) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (163100) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (163110) DHT_Task: Message published[0m
+[0;32mI (163540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5008[0m
+[0;32mI (163610) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (163610) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (163620) DHT_Task: Message published[0m
+[0;32mI (163630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10904[0m
+[0;32mI (164120) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (164120) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (164130) DHT_Task: Message published[0m
+[0;32mI (164160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60239[0m
+[0;32mI (164630) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (164630) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (164640) DHT_Task: Message published[0m
+[0;32mI (164660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22884[0m
+[0;32mI (165140) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (165140) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (165150) DHT_Task: Message published[0m
+[0;32mI (165170) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50851[0m
+[0;32mI (165650) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (165650) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (165660) DHT_Task: Message published[0m
+[0;32mI (165680) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44207[0m
+[0;32mI (166160) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (166160) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (166170) DHT_Task: Message published[0m
+[0;32mI (166170) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41154[0m
+[0;32mI (166670) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (166670) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (166680) DHT_Task: Message published[0m
+[0;32mI (166680) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55833[0m
+[0;32mI (167180) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (167180) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (167190) DHT_Task: Message published[0m
+[0;32mI (167220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34943[0m
+[0;32mI (167690) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (167690) DHT_Task: Hum: 71.7 Tmp: 25.1
+[0m
+[0;32mI (167700) DHT_Task: Message published[0m
+[0;32mI (167700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33114[0m
+[0;32mI (168200) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (168200) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (168210) DHT_Task: Message published[0m
+[0;32mI (168240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51842[0m
+[0;32mI (168710) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (168710) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (168720) DHT_Task: Message published[0m
+[0;32mI (168720) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63773[0m
+[0;32mI (169220) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (169220) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (169230) DHT_Task: Message published[0m
+[0;32mI (169670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28180[0m
+[0;32mI (169730) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (169730) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (169740) DHT_Task: Message published[0m
+[0;32mI (169740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47663[0m
+[0;32mI (170240) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (170240) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (170250) DHT_Task: Message published[0m
+[0;32mI (170250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45060[0m
+[0;32mI (170750) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (170750) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (170760) DHT_Task: Message published[0m
+[0;32mI (170760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56424[0m
+[0;32mI (171260) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (171260) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (171270) DHT_Task: Message published[0m
+[0;32mI (171530) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27309[0m
+[0;32mI (171770) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (171770) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (171780) DHT_Task: Message published[0m
+[0;32mI (171860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45221[0m
+[0;32mI (172280) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (172280) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (172290) DHT_Task: Message published[0m
+[0;32mI (172450) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9257[0m
+[0;32mI (172790) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (172790) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (172800) DHT_Task: Message published[0m
+[0;32mI (172850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43358[0m
+[0;32mI (173300) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (173300) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (173310) DHT_Task: Message published[0m
+[0;32mI (173310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7140[0m
+[0;32mI (173810) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (173810) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (173820) DHT_Task: Message published[0m
+[0;32mI (173980) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17118[0m
+[0;32mI (174320) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (174320) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (174330) DHT_Task: Message published[0m
+[0;32mI (174330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32263[0m
+[0;32mI (174830) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (174830) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (174840) DHT_Task: Message published[0m
+[0;32mI (175200) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46854[0m
+[0;32mI (175340) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (175340) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (175350) DHT_Task: Message published[0m
+[0;32mI (175350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13712[0m
+[0;32mI (175850) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (175850) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (175860) DHT_Task: Message published[0m
+[0;32mI (175860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35834[0m
+[0;32mI (176360) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (176360) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (176370) DHT_Task: Message published[0m
+[0;32mI (176740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29709[0m
+[0;32mI (176870) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (176870) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (176880) DHT_Task: Message published[0m
+[0;32mI (176880) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34745[0m
+[0;32mI (177380) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (177380) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (177390) DHT_Task: Message published[0m
+[0;32mI (177660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33495[0m
+[0;32mI (177890) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (177890) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (177900) DHT_Task: Message published[0m
+[0;32mI (178330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5943[0m
+[0;32mI (178400) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (178400) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (178410) DHT_Task: Message published[0m
+[0;32mI (178580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10480[0m
+[0;32mI (178910) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (178910) DHT: Sensor Timeout
+[0m
+[0;32mI (178910) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (178920) DHT_Task: Message published[0m
+[0;32mI (179210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41980[0m
+[0;32mI (179420) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (179420) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (179430) DHT_Task: Message published[0m
+[0;32mI (179820) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19738[0m
+[0;32mI (179930) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (179930) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (179940) DHT_Task: Message published[0m
+[0;32mI (180130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50609[0m
+[0;32mI (180440) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (180440) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (180450) DHT_Task: Message published[0m
+[0;32mI (180580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59810[0m
+[0;32mI (180950) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (180950) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (180960) DHT_Task: Message published[0m
+[0;32mI (181350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3621[0m
+[0;32mI (181460) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (181460) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (181470) DHT_Task: Message published[0m
+[0;32mI (181660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14919[0m
+[0;32mI (181970) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (181970) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (181980) DHT_Task: Message published[0m
+[0;32mI (181980) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55114[0m
+[0;32mI (182480) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (182480) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (182490) DHT_Task: Message published[0m
+[0;32mI (182890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47617[0m
+[0;32mI (182990) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (182990) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (183000) DHT_Task: Message published[0m
+[0;32mI (183000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55990[0m
+[0;32mI (183500) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (183500) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (183510) DHT_Task: Message published[0m
+[0;32mI (183510) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28379[0m
+[0;32mI (184010) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (184010) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (184020) DHT_Task: Message published[0m
+[0;32mI (184020) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43364[0m
+[0;32mI (184520) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (184520) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (184530) DHT_Task: Message published[0m
+[0;32mI (184730) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34526[0m
+[0;32mI (185030) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (185030) DHT: Sensor Timeout
+[0m
+[0;32mI (185030) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (185040) DHT_Task: Message published[0m
+[0;32mI (185040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30963[0m
+[0;32mI (185540) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (185540) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (185550) DHT_Task: Message published[0m
+[0;32mI (185960) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9353[0m
+[0;32mI (186050) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (186050) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (186060) DHT_Task: Message published[0m
+[0;32mI (186060) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24235[0m
+[0;32mI (186560) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (186560) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (186570) DHT_Task: Message published[0m
+[0;32mI (186880) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20899[0m
+[0;32mI (187070) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (187070) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (187080) DHT_Task: Message published[0m
+[0;32mI (187080) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35214[0m
+[0;32mI (187580) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (187580) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (187590) DHT_Task: Message published[0m
+[0;32mI (187810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51851[0m
+[0;32mI (188090) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (188090) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (188100) DHT_Task: Message published[0m
+[0;32mI (188120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5048[0m
+[0;32mI (188600) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (188600) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (188610) DHT_Task: Message published[0m
+[0;32mI (188630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60171[0m
+[0;32mI (189110) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (189110) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (189120) DHT_Task: Message published[0m
+[0;32mI (189120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7972[0m
+[0;32mI (189620) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (189620) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (189630) DHT_Task: Message published[0m
+[0;32mI (189640) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22356[0m
+[0;32mI (190130) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (190130) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (190140) DHT_Task: Message published[0m
+[0;32mI (190150) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42133[0m
+[0;32mI (190640) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (190640) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (190650) DHT_Task: Message published[0m
+[0;32mI (190670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15885[0m
+[0;32mI (191150) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (191150) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (191160) DHT_Task: Message published[0m
+[0;32mI (191180) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57143[0m
+[0;32mI (191660) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (191660) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (191670) DHT_Task: Message published[0m
+[0;32mI (191690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35785[0m
+[0;32mI (192170) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (192170) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (192180) DHT_Task: Message published[0m
+[0;32mI (192180) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17584[0m
+[0;32mI (192680) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (192680) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (192690) DHT_Task: Message published[0m
+[0;32mI (192710) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62795[0m
+[0;32mI (193190) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (193190) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (193200) DHT_Task: Message published[0m
+[0;32mI (193230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38078[0m
+[0;32mI (193700) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (193700) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (193710) DHT_Task: Message published[0m
+[0;32mI (193740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53504[0m
+[0;32mI (194210) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (194210) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (194220) DHT_Task: Message published[0m
+[0;32mI (194220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52570[0m
+[0;32mI (194720) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (194720) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (194730) DHT_Task: Message published[0m
+[0;32mI (194760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23418[0m
+[0;32mI (195230) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (195230) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (195240) DHT_Task: Message published[0m
+[0;32mI (195290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47026[0m
+[0;32mI (195740) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (195740) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (195750) DHT_Task: Message published[0m
+[0;32mI (196090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29941[0m
+[0;32mI (196250) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (196250) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (196260) DHT_Task: Message published[0m
+[0;32mI (196300) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13394[0m
+[0;32mI (196760) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (196760) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (196770) DHT_Task: Message published[0m
+[0;32mI (196810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14421[0m
+[0;32mI (197270) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (197270) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (197280) DHT_Task: Message published[0m
+[0;32mI (197330) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32738[0m
+[0;32mI (197780) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (197780) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (197790) DHT_Task: Message published[0m
+[0;32mI (197830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32996[0m
+[0;32mI (198290) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (198290) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (198300) DHT_Task: Message published[0m
+[0;32mI (198350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21514[0m
+[0;32mI (198800) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (198800) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (198810) DHT_Task: Message published[0m
+[0;32mI (198860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12116[0m
+[0;32mI (199310) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (199310) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (199320) DHT_Task: Message published[0m
+[0;32mI (199340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47886[0m
+[0;32mI (199820) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (199820) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (199830) DHT_Task: Message published[0m
+[0;32mI (199830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10460[0m
+[0;32mI (200330) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (200330) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (200340) DHT_Task: Message published[0m
+[0;32mI (200700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1060[0m
+[0;32mI (200840) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (200840) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (200850) DHT_Task: Message published[0m
+[0;32mI (200850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22018[0m
+[0;32mI (201350) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (201350) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (201360) DHT_Task: Message published[0m
+[0;32mI (201620) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30863[0m
+[0;32mI (201860) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (201860) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (201870) DHT_Task: Message published[0m
+[0;32mI (201870) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35629[0m
+[0;32mI (202370) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (202370) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (202380) DHT_Task: Message published[0m
+[0;32mI (202540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7476[0m
+[0;32mI (202880) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (202880) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (202890) DHT_Task: Message published[0m
+[0;32mI (202890) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7151[0m
+[0;32mI (203390) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (203390) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (203400) DHT_Task: Message published[0m
+[0;32mI (203790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6932[0m
+[0;32mI (203900) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (203900) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (203910) DHT_Task: Message published[0m
+[0;32mI (203910) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56598[0m
+[0;32mI (204410) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (204410) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (204420) DHT_Task: Message published[0m
+[0;32mI (204440) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33127[0m
+[0;32mI (204920) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (204920) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (204930) DHT_Task: Message published[0m
+[0;32mI (204930) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6819[0m
+[0;32mI (205430) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (205430) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (205440) DHT_Task: Message published[0m
+[0;32mI (205440) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45524[0m
+[0;32mI (205940) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (205940) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (205950) DHT_Task: Message published[0m
+[0;32mI (206230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60513[0m
+[0;32mI (206450) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (206450) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (206460) DHT_Task: Message published[0m
+[0;32mI (206850) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31804[0m
+[0;32mI (206960) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (206960) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (206970) DHT_Task: Message published[0m
+[0;32mI (207150) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43661[0m
+[0;32mI (207470) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (207470) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (207480) DHT_Task: Message published[0m
+[0;32mI (207770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11060[0m
+[0;32mI (207980) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (207980) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (207990) DHT_Task: Message published[0m
+[0;32mI (208390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49375[0m
+[0;32mI (208490) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (208490) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (208500) DHT_Task: Message published[0m
+[0;32mI (208690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49354[0m
+[0;32mI (209000) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (209000) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (209010) DHT_Task: Message published[0m
+[0;32mI (209310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27651[0m
+[0;32mI (209510) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (209510) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (209520) DHT_Task: Message published[0m
+[0;32mI (209520) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60409[0m
+[0;32mI (210020) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (210020) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (210030) DHT_Task: Message published[0m
+[0;32mI (210220) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51135[0m
+[0;32mI (210530) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (210530) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (210540) DHT_Task: Message published[0m
+[0;32mI (210540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1689[0m
+[0;32mI (211040) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (211040) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (211050) DHT_Task: Message published[0m
+[0;32mI (211450) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35279[0m
+[0;32mI (211550) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (211550) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (211560) DHT_Task: Message published[0m
+[0;32mI (211560) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65223[0m
+[0;32mI (212060) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (212060) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (212070) DHT_Task: Message published[0m
+[0;32mI (212080) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15962[0m
+[0;32mI (212570) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (212570) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (212580) DHT_Task: Message published[0m
+[0;32mI (213000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4772[0m
+[0;32mI (213080) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (213080) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (213090) DHT_Task: Message published[0m
+[0;32mI (213320) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53218[0m
+[0;32mI (213590) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (213590) DHT: Sensor Timeout
+[0m
+[0;32mI (213590) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (213600) DHT_Task: Message published[0m
+[0;32mI (213600) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12126[0m
+[0;32mI (214100) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (214100) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (214110) DHT_Task: Message published[0m
+[0;32mI (214120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63898[0m
+[0;32mI (214610) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (214610) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (214620) DHT_Task: Message published[0m
+[0;32mI (214620) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57722[0m
+[0;32mI (215120) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (215120) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (215130) DHT_Task: Message published[0m
+[0;32mI (215140) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47638[0m
+[0;32mI (215630) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (215630) DHT_Task: Hum: 71.9 Tmp: 25.3
+[0m
+[0;32mI (215640) DHT_Task: Message published[0m
+[0;32mI (215650) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6963[0m
+[0;32mI (216140) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (216140) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (216150) DHT_Task: Message published[0m
+[0;32mI (216160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12511[0m
+[0;32mI (216650) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (216650) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (216660) DHT_Task: Message published[0m
+[0;32mI (216680) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15430[0m
+[0;32mI (217160) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (217160) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (217170) DHT_Task: Message published[0m
+[0;32mI (217190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49628[0m
+[0;32mI (217670) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (217670) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (217680) DHT_Task: Message published[0m
+[0;32mI (217700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24617[0m
+[0;32mI (218180) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (218180) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (218190) DHT_Task: Message published[0m
+[0;32mI (218210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38516[0m
+[0;32mI (218690) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (218690) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (218700) DHT_Task: Message published[0m
+[0;32mI (218720) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33176[0m
+[0;32mI (219200) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (219200) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (219210) DHT_Task: Message published[0m
+[0;32mI (219240) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28663[0m
+[0;32mI (219710) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (219710) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (219720) DHT_Task: Message published[0m
+[0;32mI (219760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28517[0m
+[0;32mI (220220) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (220220) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (220230) DHT_Task: Message published[0m
+[0;32mI (220260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17433[0m
+[0;32mI (220730) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (220730) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (220740) DHT_Task: Message published[0m
+[0;32mI (220770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47482[0m
+[0;32mI (221240) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (221240) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (221250) DHT_Task: Message published[0m
+[0;32mI (221280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48378[0m
+[0;32mI (221750) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (221750) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (221760) DHT_Task: Message published[0m
+[0;32mI (221800) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12154[0m
+[0;32mI (222260) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (222260) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (222270) DHT_Task: Message published[0m
+[0;32mI (222310) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39738[0m
+[0;32mI (222770) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (222770) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (222780) DHT_Task: Message published[0m
+[0;32mI (222780) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23311[0m
+[0;32mI (223280) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (223280) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (223290) DHT_Task: Message published[0m
+[0;32mI (223290) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20770[0m
+[0;32mI (223790) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (223790) DHT_Task: Hum: 71.6 Tmp: 25.4
+[0m
+[0;32mI (223800) DHT_Task: Message published[0m
+[0;32mI (223840) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16295[0m
+[0;32mI (224300) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (224300) DHT_Task: Hum: 71.8 Tmp: 25.2
+[0m
+[0;32mI (224310) DHT_Task: Message published[0m
+[0;32mI (224360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11383[0m
+[0;32mI (224810) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (224810) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (224820) DHT_Task: Message published[0m
+[0;32mI (224870) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8875[0m
+[0;32mI (225320) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (225320) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (225330) DHT_Task: Message published[0m
+[0;32mI (225380) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53669[0m
+[0;32mI (225830) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (225830) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (225840) DHT_Task: Message published[0m
+[0;32mI (226200) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45462[0m
+[0;32mI (226340) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (226340) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (226350) DHT_Task: Message published[0m
+[0;32mI (226350) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43637[0m
+[0;32mI (226850) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (226850) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (226860) DHT_Task: Message published[0m
+[0;32mI (226860) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53217[0m
+[0;32mI (227360) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (227360) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (227370) DHT_Task: Message published[0m
+[0;32mI (227730) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30978[0m
+[0;32mI (227870) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (227870) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (227880) DHT_Task: Message published[0m
+[0;32mI (228040) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60584[0m
+[0;32mI (228380) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (228380) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (228390) DHT_Task: Message published[0m
+[0;32mI (228660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20142[0m
+[0;32mI (228890) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (228890) DHT_Task: Hum: 71.7 Tmp: 25.4
+[0m
+[0;32mI (228900) DHT_Task: Message published[0m
+[0;32mI (229270) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19112[0m
+[0;32mI (229400) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (229400) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (229410) DHT_Task: Message published[0m
+[0;32mI (229580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20611[0m
+[0;32mI (229910) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (229910) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (229920) DHT_Task: Message published[0m
+[0;32mI (230190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39586[0m
+[0;32mI (230420) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (230420) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (230430) DHT_Task: Message published[0m
+[0;32mI (230810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35201[0m
+[0;32mI (230930) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (230930) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (230940) DHT_Task: Message published[0m
+[0;32mI (231110) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3788[0m
+[0;32mI (231440) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (231440) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (231450) DHT_Task: Message published[0m
+[0;32mI (231490) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21449[0m
+[0;32mI (231950) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (231950) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (231960) DHT_Task: Message published[0m
+[0;32mI (231960) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37071[0m
+[0;32mI (232460) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (232460) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (232470) DHT_Task: Message published[0m
+[0;32mI (232650) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32573[0m
+[0;32mI (232970) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (232970) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (232980) DHT_Task: Message published[0m
+[0;32mI (233260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6506[0m
+[0;32mI (233480) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (233480) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (233490) DHT_Task: Message published[0m
+[0;32mI (233880) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38186[0m
+[0;32mI (233990) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (233990) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (234000) DHT_Task: Message published[0m
+[0;32mI (234000) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26984[0m
+[0;32mI (234500) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (234500) DHT_Task: Hum: 71.8 Tmp: 25.3
+[0m
+[0;32mI (234510) DHT_Task: Message published[0m
+[0;32mI (234800) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13879[0m
+[0;32mI (235010) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (235010) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (235020) DHT_Task: Message published[0m
+[0;32mI (235020) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6559[0m
+[0;32mI (235520) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (235520) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (235530) DHT_Task: Message published[0m
+[0;32mI (235720) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1276[0m
+[0;32mI (236030) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (236030) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (236040) DHT_Task: Message published[0m
+[0;32mI (236090) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44396[0m
+[0;32mI (236540) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (236540) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (236550) DHT_Task: Message published[0m
+[0;32mI (236550) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11567[0m
+[0;32mI (237050) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (237050) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (237060) DHT_Task: Message published[0m
+[0;32mI (237260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9084[0m
+[0;32mI (237560) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (237560) DHT: Sensor Timeout
+[0m
+[0;32mI (237560) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (237570) DHT_Task: Message published[0m
+[0;32mI (237570) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44266[0m
+[0;32mI (238070) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (238070) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (238080) DHT_Task: Message published[0m
+[0;32mI (238490) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9425[0m
+[0;32mI (238580) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (238580) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (238590) DHT_Task: Message published[0m
+[0;32mI (238790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40316[0m
+[0;32mI (239090) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (239090) DHT: Sensor Timeout
+[0m
+[0;32mI (239090) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (239100) DHT_Task: Message published[0m
+[0;32mI (239130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45298[0m
+[0;32mI (239600) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (239600) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (239610) DHT_Task: Message published[0m
+[0;32mI (239630) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59251[0m
+[0;32mI (240110) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (240110) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (240120) DHT_Task: Message published[0m
+[0;32mI (240120) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29897[0m
+[0;32mI (240620) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (240620) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (240630) DHT_Task: Message published[0m
+[0;32mI (240640) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15960[0m
+[0;32mI (241130) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (241130) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (241140) DHT_Task: Message published[0m
+[0;32mI (241150) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2254[0m
+[0;32mI (241640) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (241640) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (241650) DHT_Task: Message published[0m
+[0;32mI (241660) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31891[0m
+[0;32mI (242150) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (242150) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (242160) DHT_Task: Message published[0m
+[0;32mI (242160) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10276[0m
+[0;32mI (242660) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (242660) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (242670) DHT_Task: Message published[0m
+[0;32mI (242680) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12418[0m
+[0;32mI (243170) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (243170) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (243180) DHT_Task: Message published[0m
+[0;32mI (243210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32055[0m
+[0;32mI (243680) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (243680) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (243690) DHT_Task: Message published[0m
+[0;32mI (243690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64937[0m
+[0;32mI (244190) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (244190) DHT_Task: Hum: 71.7 Tmp: 25.2
+[0m
+[0;32mI (244200) DHT_Task: Message published[0m
+[0;32mI (244200) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37399[0m
+[0;32mI (244700) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (244700) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (244710) DHT_Task: Message published[0m
+[0;32mI (244760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5062[0m
+[0;32mI (245210) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (245210) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (245220) DHT_Task: Message published[0m
+[0;32mI (245250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43545[0m
+[0;32mI (245720) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (245720) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (245730) DHT_Task: Message published[0m
+[0;32mI (245760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48924[0m
+[0;32mI (246230) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (246230) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (246240) DHT_Task: Message published[0m
+[0;32mI (246270) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3274[0m
+[0;32mI (246740) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (246740) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (246750) DHT_Task: Message published[0m
+[0;32mI (246750) MQTT: MQTT_EVENT_PUBLISHED, msg_id=761[0m
+[0;32mI (247250) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (247250) DHT_Task: Hum: 71.4 Tmp: 25.3
+[0m
+[0;32mI (247260) DHT_Task: Message published[0m
+[0;32mI (247260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34076[0m
+[0;32mI (247760) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (247760) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (247770) DHT_Task: Message published[0m
+[0;32mI (247810) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36326[0m
+[0;32mI (248270) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (248270) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (248280) DHT_Task: Message published[0m
+[0;32mI (248320) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54773[0m
+[0;32mI (248780) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (248780) DHT_Task: Hum: 71.4 Tmp: 25.3
+[0m
+[0;32mI (248790) DHT_Task: Message published[0m
+[0;32mI (248830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61728[0m
+[0;32mI (249290) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (249290) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (249300) DHT_Task: Message published[0m
+[0;32mI (249340) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37401[0m
+[0;32mI (249800) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (249800) DHT_Task: Hum: 71.4 Tmp: 25.3
+[0m
+[0;32mI (249810) DHT_Task: Message published[0m
+[0;32mI (250260) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60470[0m
+[0;32mI (250310) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (250310) DHT: Sensor Timeout
+[0m
+[0;32mI (250310) DHT_Task: Hum: 71.4 Tmp: 25.3
+[0m
+[0;32mI (250320) DHT_Task: Message published[0m
+[0;32mI (250360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45010[0m
+[0;32mI (250820) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (250820) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (250830) DHT_Task: Message published[0m
+[0;32mI (250830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61396[0m
+[0;32mI (251330) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (251330) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (251340) DHT_Task: Message published[0m
+[0;32mI (251390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56839[0m
+[0;32mI (251840) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (251840) DHT_Task: Hum: 71.3 Tmp: 25.3
+[0m
+[0;32mI (251850) DHT_Task: Message published[0m
+[0;32mI (252010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24418[0m
+[0;32mI (252350) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (252350) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (252360) DHT_Task: Message published[0m
+[0;32mI (252360) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1168[0m
+[0;32mI (252860) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (252860) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (252870) DHT_Task: Message published[0m
+[0;32mI (253230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10739[0m
+[0;32mI (253370) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (253370) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (253380) DHT_Task: Message published[0m
+[0;32mI (253540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9359[0m
+[0;32mI (253880) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (253880) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (253890) DHT_Task: Message published[0m
+[0;32mI (254150) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12470[0m
+[0;32mI (254390) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (254390) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (254400) DHT_Task: Message published[0m
+[0;32mI (254770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53051[0m
+[0;32mI (254900) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (254900) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (254910) DHT_Task: Message published[0m
+[0;32mI (254910) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5184[0m
+[0;32mI (255410) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (255410) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (255420) DHT_Task: Message published[0m
+[0;32mI (255690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39113[0m
+[0;32mI (255920) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (255920) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (255930) DHT_Task: Message published[0m
+[0;32mI (256300) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52035[0m
+[0;32mI (256430) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (256430) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (256440) DHT_Task: Message published[0m
+[0;32mI (256610) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51309[0m
+[0;32mI (256940) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (256940) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (256950) DHT_Task: Message published[0m
+[0;32mI (257230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60236[0m
+[0;32mI (257450) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (257450) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (257460) DHT_Task: Message published[0m
+[0;32mI (257840) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58209[0m
+[0;32mI (257960) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (257960) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (257970) DHT_Task: Message published[0m
+[0;32mI (257970) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2777[0m
+[0;32mI (258470) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (258470) DHT_Task: Hum: 71.5 Tmp: 25.2
+[0m
+[0;32mI (258480) DHT_Task: Message published[0m
+[0;32mI (258760) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41915[0m
+[0;32mI (258980) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (258980) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (258990) DHT_Task: Message published[0m
+[0;32mI (259390) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5649[0m
+[0;32mI (259490) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (259490) DHT_Task: Hum: 71.4 Tmp: 25.2
+[0m
+[0;32mI (259500) DHT_Task: Message published[0m
+[0;32mI (259540) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19288[0m
+[0;32mI (260000) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (260000) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (260010) DHT_Task: Message published[0m
+[0;32mI (260010) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3963[0m
+[0;32mI (260510) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (260510) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (260520) DHT_Task: Message published[0m
+[0;32mI (260910) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41013[0m
+[0;32mI (261020) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (261020) DHT_Task: Hum: 71.4 Tmp: 25.3
+[0m
+[0;32mI (261030) DHT_Task: Message published[0m
+[0;32mI (261030) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12902[0m
+[0;32mI (261530) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (261530) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (261540) DHT_Task: Message published[0m
+[0;32mI (261830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46832[0m
+[0;32mI (262040) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (262040) DHT_Task: Hum: 71.4 Tmp: 25.2
+[0m
+[0;32mI (262050) DHT_Task: Message published[0m
+[0;32mI (262050) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39867[0m
+[0;32mI (262550) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (262550) DHT_Task: Hum: 71.4 Tmp: 25.2
+[0m
+[0;32mI (262560) DHT_Task: Message published[0m
+[0;32mI (262560) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46092[0m
+[0;32mI (263060) DHT_Task: === Reading DHT ===
+[0m
+[0;31mE (263060) DHT: Sensor Timeout
+[0m
+[0;32mI (263060) DHT_Task: Hum: 71.4 Tmp: 25.2
+[0m
+[0;32mI (263070) DHT_Task: Message published[0m
+[0;32mI (263070) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30816[0m
+[0;32mI (263570) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (263570) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (263580) DHT_Task: Message published[0m
+[0;32mI (263580) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13224[0m
+[0;32mI (264080) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (264080) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (264090) DHT_Task: Message published[0m
+[0;32mI (264300) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16457[0m
+[0;32mI (264590) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (264590) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (264600) DHT_Task: Message published[0m
+[0;32mI (264600) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53482[0m
+[0;32mI (265100) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (265100) DHT_Task: Hum: 71.6 Tmp: 25.2
+[0m
+[0;32mI (265110) DHT_Task: Message published[0m
+[0;32mI (265110) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33211[0m
+[0;32mI (265610) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (265610) DHT_Task: Hum: 71.4 Tmp: 25.2
+[0m
+[0;32mI (265620) DHT_Task: Message published[0m
+[0;32mI (265830) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10436[0m
+[0;32mI (266120) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (266120) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (266130) DHT_Task: Message published[0m
+[0;32mI (266130) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2215[0m
+[0;32mI (266630) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (266630) DHT_Task: Hum: 71.3 Tmp: 25.3
+[0m
+[0;32mI (266640) DHT_Task: Message published[0m
+[0;32mI (266650) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38848[0m
+[0;32mI (267140) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (267140) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (267150) DHT_Task: Message published[0m
+[0;32mI (267190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40967[0m
+[0;32mI (267650) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (267650) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (267660) DHT_Task: Message published[0m
+[0;32mI (267670) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33912[0m
+[0;32mI (268160) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (268160) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (268170) DHT_Task: Message published[0m
+[0;32mI (268190) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60847[0m
+[0;32mI (268670) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (268670) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (268680) DHT_Task: Message published[0m
+[0;32mI (268690) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12624[0m
+[0;32mI (269180) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (269180) DHT_Task: Hum: 71.4 Tmp: 25.3
+[0m
+[0;32mI (269190) DHT_Task: Message published[0m
+[0;32mI (269210) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2984[0m
+[0;32mI (269690) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (269690) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (269700) DHT_Task: Message published[0m
+[0;32mI (269700) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17588[0m
+[0;32mI (270200) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (270200) DHT_Task: Hum: 71.6 Tmp: 25.3
+[0m
+[0;32mI (270210) DHT_Task: Message published[0m
+[0;32mI (270230) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12077[0m
+[0;32mI (270710) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (270710) DHT_Task: Hum: 71.7 Tmp: 25.3
+[0m
+[0;32mI (270720) DHT_Task: Message published[0m
+[0;32mI (270740) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45677[0m
+[0;32mI (271220) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (271220) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (271230) DHT_Task: Message published[0m
+[0;32mI (271250) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57580[0m
+[0;32mI (271730) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (271730) DHT_Task: Hum: 71.4 Tmp: 25.2
+[0m
+[0;32mI (271740) DHT_Task: Message published[0m
+[0;32mI (271770) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9[0m
+[0;32mI (272240) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (272240) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (272250) DHT_Task: Message published[0m
+[0;32mI (272280) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9538[0m
+[0;32mI (272750) DHT_Task: === Reading DHT ===
+[0m
+[0;32mI (272750) DHT_Task: Hum: 71.5 Tmp: 25.3
+[0m
+[0;32mI (272760) DHT_Task: Message published[0m
+[0;32mI (272790) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57061[0m

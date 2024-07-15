@@ -1,0 +1,143 @@
+{
+    "classes": [
+        {
+            "className": "MyMQTT",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getScene",
+                    "returnType": "Scene*"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 0,
+                    "name": "sceneName",
+                    "notify": "sceneNameChanged",
+                    "read": "sceneName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setSceneName"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 1,
+                    "name": "index",
+                    "notify": "indexChanged",
+                    "read": "index",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setIndex"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": true,
+                    "index": 2,
+                    "name": "currentIndex",
+                    "notify": "currentIndexChanged",
+                    "read": "currentIndex",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setCurrentIndex"
+                }
+            ],
+            "qualifiedClassName": "MyMQTT",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "sceneNameChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "indexChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "currentIndexChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "temperatureChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "humidityChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QByteArray"
+                        },
+                        {
+                            "name": "topic",
+                            "type": "QMqttTopicName"
+                        }
+                    ],
+                    "name": "handleMessage",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "state",
+                            "type": "QMqttClient::ClientState"
+                        }
+                    ],
+                    "name": "changeState",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "hostname",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "hostnameChange",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "mymqtt.h",
+    "outputRevision": 68
+}

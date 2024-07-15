@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/untitled/">
+    <file alias="Main.qml">/home/petr/untitled/Main.qml</file>
+    <file alias="SensorPage.qml">/home/petr/untitled/SensorPage.qml</file>
+    <file alias="temperature.svg">/home/petr/untitled/temperature.svg</file>
+    <file alias="home.svg">/home/petr/untitled/home.svg</file>
+    <file alias="sevensegment.ttf">/home/petr/untitled/sevensegment.ttf</file>
+    <file alias="waterdrop.svg">/home/petr/untitled/waterdrop.svg</file>
+  </qresource>
+</RCC>
+

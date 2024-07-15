@@ -1,0 +1,15 @@
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled_qmltyperegistration.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/all_qmltyperegistrations.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled_other_files.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled_qmllint.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/all_qmllint.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled_tooling.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/install.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/install/local.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/install/strip.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled_autogen_timestamp_deps.dir
+/home/petr/untitled/build/Desktop_Qt_6_2_12_GCC_64bit-Debug/CMakeFiles/appuntitled_autogen.dir

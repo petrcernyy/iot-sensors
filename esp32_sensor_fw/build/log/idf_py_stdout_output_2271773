@@ -1,0 +1,73 @@
+[1/5] cd /home/petr/esp/tcp/build/esp-idf/esptool_py && /home/petr/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/petr/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/petr/esp/tcp/build/partition_table/partition-table.bin /home/petr/esp/tcp/build/mqtt_tcp.bin
+mqtt_tcp.bin binary size 0xd2be0 bytes. Smallest app partition is 0x100000 bytes. 0x2d420 bytes (18%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/petr/esp/tcp/build/bootloader/esp-idf/esptool_py && /home/petr/.espressif/python_env/idf5.2_py3.10_env/bin/python /home/petr/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/petr/esp/tcp/build/bootloader/bootloader.bin
+Bootloader binary size 0x55f0 bytes. 0x1a10 bytes (23%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/petr/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/petr/esp/esp-idf -D "SERIAL_TOOL=/home/petr/.espressif/python_env/idf5.2_py3.10_env/bin/python;;/home/petr/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s2" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/petr/esp/tcp/build -P /home/petr/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s2 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 mqtt_tcp.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-S2FH4 (revision v0.0)
+Features: WiFi, Embedded Flash 4MB, No Embedded PSRAM, ADC and temperature sensor calibration in BLK2 of efuse V1
+Crystal is 40MHz
+MAC: 7c:df:a1:99:97:d0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00006fff...
+Flash will be erased from 0x00010000 to 0x000e2fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 22000 bytes to 13490...
+Writing at 0x00001000... (100 %)
+Wrote 22000 bytes (13490 compressed) at 0x00001000 in 0.6 seconds (effective 294.8 kbit/s)...
+Hash of data verified.
+Compressed 863200 bytes to 544543...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001dcfe... (5 %)
+Writing at 0x00026b71... (8 %)
+Writing at 0x0002b886... (11 %)
+Writing at 0x000349e8... (14 %)
+Writing at 0x0003ca0d... (17 %)
+Writing at 0x00042bbe... (20 %)
+Writing at 0x00048874... (23 %)
+Writing at 0x0004e20b... (26 %)
+Writing at 0x0005403e... (29 %)
+Writing at 0x00059be8... (32 %)
+Writing at 0x0005f923... (35 %)
+Writing at 0x000661ca... (38 %)
+Writing at 0x0006bcf6... (41 %)
+Writing at 0x00071a7c... (44 %)
+Writing at 0x00076afc... (47 %)
+Writing at 0x0007bae9... (50 %)
+Writing at 0x00080cc3... (52 %)
+Writing at 0x00085cff... (55 %)
+Writing at 0x0008b06e... (58 %)
+Writing at 0x00090477... (61 %)
+Writing at 0x000966fe... (64 %)
+Writing at 0x0009c079... (67 %)
+Writing at 0x000a1b6f... (70 %)
+Writing at 0x000a7801... (73 %)
+Writing at 0x000ad44d... (76 %)
+Writing at 0x000b2d84... (79 %)
+Writing at 0x000b8a94... (82 %)
+Writing at 0x000be10d... (85 %)
+Writing at 0x000c7c50... (88 %)
+Writing at 0x000d0041... (91 %)
+Writing at 0x000d5c1e... (94 %)
+Writing at 0x000dc304... (97 %)
+Writing at 0x000e12a9... (100 %)
+Wrote 863200 bytes (544543 compressed) at 0x00010000 in 12.7 seconds (effective 543.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 533.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
