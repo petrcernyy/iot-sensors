@@ -8,7 +8,7 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <style>
-        body, html {    
+        body, html {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             height: 100%;
@@ -207,7 +207,6 @@
         .modal {
             display: none; /* Hidden by default */
             position: fixed;
-            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
@@ -227,28 +226,244 @@
         }
 
         .icon-list {
+            border: 2px solid black; 
+            flex-wrap: wrap;
             display: flex;
-            justify-content: space-around;
-            margin: 10px 0;
+            align-items: center;
+        }
+        .icon-button {
+            width: 50px;   /* Fixed width */
+            height: 50px;  /* Fixed height */
+            background: none;
+            border: 2px solid #7063e6;
+            border-radius: 5px;
+            padding: 0;
+            cursor: pointer;
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            margin: 10px;
         }
 
         .icon-option {
-            width: 30px;
+            width: 30px; /* Adjust as needed */
+            height: 30px; /* Adjust as needed */
+        }
+        .icon-option-active {
+            border: 2px solid #ff9800;
+        }
+
+        .scene-button {
+            width: 50px;   /* Fixed width */
+            height: 50px;  /* Fixed height */
+            background: none;
+            border: 2px solid #7063e6;
+            border-radius: 5px;
+            padding: 0;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .button-icon {
+            width: 40px;   /* Icon width */
+            height: 40px;  /* Icon height */
+        }
+        .active-button {
+            border: 2px solid #ff9800; /* Change to the desired highlight color */
+        }
+        .hidden {
+            display: none;
+        }
+
+        .settings-content {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .color-settings {
+            margin-top: 20px;
+        }
+
+        .gradient-section {
+            margin-bottom: 20px;
+        }
+
+        .color-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            background: none;
+        }
+
+        .color-sample {
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                height: 95%;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+            .left-panel {
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+                flex-direction: row;
+                padding: 10px;
+            }
+            .option {
+                width: 50px;
+                margin: 0 50px 0 25px;
+            }
+            .option-text {
+                display: none;
+            }
+            .content {
+                width: 100%;
+                padding: 5%;
+            }
+            .top-row {
+                flex-direction: column;
+                height: auto;
+            }
+            .main-window, .date-window {
+                width: 100%;
+                margin: 10px 0;
+                height: auto;
+                max-height: 170px;
+            }
+            .picture-container {
+                left: 70px;
+                text-align: center;
+            }
+            .scene-window {
+                height: 20vh;
+                margin-top: 5%;
+            }
+            .status {
+                flex-direction: row;
+                top: -50px;
+            }
+            .temp-hum {
+                margin-left: 0;
+            }
+            .calendar-text {
+                font-size: 20px;
+                transform: translate(0, 40%);
+            }
+            .image-call {
+                transform: translate(0, 40%);
+            }
+            .month-text {
+                top: 50%;
+                left: 200%;
+                font-size: 20px;
+            }
+            .day-number {
+                top: 0%;
+                left: -10%;
+                transform: translate(0, -15%);
+                font-size: 70px;
+            }
+            .welcome-text, .name-text {
+                top: -50px;
+            }
+            .value {
+                font-size: 25px !important;
+            }
+            .icon-list {
+                border: 2px solid black; 
+                flex-wrap: wrap;
+            }
+            .icon-button {
+                width: 50px;   /* Fixed width */
+                height: 50px;  /* Fixed height */
+                background: none;
+                border: 2px solid #7063e6;
+                border-radius: 5px;
+                padding: 0;
+                cursor: pointer;
+                display: flex; /* Use flexbox */
+                align-items: center; /* Center vertically */
+                justify-content: center; /* Center horizontally */
+                margin: 10px;
+            }
+
+            .icon-option {
+                width: 30px; /* Adjust as needed */
+                height: 30px; /* Adjust as needed */
+            }
+            .icon-option-active {
+                border: 2px solid #ff9800;
+            }
+            .modal-content {
+                width: 80%;
+                margin: 5%;
+            }
+            .plus-sign {
+                width: 40px;
+                height: 40px;
+                background-color: #fff;
+                border: 2px solid #7063e6;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                color: #7063e6;
+                cursor: pointer;
+                position: relative;
+                top: 10px;
+                left: 10px;
+            }
+            .scene-button {
+                width: 40px;   /* Fixed width */
+                height: 40px;  /* Fixed height */
+                background: none;
+                border: 2px solid #7063e6;
+                border-radius: 5px;
+                padding: 0;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+            }
+            .active-button {
+                border: 2px solid #ff9800; /* Change to the desired highlight color */
+            }
+            .button-icon {
+                width: 35px;   /* Icon width */
+                height: 35px;  /* Icon height */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
-            <div class="option">
+            <button class="option" onclick="showDashboard()">
                 <img src="./dashboard.svg" alt="Dashboard icon" class="option-icon">
                 <span class="option-text">Dashboard</span>
-            </div>
-            <div class="option">
+            </button>
+            <button class="option" onclick="showSettings()">
                 <img src="./settings.svg" alt="Settings icon" class="option-icon">
                 <span class="option-text">Settings</span>
-            </div>
+            </button>
         </div>
         <div class="content">
             <div class="top-row">
@@ -284,12 +499,55 @@
                     <h3>Create New Scene</h3>
                     <input type="text" id="scene-name" placeholder="Name of the scene">
                     <div class="icon-list">
-                        <img src="./bathroom.svg" alt="Icon 1" onclick="selectIcon('bathroom.svg')" class="icon-option">
-                        <img src="./dishwasher.svg" alt="Icon 2" onclick="selectIcon('dishwasher.svg')" class="icon-option">
-                        <!-- Add more icons as needed -->
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./bathroom.svg" alt="Icon 1" onclick="selectIcon('bathroom.svg')" class="icon-option" id="icon-0">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./dishwasher.svg" alt="Icon 2" onclick="selectIcon('dishwasher.svg')" class="icon-option" id="icon-1">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./fireplace.svg" alt="Icon 3" onclick="selectIcon('fireplace.svg')" class="icon-option" id="icon-2">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./fridge.svg" alt="Icon 4" onclick="selectIcon('fridge.svg')" class="icon-option" id="icon-3">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./hedgehog.svg" alt="Icon 5" onclick="selectIcon('hedgehog.svg')" class="icon-option" id="icon-4">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./kitchen.svg" alt="Icon 6" onclick="selectIcon('kitchen.svg')" class="icon-option" id="icon-5">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./sofa.svg" alt="Icon 7" onclick="selectIcon('sofa.svg')" class="icon-option" id="icon-6">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./stove.svg" alt="Icon 8" onclick="selectIcon('stove.svg')" class="icon-option" id="icon-7">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./toillet.svg" alt="Icon 9" onclick="selectIcon('toillet.svg')" class="icon-option" id="icon-8">
+                        </button>
                     </div>
+                    <button onclick="closeCreateScene()">Close</button>
                     <button onclick="createScene()">Create</button>
                 </div>
+            </div>
+        </div>
+        <div class="settings-content" style="display: none;">
+            <h3>Settings</h3>
+            <input type="text" id="user-name" placeholder="Enter your name">
+            <button onclick="saveName()">Save</button>
+            <div class="color-settings">
+                <h3>Choose Color Gradient for All Sections</h3>
+                
+                <button class="color-option" onclick="applyGradientToAll('linear-gradient(to bottom, #7063e6 0%, #a34bff 100%)')">
+                    <div class="color-sample" style="background: linear-gradient(to bottom, #7063e6 0%, #a34bff 100%)"></div>
+                    <span>Gradient 1</span>
+                </button>
+                <button class="color-option" onclick="applyGradientToAll('linear-gradient(to bottom, #ff6f61 0%, #d83a56 100%)')">
+                    <div class="color-sample" style="background: linear-gradient(to bottom, #ff6f61 0%, #d83a56 100%)"></div>
+                    <span>Gradient 2</span>
+                </button>
+                <!-- Add more gradients as needed -->
             </div>
         </div>
     </div>
@@ -305,6 +563,8 @@
     }
     updateDate();
     const socket = io();
+
+    socket.emit('getData');
 
     socket.on('temperature', function(data) {
         updateTemperature(data);
@@ -332,28 +592,76 @@
         }
     }
 
+    function showSettings() {
+        document.querySelector('.content').classList.add('hidden');
+        document.querySelector('.settings-content').style.display = 'block';
+        highlightMenuOption('settings');
+    }
+
+    function showDashboard() {
+        document.querySelector('.content').classList.remove('hidden');
+        document.querySelector('.settings-content').style.display = 'none';
+        highlightMenuOption('dashboard');
+    }
+
+    function saveName() {
+        const userName = document.getElementById('user-name').value;
+        document.querySelector('.name-text').innerText = userName;
+        showDashboard();
+    }
+    
     function openModal() {
+        if (activeIcon) {
+            activeIcon.classList.remove('icon-option-active');
+        }
         document.getElementById('scene-modal').style.display = 'block';
     }
 
-    function selectIcon(icon) {
-        // Store selected icon globally or in a variable
-        window.selectedIcon = icon;
+    function closeCreateScene() {
+        if (activeIcon) {
+            activeIcon.classList.remove('icon-option-active');
+        }
+        document.getElementById('scene-modal').style.display = 'none';
     }
+
+    let scenesNumber = 0;
+
+    let scenes = [];
+    let activeButton = null;
+    let activeIcon = null;
 
     function createScene() {
         const sceneName = document.getElementById('scene-name').value;
         const sceneWindow = document.querySelector('.scene-window');
 
-        // Create the scene icon element
+        // Create the button element with a fixed size
+        const buttonElement = document.createElement('button');
+        buttonElement.classList.add('scene-button');
+
+        // Create the icon element
         const iconElement = document.createElement('img');
         iconElement.src = window.selectedIcon;
-        iconElement.style.width = '30px';
-        iconElement.style.margin = '5px';
+        iconElement.classList.add('button-icon');
 
-        // Append icon to the scene window
-        sceneWindow.appendChild(iconElement);
-        
+        // Append the icon to the button
+        buttonElement.appendChild(iconElement);
+
+        // Store scene data
+        const sceneData = {
+            name: sceneName,
+            temperature: (Math.random() * 30).toFixed(2), // Random temperature for demonstration
+            humidity: (Math.random() * 100).toFixed(2) // Random humidity for demonstration
+        };
+        scenes.push(sceneData);
+
+        // Attach the click event listener to the button
+        buttonElement.addEventListener('click', function() {
+            setActiveScene(sceneData, buttonElement);
+        });
+
+        // Append the button to the scene window
+        sceneWindow.appendChild(buttonElement);
+
         // Add plus sign next to it
         const plusSign = document.querySelector('.plus-sign');
         sceneWindow.appendChild(plusSign);
@@ -361,5 +669,48 @@
         // Close the modal
         document.getElementById('scene-modal').style.display = 'none';
     }
+
+    function setActiveScene(sceneData, buttonElement) {
+        updateTemperature(sceneData.temperature);
+        updateHumidity(sceneData.humidity);
+        highlightActiveButton(buttonElement);
+    }
+
+    function highlightActiveButton(buttonElement) {
+        if (activeButton) {
+            activeButton.classList.remove('active-button');
+        }
+        buttonElement.classList.add('active-button');
+        activeButton = buttonElement;
+    }
+
+    function highlighIcon(Icon) {
+        Icon.classList.add('icon-option-active')
+        activeIcon = Icon;
+    }
+
+    function selectIcon(icon) {
+        window.selectedIcon = icon;
+    }
+
+    function applyGradientToAll(gradient) {
+        // Apply the gradient to the specified sections
+        document.querySelector('.left-panel').style.background = gradient;
+        document.querySelector('.main-window').style.background = gradient;
+        document.querySelector('.date-window').style.background = gradient;
+
+        // Save the selected gradient to localStorage (optional)
+        localStorage.setItem('globalGradient', gradient);
+    }
+
+    // Load the saved gradient from localStorage on page load
+    window.addEventListener('load', () => {
+        const savedGradient = localStorage.getItem('globalGradient');
+        if (savedGradient) {
+            document.querySelector('.left-panel').style.background = savedGradient;
+            document.querySelector('.main-window').style.background = savedGradient;
+            document.querySelector('.date-window').style.background = savedGradient;
+        }
+    });
 </script>
 </html>
