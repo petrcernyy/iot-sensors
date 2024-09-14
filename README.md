@@ -12,6 +12,28 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 ## Architecture Overview
 ![System Architecture](./images/system_architecture.png)
 
+### Components
+
+1. **ESP32 Firmware**  
+   - Collects temperature data.
+   - Publishes data to the MQTT broker running on the Raspberry Pi.
+
+2. **Node.js Web Application**  
+   - Hosts a frontend to display temperature data and configure settings.
+   - Enables adding new sensor. When a sensor is first connected it will display a add button for creating a new room
+   - Displays graph of temperature and humidity
+   - Works also on phone
+(./images/nodejsweb.png)
+
+3. **Yocto Layer**  
+   - Builds a custom distribution for the Raspberry Pi.
+   - Installs necessary packages for MQTT, the Node.js web server, and the Qt application.
+
+4. **Qt Application**  
+   - Displays the temperature data in real time on the Raspberry Pi.
+(./images/qtapp.png)
+
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -45,7 +67,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 
 `idf.py set-target esp32-s2`\
 `idf.py build`\
-`idf.py flash`\
+`idf.py flash`
 
 ### Step 3: Compile yocto distribution
 
@@ -63,7 +85,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 `bitbake-layers add-layer ../meta-openembedded/meta-networking`\
 `bitbake-layers add-layer ../meta-qt6`\
 `bitbake-layers add-layer ../meta-raspberrypi`\
-`bitbake-layers add-layer ../meta-qt6helloworld\
+`bitbake-layers add-layer ../meta-qt6helloworld`
 
 4. Enable building of recipes inside local.conf
 
@@ -75,7 +97,7 @@ Locate line\
 and change it to \
 `MACHINE = "raspberrypi4-64"`
 
-then add this line\
+then add this line
 
 `IMAGE_INSTALL_append += " qml qtsvg appuntitled mosquitto mosquitto-clients express socketio mqtt localtunnel"`
 
@@ -91,4 +113,20 @@ Navigate to
 
 Here locate file core-image-sato-raspberrypi4-64-xxxxxxxxxx-rootfs.wiz.bz2 and use program balenaEtcher for flashing
 
-### Step 3: 
+### Step 4: Raspberry
+
+1. After booting open the terminal and connect to wifi using connman
+
+2. Run the MQTT broker mosquitto
+
+3. The copy the files for the nodejs web app to the raspberry
+
+4. You can run the web app using node command
+
+`node app.js`
+
+4. Then in another terminal you can tunnel the localhost using localtunnel so it can be access remotely
+
+5. Run the Qt app
+
+`cd ./usr/bin/appuntitled`
