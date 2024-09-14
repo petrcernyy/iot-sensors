@@ -34,18 +34,18 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 
 2. Change the SSID and PASSWORD for wifi connection. Also change the ip of your MQTT broker inside ./main/iot_sensor.c
 
-`
+```
 #define EXAMPLE_ESP_WIFI_SSID      "SSID"
 #define EXAMPLE_ESP_WIFI_PASS      "PASS"
 
 #define MQTT_ADDRESS                "mqtt://xxx.xxx.x.xx:xxxx"
-`
+```
 
 3. Set target and build/flash
 
-`idf.py set-target esp32-s2`
-`idf.py build`
-`idf.py flash`
+`idf.py set-target esp32-s2`/
+`idf.py build`/
+`idf.py flash`/
 
 ### Step 3: Compile yocto distribution
 
@@ -57,25 +57,25 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 
 3. Add layers
 
-`bitbake-layers add-layer ../meta-openembedded/meta-oe`
-`bitbake-layers add-layer ../meta-openembedded/meta-python`
-`bitbake-layers add-layer ../meta-openembedded/meta-networking`
-`bitbake-layers add-layer ../meta-openembedded/meta-networking`
-`bitbake-layers add-layer ../meta-qt6`
-`bitbake-layers add-layer ../meta-raspberrypi`
-`bitbake-layers add-layer ../meta-qt6helloworld
+`bitbake-layers add-layer ../meta-openembedded/meta-oe`/
+`bitbake-layers add-layer ../meta-openembedded/meta-python`/
+`bitbake-layers add-layer ../meta-openembedded/meta-networking`/
+`bitbake-layers add-layer ../meta-openembedded/meta-networking`/
+`bitbake-layers add-layer ../meta-qt6`/
+`bitbake-layers add-layer ../meta-raspberrypi`/
+`bitbake-layers add-layer ../meta-qt6helloworld/
 
 4. Enable building of recipes inside local.conf
 
 `sudo vim conf/local.conf`
 
-Locate line
+Locate line/
 `MACHINE ??= "qemux86-64`
 
-and change it to 
+and change it to /
 `MACHINE = "raspberrypi4-64"`
 
-then add this line
+then add this line/
 
 `IMAGE_INSTALL_append += " qml qtsvg appuntitled mosquitto mosquitto-clients express socketio mqtt localtunnel"`
 
