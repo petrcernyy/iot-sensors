@@ -1,13 +1,13 @@
-# IoT Temperature Monitoring System
+# IoT Temperature and humidity Monitoring System
 
-This project consists of an IoT system for monitoring temperature using ESP32 and Raspberry Pi. The project includes:
+This project consists of an IoT system for monitoring temperature and humidity using ESP32 and Raspberry Pi. The project includes:
 
-- **ESP32 Firmware**: A firmware to gather temperature data and send it via MQTT.
+- **ESP32 Firmware**: A firmware to gather temperature and humidity data and send it via MQTT.
 - **Node.js Web Application**: A backend and frontend web application to visualize data and control settings.
 - **Yocto Layer**: Custom Yocto layer to compile a distribution for the Raspberry Pi.
-- **Qt Application**: A graphical interface running on Raspberry Pi, providing real-time temperature display.
+- **Qt Application**: A graphical interface running on Raspberry Pi, providing real-time temperature and humidity display.
 
-The ESP32 measures the temperature and communicates over MQTT with the Raspberry Pi, which acts as a server. The Raspberry Pi also hosts the Node.js web application and tunnels its localhost to allow remote access.
+The ESP32 measures the temperature and humidity and communicates over MQTT with the Raspberry Pi, which acts as a server. The Raspberry Pi also hosts the Node.js web application and tunnels its localhost to allow remote access.
 
 ### Components
 
@@ -16,7 +16,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
    - Publishes data to the MQTT broker running on the Raspberry Pi.
 
 2. **Node.js Web Application**  
-   - Hosts a frontend to display temperature data and configure settings.
+   - Hosts a frontend to display temperature and humidity data and configure settings.
    - Enables adding new sensor. When a sensor is first connected it will display a add button for creating a new room
    - Displays graph of temperature and humidity
    - Works also on phone
@@ -27,7 +27,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
    - Installs necessary packages for MQTT, the Node.js web server, and the Qt application.
 
 4. **Qt Application**  
-   - Displays the temperature data in real time on the Raspberry Pi.
+   - Displays the temperature and humidity data in real time on the Raspberry Pi.
 ![Qt application](./images/qtapp.png)
 
 
@@ -36,7 +36,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 ### Prerequisites
 
 1. ESP32-s2 development board
-2. SHT30 temperature sensor
+2. SHT30 temperature and humidity sensor
 3. Raspberry Pi with a display
 
 ### Step 1: Clone the repository
