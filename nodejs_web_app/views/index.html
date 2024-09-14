@@ -7,8 +7,13 @@
 
     <script src="/socket.io/socket.io.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
     <style>
-        body, html {    
+        body, html {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             height: 100%;
@@ -204,19 +209,17 @@
             left: 10px;
         }
 
-        .modal {
-            display: none; /* Hidden by default */
+        .new-scene-content {
+            display: none;
             position: fixed;
-            z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
             background-color: rgba(0, 0, 0, 0.5);
         }
 
-        .modal-content {
+        .new-scenes-container {
             background-color: #fff;
             margin: 15% auto;
             padding: 20px;
@@ -224,33 +227,358 @@
             width: 300px;
             border-radius: 10px;
             text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(0, -25%);
         }
 
         .icon-list {
+            border: 2px solid black; 
+            flex-wrap: wrap;
             display: flex;
-            justify-content: space-around;
-            margin: 10px 0;
+            align-items: center;
+        }
+        .icon-button {
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: 2px solid #7063e6;
+            border-radius: 5px;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
         }
 
         .icon-option {
             width: 30px;
+            height: 30px;
+        }
+        .icon-option-active {
+            border: 2px solid #ff9800;
+        }
+
+        .scene-button {
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: 2px solid #7063e6;
+            border-radius: 5px;
+            padding: 0;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .button-icon {
+            width: 40px;
+            height: 40px;
+        }
+        .active-button {
+            border: 2px solid #ff9800;
+        }
+        .hidden {
+            display: none;
+        }
+
+        .settings-content {
+            display: none;
+            text-align: center;
+        }
+
+        .settings-container {
+            transform: translate(50%, 50%);
+        }
+
+        .color-settings {
+            margin-top: 20px;
+        }
+
+        .gradient-section {
+            margin-bottom: 20px;
+        }
+
+        .color-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            background: none;
+        }
+
+        .color-sample {
+            width: 50px;
+            height: 30px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .create-scene-header {
+            font-size: 20px;       
+        }
+
+        .create-scene-input {
+            width: 60%;
+            height: 20px;
+            margin-bottom: 5%;
+        }
+
+        .create-scene-button {
+            background-color: #4c8aa3;
+            border: none;
+            width: 100px;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .create-scene-button:hover {
+          background-color: #246427;
+          transform: translateY(-2px);
+        }
+
+        .create-scene-button:active {
+          background-color: #45af8f;
+          transform: translateY(0);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-scene-button {
+            background-color: #df2f2f;
+        }
+
+        .close-scene-button:hover {
+            background-color: #531217;
+        }
+
+        .close-scene-button:active {
+            background-color: #3a0712;
+        }
+
+        .graph-content {
+            display: none;
+            width: 70%;
+            margin-left: 5%;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+
+        .graph-container {
+            border: 2px solid black;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                height: 95%;
+                flex-direction: column;
+                border-radius: 10px;
+            }
+            .left-panel {
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+                flex-direction: row;
+                padding: 10px;
+            }
+            .option {
+                width: 50px;
+                margin: 0 50px 0 25px;
+            }
+            .option-text {
+                display: none;
+            }
+            .content {
+                width: 100%;
+                padding: 5%;
+            }
+            .top-row {
+                flex-direction: column;
+                height: auto;
+            }
+            .main-window, .date-window {
+                width: 100%;
+                margin: 10px 0;
+                height: auto;
+                max-height: 170px;
+            }
+            .picture-container {
+                left: 70px;
+                text-align: center;
+            }
+            .scene-window {
+                height: 20vh;
+                margin-top: 5%;
+            }
+            .status {
+                flex-direction: row;
+                top: -50px;
+            }
+            .temp-hum {
+                margin-left: 0;
+            }
+            .calendar-text {
+                font-size: 20px;
+                transform: translate(0, 40%);
+            }
+            .image-call {
+                transform: translate(0, 40%);
+            }
+            .month-text {
+                top: 50%;
+                left: 200%;
+                font-size: 20px;
+            }
+            .day-number {
+                top: 0%;
+                left: -10%;
+                transform: translate(0, -15%);
+                font-size: 70px;
+            }
+            .welcome-text, .name-text {
+                top: -50px;
+            }
+            .value {
+                font-size: 25px !important;
+            }
+            .icon-list {
+                border: 2px solid black; 
+                flex-wrap: wrap;
+            }
+            .icon-button {
+                width: 50px;
+                height: 50px;
+                background: none;
+                border: 2px solid #7063e6;
+                border-radius: 5px;
+                padding: 0;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+            }
+
+            .icon-option {
+                width: 30px;
+                height: 30px;
+            }
+            .icon-option-active {
+                border: 2px solid #ff9800;
+            }
+            .new-scenes-container {
+                width: 80%;
+                margin: 5%;
+            }
+            .plus-sign {
+                width: 40px;
+                height: 40px;
+                background-color: #fff;
+                border: 2px solid #7063e6;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                color: #7063e6;
+                cursor: pointer;
+                position: relative;
+                top: 10px;
+                left: 10px;
+            }
+            .scene-button {
+                width: 40px;
+                height: 40px;
+                background: none;
+                border: 2px solid #7063e6;
+                border-radius: 5px;
+                padding: 0;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+            }
+            .active-button {
+                border: 2px solid #ff9800;
+            }
+            .button-icon {
+                width: 35px; 
+                height: 35px;
+            }
+            .settings-content {
+                display: none;
+                text-align: center;
+            }
+
+            .settings-container {
+                transform: translate(0, 0);
+            }
+
+            .graph-content {
+                display: none;
+                width: 90%;
+                height: 90%;
+                margin-left: 5%;
+                margin-top: 5%;
+                margin-bottom: 10%;
+            }
+
+            .graph-container {
+                border: 2px solid black;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .graph-heigh {
+                transform: rotate(90deg); /* Rotate the graph */
+            }
+
+            canvas {
+                width: fit-content;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
-            <div class="option">
+            <button class="option" onclick="showDashboard()">
                 <img src="./dashboard.svg" alt="Dashboard icon" class="option-icon">
                 <span class="option-text">Dashboard</span>
-            </div>
-            <div class="option">
+            </button>
+            <button class="option" onclick="showSettings()">
                 <img src="./settings.svg" alt="Settings icon" class="option-icon">
                 <span class="option-text">Settings</span>
-            </div>
+            </button>
+            <button class="option" onclick="showGraph()">
+                <img src="./graph.svg" alt="Graph icon" class="option-icon">
+                <span class="option-text">Graph</span>
+            </button>
         </div>
-        <div class="content">
+        <div class="content" id="mainContent">
             <div class="top-row">
                 <div class="main-window">
                     <div class="picture-container">
@@ -277,24 +605,409 @@
                 </div>
             </div>
             <div class="scene-window">
-                <div class="plus-sign" onclick="openModal()">+</div>
+                <div id="plusSign" class="plus-sign" onclick="openNewSceneContent()">+</div>
             </div>
-            <div id="scene-modal" class="modal">
-                <div class="modal-content">
-                    <h3>Create New Scene</h3>
-                    <input type="text" id="scene-name" placeholder="Name of the scene">
+            <div id="newSceneContent" class="new-scene-content">
+                <div class="new-scenes-container">
+                    <h3 class="create-scene-header ">Create New Scene</h3>
+                    <input type="text" class="create-scene-input" id="scene-name" placeholder="Name of the scene">
                     <div class="icon-list">
-                        <img src="./bathroom.svg" alt="Icon 1" onclick="selectIcon('bathroom.svg')" class="icon-option">
-                        <img src="./dishwasher.svg" alt="Icon 2" onclick="selectIcon('dishwasher.svg')" class="icon-option">
-                        <!-- Add more icons as needed -->
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./bathroom.svg" alt="Icon 1" onclick="selectIcon('bathroom.svg')" class="icon-option" id="icon-0">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./dishwasher.svg" alt="Icon 2" onclick="selectIcon('dishwasher.svg')" class="icon-option" id="icon-1">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./fireplace.svg" alt="Icon 3" onclick="selectIcon('fireplace.svg')" class="icon-option" id="icon-2">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./fridge.svg" alt="Icon 4" onclick="selectIcon('fridge.svg')" class="icon-option" id="icon-3">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./hedgehog.svg" alt="Icon 5" onclick="selectIcon('hedgehog.svg')" class="icon-option" id="icon-4">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./kitchen.svg" alt="Icon 6" onclick="selectIcon('kitchen.svg')" class="icon-option" id="icon-5">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./sofa.svg" alt="Icon 7" onclick="selectIcon('sofa.svg')" class="icon-option" id="icon-6">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./stove.svg" alt="Icon 8" onclick="selectIcon('stove.svg')" class="icon-option" id="icon-7">
+                        </button>
+                        <button class="icon-button" onclick="highlighIcon(this)">
+                            <img src="./toillet.svg" alt="Icon 9" onclick="selectIcon('toillet.svg')" class="icon-option" id="icon-8">
+                        </button>
                     </div>
-                    <button onclick="createScene()">Create</button>
+                    <button class="create-scene-button close-scene-button" onclick="closeCreateScene()">Close</button>
+                    <button class="create-scene-button" onclick="createScene()">Create</button>
                 </div>
             </div>
+        </div>
+        <div class="settings-content" id="settingsContent">
+            <div class="settings-container">
+                <h3>Settings</h3>
+                <input type="text" id="user-name" placeholder="Enter your name">
+                <button onclick="saveName()">Save</button>
+                <div class="color-settings">
+                    <h3>Choose Color Gradient for All Sections</h3>
+                    
+                    <button class="color-option" onclick="applyGradientToAll('linear-gradient(to bottom, #7063e6 0%, #a34bff 100%)')">
+                        <div class="color-sample" style="background: linear-gradient(to bottom, #7063e6 0%, #a34bff 100%)"></div>
+                        <span>Gradient 1</span>
+                    </button>
+                    <button class="color-option" onclick="applyGradientToAll('linear-gradient(to bottom, #ff6f61 0%, #d83a56 100%)')">
+                        <div class="color-sample" style="background: linear-gradient(to bottom, #ff6f61 0%, #d83a56 100%)"></div>
+                        <span>Gradient 2</span>
+                    </button>
+                    <button class="color-option" onclick="applyGradientToAll('linear-gradient(to bottom, #ff6f61 0%, #d83a56 100%)')">
+                        <div class="color-sample" style="background: linear-gradient(to bottom, #74d193 0%, #094d0c 100%)"></div>
+                        <span>Gradient 3</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="graph-content" id="graphContent">
+            <div class="graph-container">
+                <canvas class="graph-heigh" id="TempChart"></canvas>
+                <canvas class="graph-heigh" id="HumChart" style="display: none;"></canvas>
+            </div>
+            <button onclick="clearGraph()">Clear</button>
+            <button onclick="resetZoom()">Reset</button>
+            <button onclick="changeGraph()">Change graph</button>
         </div>
     </div>
 </body>
 <script>
+
+    updateDate();
+
+    let Tempctx = document.getElementById('TempChart').getContext('2d');
+    let Humctx = document.getElementById('HumChart').getContext('2d');
+
+    let xyValues = [];                              /*!< Empty variable for storing datasets to display in graph */
+
+    let TempChart = new Chart(Tempctx, {                    // Create new graph using chartjs 
+        type: "line",                               // Specify line graph
+        data: {
+            datasets: []                            // No data yet 
+        },
+        options: {
+            responsive: true,                       // Resizes the graph automatically when new data arrive 
+            maintainAspectRatio: true,              // Maintains constant scale width:height 
+            animation: {                            // Animation for new data when they appear 
+                duration: 1000,
+                easing: 'easeOutBounce',
+            },
+            scales: {
+                x: {
+                    type: 'time',                   // X axis is displayed in time format 
+                    time: {
+                        unit: 'second',             // Default unit is second 
+                        displayFormats: {
+                            second: 'HH:mm:ss'      // Format of each tick in axis displayed 
+                        }
+                    },
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Time [HH:MM:SS]',    // Text of label 
+                        font: {                     // Font size and weight of text 
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    ticks: {                        
+                        autoSkip: true,             // If true, automatically calculates how many labels can be shown and hides labels accordingly 
+                        maxTicksLimit: 10           // Maximum number of ticks and gridlines to show 
+                    },
+                },
+                y: {
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Temperature [°C]',   // Text of label 
+                        font: {                     // Font size and weight of text
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                zoom: {                             // Allow zooming in graph 
+                    zoom: {                         // Allow zooming with mouse wheel 
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true
+                        },
+                        mode: 'xy',                 // Allow moving in both directions with mouse wheel 
+                        speed: 0.1
+                    },
+                    pan: {                          // Allow zooming with mouse click 
+                        enabled: true,
+                        mode: 'xy',                 // Allow moving in both directions with mouse click 
+                        speed: 0.1
+                    }
+                },
+                legend: {
+                    display: true,                  // Display legend 
+                    position: 'bottom',             // Position of legend is below the graph
+                    labels: {
+                        font: {
+                            weight: 'bold'          // Make legends label font
+                        },
+                        usePointStyle: true         // Display the style of point in graph next to legend label
+                    }
+                }
+            }
+        }
+    });
+
+    let HumChart = new Chart(Humctx, {                    // Create new graph using chartjs 
+        type: "line",                               // Specify line graph
+        data: {
+            datasets: []                            // No data yet 
+        },
+        options: {
+            responsive: true,                       // Resizes the graph automatically when new data arrive 
+            maintainAspectRatio: true,              // Maintains constant scale width:height 
+            animation: {                            // Animation for new data when they appear 
+                duration: 1000,
+                easing: 'easeOutBounce',
+            },
+            scales: {
+                x: {
+                    type: 'time',                   // X axis is displayed in time format 
+                    time: {
+                        unit: 'second',             // Default unit is second 
+                        displayFormats: {
+                            second: 'HH:mm:ss'      // Format of each tick in axis displayed 
+                        }
+                    },
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Time [HH:MM:SS]',    // Text of label 
+                        font: {                     // Font size and weight of text 
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    ticks: {                        
+                        autoSkip: true,             // If true, automatically calculates how many labels can be shown and hides labels accordingly 
+                        maxTicksLimit: 10           // Maximum number of ticks and gridlines to show 
+                    },
+                },
+                y: {
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Humidity [%]',   // Text of label 
+                        font: {                     // Font size and weight of text
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                zoom: {                             // Allow zooming in graph 
+                    zoom: {                         // Allow zooming with mouse wheel 
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true
+                        },
+                        mode: 'xy',                 // Allow moving in both directions with mouse wheel 
+                        speed: 0.1
+                    },
+                    pan: {                          // Allow zooming with mouse click 
+                        enabled: true,
+                        mode: 'xy',                 // Allow moving in both directions with mouse click 
+                        speed: 0.1
+                    }
+                },
+                legend: {
+                    display: true,                  // Display legend 
+                    position: 'bottom',             // Position of legend is below the graph
+                    labels: {
+                        font: {
+                            weight: 'bold'          // Make legends label font
+                        },
+                        usePointStyle: true         // Display the style of point in graph next to legend label
+                    }
+                }
+            }
+        }
+    });
+
+    function updateGraph(name, temperature, humidity) {
+        let datasetFound = false;
+        let tempDataset = TempChart.data.datasets;
+        let humDataset = HumChart.data.datasets;
+
+        // Iterate through each dataset in graph and check if passed color is created, if yes then update this dataset
+        // if not then create new dataset.
+        for (let dataset of tempDataset) {
+            if (dataset.label === name) {
+                dataset.data.push({
+                    x: new Date(),
+                    y: temperature
+                });
+                datasetFound = true;
+                break;
+            }
+        }
+
+        for (let dataset of humDataset) {
+            if (dataset.label === name) {
+                dataset.data.push({
+                    x: new Date(),
+                    y: humidity
+                });
+                datasetFound = true;
+                break;
+            }
+        }
+
+        if (!datasetFound) {
+            let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+            tempDataset.push({                              // Create new dataset
+                label: name, 
+                borderColor: color,
+                backgroundColor: 'rgba(0,0,0,0)',
+                pointRadius: 10,
+                pointStyle: 'crossRot',
+                pointBackgroundColor: color,
+                data: [{
+                    x: new Date(),
+                    y: temperature
+                }],
+                fill: false,
+                showLine: true
+            });
+
+            humDataset.push({                              // Create new dataset
+                label: name, 
+                borderColor: color,
+                backgroundColor: 'rgba(0,0,0,0)',
+                pointRadius: 10,
+                pointStyle: 'crossRot',
+                pointBackgroundColor: color,
+                data: [{
+                    x: new Date(),
+                    y: humidity
+                }],
+                fill: false,
+                showLine: true
+            });
+        }
+
+
+        TempChart.update();
+        HumChart.update();
+    }
+
+    function initGraph(name, temperature, temp_time, humidity, hum_time)
+    {
+        let tempDataset = TempChart.data.datasets;
+        let humDataset = HumChart.data.datasets;
+
+        let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        tempDataset.push({                              // Create new dataset
+            label: name, 
+            borderColor: color,
+            backgroundColor: 'rgba(0,0,0,0)',
+            pointRadius: 10,
+            pointStyle: 'crossRot',
+            pointBackgroundColor: color,
+            data: [{
+                x: temp_time[0],
+                y: temperature[0]
+            }],
+            fill: false,
+            showLine: true
+        });
+
+        for (let dataset of tempDataset) {
+            if (dataset.label === name) {
+                for (let i = 1; i < temperature.length; i++) {
+                    dataset.data.push({
+                        x: temp_time[i],
+                        y: temperature[i]
+                    });
+                }
+            }
+        }
+
+        let colorhum = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        humDataset.push({                              // Create new dataset
+            label: name, 
+            borderColor: colorhum,
+            backgroundColor: 'rgba(0,0,0,0)',
+            pointRadius: 10,
+            pointStyle: 'crossRot',
+            pointBackgroundColor: color,
+            data: [{
+                x: hum_time[0],
+                y: humidity[0]
+            }],
+            fill: false,
+            showLine: true
+        });
+
+        for (let dataset of humDataset) {
+            if (dataset.label === name) {
+                for (let i = 1; i < humidity.length; i++) {
+                    dataset.data.push({
+                        x: hum_time[i],
+                        y: humidity[i]
+                    });
+                }
+            }
+        }
+
+        TempChart.update();
+        HumChart.update();
+
+    }
+
+
+    function resetZoom()
+    {
+        chart.resetZoom();
+    }
+
+    function clearGraph() {
+        chart.data.datasets = []; 
+        chart.update();
+    }
+
+    function changeGraph() {
+        if (document.getElementById('TempChart').style.display == 'none') {
+            document.getElementById('TempChart').style.display = 'block'
+        } else {
+            document.getElementById('TempChart').style.display = 'none'
+        }
+        if (document.getElementById('HumChart').style.display == 'none') {
+            document.getElementById('HumChart').style.display = 'block'
+        } else {
+            document.getElementById('HumChart').style.display = 'none'
+        }
+    }
+
+
+    const socket = io();
+
+    document.getElementById('plusSign').style.display = 'none';
+    let activeSceneNumber;
+    let scenesNumber = 0;
+
+    let scenes = [];
+    let activeButton = null;
+    let activeIcon = null;
+
     function updateDate() {
         const date = new Date();
         const day = date.getDate();
@@ -303,15 +1016,57 @@
         document.getElementById('day-number').innerText = day;
         document.getElementById('month').innerText = month;
     }
-    updateDate();
-    const socket = io();
 
-    socket.on('temperature', function(data) {
-        updateTemperature(data);
+    window.onload = (event) => {
+        console.log("page is fully loaded");
+        socket.emit('data/getDataInit');
+    };
+
+    socket.on('data/returnData', function(scenesNew) {
+        scenes = scenesNew;
+        for (let i = 0; i < scenesNew.length; i++) {
+            updateGraph(scenes[i].name, scenes[i].temperature.slice(-1), scenes[i].humidity.slice(-1));
+        }
+        updateTemperature(scenes[activeSceneNumber].temperature.slice(-1));
+        updateHumidity(scenes[activeSceneNumber].humidity.slice(-1));
     })
 
-    socket.on('humidity', function(data) {
-        updateHumidity(data);
+    socket.on('/ready', function() {
+        document.getElementById('plusSign').style.display = 'flex';
+    })
+
+    socket.on('data/returnDataInit', function(scenesNew) {
+        if(scenesNew) {
+            for (let i = 0; i < scenesNew.length; i++) {
+                const sceneWindow = document.querySelector('.scene-window');
+
+                const buttonElement = document.createElement('button');
+                buttonElement.classList.add('scene-button');
+
+                const iconElement = document.createElement('img');
+                iconElement.src = scenesNew[i].icon;
+                iconElement.classList.add('button-icon');
+
+                buttonElement.appendChild(iconElement);
+
+                let currentIndex = scenesNew[i].idx;
+
+                buttonElement.addEventListener('click', function() {
+                    setActiveScene(currentIndex, buttonElement);
+                });
+
+                sceneWindow.appendChild(buttonElement);
+
+                const plusSign = document.querySelector('.plus-sign');
+                sceneWindow.appendChild(plusSign);
+
+                document.getElementById('newSceneContent').style.display = 'none';
+
+                scenesNumber = scenesNumber + 1;
+                initGraph(scenesNew[i].name, scenesNew[i].temperature, scenesNew[i].timestampsTemp, scenesNew[i].humidity, scenesNew[i].timestampsHum);
+            }
+            scenes = scenesNew;
+        }
     })
 
     function updateTemperature(value) {
@@ -332,34 +1087,148 @@
         }
     }
 
-    function openModal() {
-        document.getElementById('scene-modal').style.display = 'block';
+    function showSettings() {
+        document.getElementById('mainContent').classList.add('hidden');
+        document.getElementById('settingsContent').style.display = 'block';
+        document.getElementById('graphContent').style.display = 'none';
     }
 
-    function selectIcon(icon) {
-        // Store selected icon globally or in a variable
-        window.selectedIcon = icon;
+    function showDashboard() {
+        document.getElementById('mainContent').classList.remove('hidden');
+        document.getElementById('settingsContent').style.display = 'none';
+        document.getElementById('graphContent').style.display = 'none';
+    }
+
+    function showGraph() {
+        document.getElementById('mainContent').classList.add('hidden');
+        document.querySelector('.settings-content').style.display = 'none';
+        document.querySelector('.graph-content').style.display = 'block';
+    }
+
+    function saveName() {
+        const userName = document.getElementById('user-name').value;
+        document.querySelector('.name-text').innerText = userName;
+        showDashboard();
+    }
+    
+    function openNewSceneContent() {
+        if (activeIcon) {
+            activeIcon.classList.remove('icon-option-active');
+        }
+        document.getElementById('newSceneContent').style.display = 'block';
+    }
+
+    function closeCreateScene() {
+        if (activeIcon) {
+            activeIcon.classList.remove('icon-option-active');
+        }
+        document.getElementById('newSceneContent').style.display = 'none';
+    }
+
+
+    class Scene {
+        temperature = [];
+        humidity = [];
+        timestampsTemp = [];
+        timestampsHum = [];
+        name;
+        idx;
+        icon;
+
+        constructor(Name, IDX, Icon)
+        {
+            this.name = Name;
+            this.idx = IDX;
+            this.icon = Icon;
+        }
+
     }
 
     function createScene() {
         const sceneName = document.getElementById('scene-name').value;
-        const sceneWindow = document.querySelector('.scene-window');
+        if (sceneName) {
+            const sceneWindow = document.querySelector('.scene-window');
 
-        // Create the scene icon element
-        const iconElement = document.createElement('img');
-        iconElement.src = window.selectedIcon;
-        iconElement.style.width = '30px';
-        iconElement.style.margin = '5px';
+            const buttonElement = document.createElement('button');
+            buttonElement.classList.add('scene-button');
 
-        // Append icon to the scene window
-        sceneWindow.appendChild(iconElement);
-        
-        // Add plus sign next to it
-        const plusSign = document.querySelector('.plus-sign');
-        sceneWindow.appendChild(plusSign);
+            const iconElement = document.createElement('img');
+            iconElement.src = window.selectedIcon;
+            iconElement.classList.add('button-icon');
 
-        // Close the modal
-        document.getElementById('scene-modal').style.display = 'none';
+            buttonElement.appendChild(iconElement);
+
+            let icon = iconElement.src;
+            const scene = new Scene(sceneName, scenesNumber, icon);
+
+
+            scenes.push(scene);
+
+            socket.emit('scenes/saveScene', scene);
+
+            let currentIndex = scenesNumber;
+
+            buttonElement.addEventListener('click', function() {
+                setActiveScene(currentIndex, buttonElement);
+            });
+
+            sceneWindow.appendChild(buttonElement);
+
+            const plusSign = document.querySelector('.plus-sign');
+            sceneWindow.appendChild(plusSign);
+
+            document.getElementById('newSceneContent').style.display = 'none';
+            document.getElementById('plusSign').style.display = 'none';
+
+            scenesNumber = scenesNumber + 1;
+        } else {
+            alert("Choose a name.");
+        }
     }
+
+    function setActiveScene(index, buttonElement) {
+        updateTemperature(scenes[index].temperature);
+        updateHumidity(scenes[index].humidity);
+        highlightActiveButton(buttonElement);
+        activeSceneNumber = index;
+    }
+
+    function highlightActiveButton(buttonElement) {
+        if (activeButton) {
+            activeButton.classList.remove('active-button');
+        }
+        buttonElement.classList.add('active-button');
+        activeButton = buttonElement;
+    }
+
+    function highlighIcon(Icon) {
+        if (activeIcon) {
+            activeIcon.classList.remove('icon-option-active');
+        }
+        Icon.classList.add('icon-option-active')
+        activeIcon = Icon;
+    }
+
+    function selectIcon(icon) {
+        window.selectedIcon = icon;
+    }
+
+    function applyGradientToAll(gradient) {
+
+        document.querySelector('.left-panel').style.background = gradient;
+        document.querySelector('.main-window').style.background = gradient;
+        document.querySelector('.date-window').style.background = gradient;
+
+        localStorage.setItem('globalGradient', gradient);
+    }
+
+    window.addEventListener('load', () => {
+        const savedGradient = localStorage.getItem('globalGradient');
+        if (savedGradient) {
+            document.querySelector('.left-panel').style.background = savedGradient;
+            document.querySelector('.main-window').style.background = savedGradient;
+            document.querySelector('.date-window').style.background = savedGradient;
+        }
+    });
 </script>
 </html>

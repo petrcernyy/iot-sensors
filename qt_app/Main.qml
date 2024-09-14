@@ -25,15 +25,20 @@ Window {
         id: viewSwipe
         width: parent.width
         height: parent.height*0.9
-        currentIndex: 0
+        currentIndex: 1
 
         onCurrentIndexChanged: {
             curIndexWitouthZero = viewSwipe.currentIndex
             curIndexWitouthZero += 1
         }
 
+        SettingsPage {
+            id: settingsPage
+
+        }
+
         function addPage(page) {
-            console.log("funzione addPage()")
+            console.log("Added Page.")
             addItem(page)
             page.visible = true
         }
@@ -65,11 +70,12 @@ Window {
         }
         onTemperatureChanged: {
             console.log(_MyMQTT.currentIndex);
-            viewSwipe.itemAt(_MyMQTT.currentIndex).myTemp = _MyMQTT.getScene(_MyMQTT.currentIndex).temperature;
+            console.log(viewSwipe.itemAt(_MyMQTT.currentIndex).myTemp);
+            viewSwipe.itemAt(_MyMQTT.currentIndex+1).myTemp = _MyMQTT.getScene(_MyMQTT.currentIndex).temperature;
         }
         onHumidityChanged: {
             console.log(_MyMQTT.currentIndex);
-            viewSwipe.itemAt(_MyMQTT.currentIndex).myHum = _MyMQTT.getScene(_MyMQTT.currentIndex).humidity;
+            viewSwipe.itemAt(_MyMQTT.currentIndex+1).myHum = _MyMQTT.getScene(_MyMQTT.currentIndex).humidity;
         }
     }
 }

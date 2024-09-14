@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
   "/home/petr/esp/esp-idf/components/bootloader/subproject"
-  "/home/petr/esp/tcp/build/bootloader"
-  "/home/petr/esp/tcp/build/bootloader-prefix"
-  "/home/petr/esp/tcp/build/bootloader-prefix/tmp"
-  "/home/petr/esp/tcp/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/petr/esp/tcp/build/bootloader-prefix/src"
-  "/home/petr/esp/tcp/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/petr/esp/iot_sensor/build/bootloader"
+  "/home/petr/esp/iot_sensor/build/bootloader-prefix"
+  "/home/petr/esp/iot_sensor/build/bootloader-prefix/tmp"
+  "/home/petr/esp/iot_sensor/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/petr/esp/iot_sensor/build/bootloader-prefix/src"
+  "/home/petr/esp/iot_sensor/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/petr/esp/tcp/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/petr/esp/iot_sensor/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/petr/esp/tcp/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/petr/esp/iot_sensor/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

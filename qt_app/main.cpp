@@ -14,11 +14,6 @@ int main(int argc, char *argv[])
     QObject::connect(mymqtta->m_client, &QMqttClient::stateChanged, mymqtta, &MyMQTT::changeState);
     QObject::connect(mymqtta->m_client, &QMqttClient::messageReceived, mymqtta, &MyMQTT::handleMessage);
 
-    mymqtta->m_client->setHostname("192.168.1.240");
-    mymqtta->m_client->setPort(1883);
-
-    mymqtta->m_client->connectToHost();
-
     QQmlApplicationEngine engine;
 
     QQmlContext *rootContext = engine.rootContext();

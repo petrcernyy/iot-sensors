@@ -13,67 +13,76 @@ app.get('/', (req, res) => {
 res.sendFile(__dirname + '/views/index.html');
 });
 
+const mqtt = require('mqtt');
 
-io.on('connection', function(socket) {
+const protocol = 'mqtt'
+const host = 'xxx.xxx.xx.xx'
+const port = 'xxxx'
+const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
 
-    const mqtt = require('mqtt');
+const connectUrl = `${protocol}://${host}:${port}`
 
-    const protocol = 'mqtt'
-    const host = '192.168.0.104'
-    const port = '1883'
-    const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
+const client = mqtt.connect(connectUrl, {
+    clientId,
+    clean: true,
+    connectTimeout: 4000,
+    username: 'emqx',
+    password: 'public',
+    reconnectPeriod: 1000,
+})
 
-    const connectUrl = `${protocol}://${host}:${port}`
+let scenes = [];
 
-    const topic = '/home/temperature'
-    const topic2 = '/home/humidity'
-    const topic3 = '/home/led'
 
-    const client = mqtt.connect(connectUrl, {
-        clientId,
-        clean: true,
-        connectTimeout: 4000,
-        username: 'emqx',
-        password: 'public',
-        reconnectPeriod: 1000,
-    })
-    
-    client.on('connect', () => {
-        console.log('Connected')
-        client.subscribe([topic], () => {
-            console.log(`Subscribe to topic '${topic}'`)
-        })
-        client.subscribe([topic2], () => {
-            console.log(`Subscribe to topic '${topic2}'`)
-        })
+client.on('connect', () => {
+
+    console.log('Connected')
+    client.subscribe(['/ready'], () => {
+        console.log(`Subscribe to topic /ready`)
     })
 
-    client.on('message', (topic, payload) => {
-        console.log('Received Message:', topic, payload.toString())
-        if (topic.localeCompare("/home/temperature") == 0) {
-            socket.emit('temperature', payload.toString());
-        }
-        else if (topic.localeCompare("/home/humidity") == 0) {
-            socket.emit('humidity', payload.toString());
-        }
-    })
+    io.on('connection', function(socket) {
 
-    socket.on('led', function(data) {
-        if (data) {
-            client.publish(topic3, 'on', { qos: 0, retain: false }, (error) => {
-                if (error) {
-                console.error(error)
+        client.on('message', (topic, payload) => {
+            console.log('Received Message:', topic, payload.toString())
+
+            let mess = topic.split('/');
+
+            for (let i = 0; i < scenes.length; i++) {
+                if (mess[1].localeCompare(scenes[i].name) == 0) {
+                    if (mess[2].localeCompare("humidity") == 0) {
+                        scenes[i].humidity.push(payload.toString());
+                        scenes[i].timestampsHum.push(new Date());
+                    } else if (mess[2].localeCompare("temperature") == 0) {
+                        scenes[i].temperature.push(payload.toString());
+                        scenes[i].timestampsTemp.push(new Date());
+                    }
+                    socket.emit('data/returnData', scenes);
+                    console.log(scenes[i]);
                 }
-            })
-        } else {
-            client.publish(topic3, 'off', { qos: 0, retain: false }, (error) => {
-                if (error) {
-                console.error(error)
-                }
-            })
-        }
-    })
+            }
+            
+            if (topic.localeCompare("/ready") == 0) {
+                socket.emit('/ready');
+            }
+        })
 
+        socket.on('data/getDataInit', function() {
+            socket.emit('data/returnDataInit', scenes);
+        })
+
+        socket.on('scenes/saveScene', function(scene) {
+            scenes.push(scene);
+
+            client.publish('/createScene', `${scene.name}`);
+            client.subscribe([`/${scene.name}/temperature`], () => {
+                console.log(`Subscribe to topic /${scene.name}/temperature`);
+            })
+            client.subscribe([`/${scene.name}/humidity`], () => {
+                console.log(`Subscribe to topic /${scene.name}/humidity`);
+            })
+        })
+    })
 })
 
 app.get('/', (req, res) => {
@@ -81,5 +90,5 @@ app.get('/', (req, res) => {
 });
 
 server.listen(3000, () => {
-  console.log('listening on *:3000');
+  console.log('listening on port 3000');
 });
