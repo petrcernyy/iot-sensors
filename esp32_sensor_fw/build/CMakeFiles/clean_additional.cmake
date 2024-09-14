@@ -14,10 +14,10 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "flash_bootloader_args"
   "flash_project_args"
   "flasher_args.json"
+  "iot_sensor.bin"
+  "iot_sensor.map"
   "ldgen_libraries"
   "ldgen_libraries.in"
-  "mqtt_tcp.bin"
-  "mqtt_tcp.map"
   "project_elf_src_esp32s2.c"
   "x509_crt_bundle.S"
   )

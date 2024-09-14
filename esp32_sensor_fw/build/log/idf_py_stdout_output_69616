@@ -1,0 +1,2084 @@
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x186c
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xb08
+load:0x4004e000,len:0x3228
+entry 0x4004a1cc
+[0;32mI (23) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug  1 2024 15:21:10[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (27) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=26d4ch (159052) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=00036d74 vaddr=3ff9e040 size=00004h (     4) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=00036d80 vaddr=3ffcaae0 size=0392ch ( 14636) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=0003a6b4 vaddr=40024000 size=05964h ( 22884) load[0m
+[0;32mI (144) esp_image: segment 4: paddr=00040020 vaddr=40080020 size=9a194h (631188) map[0m
+[0;32mI (273) esp_image: segment 5: paddr=000da1bc vaddr=40029964 size=11178h ( 70008) load[0m
+[0;32mI (290) esp_image: segment 6: paddr=000eb33c vaddr=40070000 size=00040h (    64) load[0m
+[0;32mI (302) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (302) boot: Disabling RNG early entropy source...[0m
+[0;32mI (314) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (314) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (320) cpu_start: Unicore app[0m
+[0;32mI (344) cpu_start: Pro cpu start user code[0m
+[0;32mI (344) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (344) app_init: Application information:[0m
+[0;32mI (347) app_init: Project name:     iot_sensor[0m
+[0;32mI (352) app_init: App version:      1[0m
+[0;32mI (356) app_init: Compile time:     Aug  1 2024 15:21:04[0m
+[0;32mI (362) app_init: ELF file SHA256:  8df29810d...[0m
+[0;32mI (367) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (372) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (377) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (382) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (387) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (394) heap_init: At 3FFD2D20 len 000292E0 (164 KiB): RAM[0m
+[0;32mI (400) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (406) heap_init: At 3FF9E044 len 00001FA4 (7 KiB): RTCRAM[0m
+[0;32mI (413) spi_flash: detected chip: generic[0m
+[0;32mI (417) spi_flash: flash io: dio[0m
+[0;33mW (421) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (438) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (448) Main: ESP_WIFI_MODE_STA[0m
+I (458) wifi:wifi driver task: 3ffdb79c, prio:23, stack:6656, core=0
+I (458) wifi:wifi firmware version: 0caa81945
+I (458) wifi:wifi certification version: v7.0
+I (458) wifi:config NVS flash: enabled
+I (458) wifi:config nano formating: disabled
+I (468) wifi:Init data frame dynamic rx buffer num: 32
+I (468) wifi:Init static rx mgmt buffer num: 5
+I (478) wifi:Init management short buffer num: 32
+I (478) wifi:Init dynamic tx buffer num: 32
+I (478) wifi:Init static rx buffer size: 1600
+I (488) wifi:Init static rx buffer num: 10
+I (488) wifi:Init dynamic rx buffer num: 32
+[0;32mI (498) wifi_init: rx ba win: 6[0m
+[0;32mI (498) wifi_init: accept mbox: 6[0m
+[0;32mI (498) wifi_init: tcpip mbox: 32[0m
+[0;32mI (508) wifi_init: udp mbox: 6[0m
+[0;32mI (508) wifi_init: tcp mbox: 6[0m
+[0;32mI (518) wifi_init: tcp tx win: 5760[0m
+[0;32mI (518) wifi_init: tcp rx win: 5760[0m
+[0;32mI (518) wifi_init: tcp mss: 1440[0m
+[0;32mI (528) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (528) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (538) phy_init: phy_version 2600,6a8ccb9,Jun  4 2024,16:49:07[0m
+I (578) wifi:mode : sta (7c:df:a1:99:97:d0)
+I (578) wifi:enable tsf
+[0;32mI (588) WIFI: wifi_init_sta finished.[0m
+I (598) wifi:new:<10,2>, old:<1,0>, ap:<255,255>, sta:<10,2>, prof:1, snd_ch_cfg:0x0
+I (598) wifi:state: init -> auth (0xb0)
+I (598) wifi:state: auth -> assoc (0x0)
+I (608) wifi:state: assoc -> run (0x10)
+I (718) wifi:connected with BrNet.cz/Veveri39, aid = 8, channel 10, 40D, bssid = e4:c3:2a:4c:ee:e4
+I (718) wifi:security: WPA2-PSK, phy: bgn, rssi: -43
+I (728) wifi:pm start, type: 1
+
+I (728) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (748) wifi:<ba-add>idx:0 (ifx:0, e4:c3:2a:4c:ee:e4), tid:0, ssn:3, winSize:64
+I (768) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (2238) esp_netif_handlers: sta ip: 192.168.0.107, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2238) WIFI: got ip:192.168.0.107[0m
+[0;32mI (2238) WIFI: connected to ap SSID:BrNet.cz/Veveri39 password:64884233[0m
+[0;32mI (2248) MQTT: Other event id:7[0m
+[0;32mI (2838) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3248) Main: Opening Non-Volatile Storage (NVS) handle... [0m
+[0;32mI (3248) Main: The value is not initialized yet!
+[0m
+[0;32mI (3248) gpio: GPIO[9]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3258) gpio: GPIO[8]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3268) Main: Ready for pairing[0m
+[0;32mI (3768) Main: Ready for pairing[0m
+[0;32mI (3848) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=36421[0m
+[0;32mI (4058) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64468[0m
+[0;32mI (4268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21456[0m
+[0;32mI (4268) Main: Ready for pairing[0m
+[0;32mI (4278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35031[0m
+[0;32mI (4768) Main: Ready for pairing[0m
+[0;32mI (4978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42796[0m
+[0;32mI (5268) Main: Ready for pairing[0m
+[0;32mI (5498) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24028[0m
+[0;32mI (5768) Main: Ready for pairing[0m
+[0;32mI (5808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49775[0m
+[0;32mI (6268) Main: Ready for pairing[0m
+[0;32mI (6308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51887[0m
+[0;32mI (6768) Main: Ready for pairing[0m
+[0;32mI (6938) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30332[0m
+[0;32mI (7268) Main: Ready for pairing[0m
+[0;32mI (7288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33121[0m
+[0;32mI (7768) Main: Ready for pairing[0m
+[0;32mI (7968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17700[0m
+[0;32mI (8268) Main: Ready for pairing[0m
+[0;32mI (8288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9875[0m
+[0;32mI (8768) Main: Ready for pairing[0m
+[0;32mI (8988) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2931[0m
+[0;32mI (9268) Main: Ready for pairing[0m
+[0;32mI (9478) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39117[0m
+[0;32mI (9768) Main: Ready for pairing[0m
+[0;32mI (9788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42681[0m
+[0;32mI (10268) Main: Ready for pairing[0m
+[0;32mI (10288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23790[0m
+[0;32mI (10768) Main: Ready for pairing[0m
+[0;32mI (10808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45103[0m
+[0;32mI (11268) Main: Ready for pairing[0m
+[0;32mI (11288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55580[0m
+[0;32mI (11768) Main: Ready for pairing[0m
+[0;32mI (11978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39984[0m
+[0;32mI (12268) Main: Ready for pairing[0m
+[0;32mI (12488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63425[0m
+[0;32mI (12768) Main: Ready for pairing[0m
+[0;32mI (12768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55755[0m
+[0;32mI (13268) Main: Ready for pairing[0m
+[0;32mI (13478) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48379[0m
+[0;32mI (13768) Main: Ready for pairing[0m
+[0;32mI (13988) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8064[0m
+[0;32mI (14268) Main: Ready for pairing[0m
+[0;32mI (14438) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5631[0m
+[0;32mI (14768) Main: Ready for pairing[0m
+[0;32mI (14808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63092[0m
+[0;32mI (15268) Main: Ready for pairing[0m
+[0;32mI (15318) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6817[0m
+[0;32mI (15768) Main: Ready for pairing[0m
+[0;32mI (15768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36564[0m
+[0;32mI (16268) Main: Ready for pairing[0m
+[0;32mI (16268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21712[0m
+[0;32mI (16768) Main: Ready for pairing[0m
+[0;32mI (16958) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53739[0m
+[0;32mI (17268) Main: Ready for pairing[0m
+[0;32mI (17468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27844[0m
+[0;32mI (17768) Main: Ready for pairing[0m
+[0;32mI (17778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55098[0m
+[0;32mI (18268) Main: Ready for pairing[0m
+[0;32mI (18498) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65249[0m
+[0;32mI (18768) Main: Ready for pairing[0m
+[0;32mI (18778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27594[0m
+[0;32mI (19268) Main: Ready for pairing[0m
+[0;32mI (19308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60092[0m
+[0;32mI (19768) Main: Ready for pairing[0m
+[0;32mI (19928) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10936[0m
+[0;32mI (20268) Main: Ready for pairing[0m
+[0;32mI (20438) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37449[0m
+[0;32mI (20768) Main: Ready for pairing[0m
+[0;32mI (20778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24471[0m
+[0;32mI (21268) Main: Ready for pairing[0m
+[0;32mI (21468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27289[0m
+[0;32mI (21768) Main: Ready for pairing[0m
+[0;32mI (21978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48994[0m
+[0;32mI (22268) Main: Ready for pairing[0m
+[0;32mI (22488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3264[0m
+[0;32mI (22768) Main: Ready for pairing[0m
+[0;32mI (22998) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37557[0m
+[0;32mI (23268) Main: Ready for pairing[0m
+[0;32mI (23268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19091[0m
+[0;32mI (23768) Main: Ready for pairing[0m
+[0;32mI (23838) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22104[0m
+[0;32mI (24268) Main: Ready for pairing[0m
+[0;32mI (24428) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43540[0m
+[0;32mI (24768) Main: Ready for pairing[0m
+[0;32mI (24948) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43954[0m
+[0;32mI (25268) Main: Ready for pairing[0m
+[0;32mI (25458) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54018[0m
+[0;32mI (25768) Main: Ready for pairing[0m
+[0;32mI (25968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45787[0m
+[0;32mI (26268) Main: Ready for pairing[0m
+[0;32mI (26478) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8992[0m
+[0;32mI (26768) Main: Ready for pairing[0m
+[0;32mI (26778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53241[0m
+[0;32mI (27268) Main: Ready for pairing[0m
+[0;32mI (27298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23101[0m
+[0;32mI (27768) Main: Ready for pairing[0m
+[0;32mI (27818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18941[0m
+[0;32mI (28268) Main: Ready for pairing[0m
+[0;32mI (28278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50010[0m
+[0;32mI (28768) Main: Ready for pairing[0m
+[0;32mI (28938) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26500[0m
+[0;32mI (29268) Main: Ready for pairing[0m
+[0;32mI (29278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41847[0m
+[0;32mI (29768) Main: Ready for pairing[0m
+[0;32mI (29958) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6375[0m
+[0;32mI (30268) Main: Ready for pairing[0m
+[0;32mI (30278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37354[0m
+[0;32mI (30768) Main: Ready for pairing[0m
+[0;32mI (30998) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24775[0m
+[0;32mI (31268) Main: Ready for pairing[0m
+[0;32mI (31298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55275[0m
+[0;32mI (31768) Main: Ready for pairing[0m
+[0;32mI (31768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34259[0m
+[0;32mI (32268) Main: Ready for pairing[0m
+[0;32mI (32278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63792[0m
+[0;32mI (32768) Main: Ready for pairing[0m
+[0;32mI (32928) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42135[0m
+[0;32mI (33268) Main: Ready for pairing[0m
+[0;32mI (33468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17948[0m
+[0;32mI (33768) Main: Ready for pairing[0m
+[0;32mI (33768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19652[0m
+[0;32mI (34268) Main: Ready for pairing[0m
+[0;32mI (34468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57110[0m
+[0;32mI (34768) Main: Ready for pairing[0m
+[0;32mI (34988) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18824[0m
+[0;32mI (35268) Main: Ready for pairing[0m
+[0;32mI (35488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10786[0m
+[0;32mI (35768) Main: Ready for pairing[0m
+[0;32mI (35928) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10439[0m
+[0;32mI (36268) Main: Ready for pairing[0m
+[0;32mI (36308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21285[0m
+[0;32mI (36768) Main: Ready for pairing[0m
+[0;32mI (36928) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48132[0m
+[0;32mI (37268) Main: Ready for pairing[0m
+[0;32mI (37278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26378[0m
+[0;32mI (37768) Main: Ready for pairing[0m
+[0;32mI (37948) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30303[0m
+[0;32mI (38268) Main: Ready for pairing[0m
+[0;32mI (38458) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59869[0m
+[0;32mI (38768) Main: Ready for pairing[0m
+[0;32mI (38808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23062[0m
+[0;32mI (39268) Main: Ready for pairing[0m
+[0;32mI (39488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52407[0m
+[0;32mI (39768) Main: Ready for pairing[0m
+[0;32mI (39998) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43095[0m
+[0;32mI (40268) Main: Ready for pairing[0m
+[0;32mI (40268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24277[0m
+[0;32mI (40768) Main: Ready for pairing[0m
+[0;32mI (40788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2615[0m
+[0;32mI (41268) Main: Ready for pairing[0m
+[0;32mI (41538) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7774[0m
+[0;32mI (41768) Main: Ready for pairing[0m
+[0;32mI (41788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35364[0m
+[0;32mI (42268) Main: Ready for pairing[0m
+[0;32mI (42558) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34721[0m
+[0;32mI (42768) Main: Ready for pairing[0m
+[0;32mI (42968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59750[0m
+[0;32mI (43268) Main: Ready for pairing[0m
+[0;32mI (43278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54434[0m
+[0;32mI (43768) Main: Ready for pairing[0m
+[0;32mI (43988) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15595[0m
+[0;32mI (44268) Main: Ready for pairing[0m
+[0;32mI (44268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62110[0m
+[0;32mI (44768) Main: Ready for pairing[0m
+[0;32mI (44808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50316[0m
+[0;32mI (45268) Main: Ready for pairing[0m
+[0;32mI (45428) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22426[0m
+[0;32mI (45768) Main: Ready for pairing[0m
+[0;32mI (45778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46300[0m
+[0;32mI (46268) Main: Ready for pairing[0m
+[0;32mI (46268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63829[0m
+[0;32mI (46768) Main: Ready for pairing[0m
+[0;32mI (46968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24113[0m
+[0;32mI (47268) Main: Ready for pairing[0m
+[0;32mI (47278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39230[0m
+[0;32mI (47768) Main: Ready for pairing[0m
+[0;32mI (47768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23724[0m
+[0;32mI (48268) Main: Ready for pairing[0m
+[0;32mI (48288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40261[0m
+[0;32mI (48768) Main: Ready for pairing[0m
+[0;32mI (49008) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8792[0m
+[0;32mI (49268) Main: Ready for pairing[0m
+[0;32mI (49298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8821[0m
+[0;32mI (49768) Main: Ready for pairing[0m
+[0;32mI (49928) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59768[0m
+[0;32mI (50268) Main: Ready for pairing[0m
+[0;32mI (50308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37730[0m
+[0;32mI (50768) Main: Ready for pairing[0m
+[0;32mI (50768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1674[0m
+[0;32mI (51268) Main: Ready for pairing[0m
+[0;32mI (51468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60524[0m
+[0;32mI (51768) Main: Ready for pairing[0m
+[0;32mI (51778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41204[0m
+[0;32mI (52268) Main: Ready for pairing[0m
+[0;32mI (52308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33829[0m
+[0;32mI (52768) Main: Ready for pairing[0m
+[0;32mI (52788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46904[0m
+[0;32mI (53268) Main: Ready for pairing[0m
+[0;32mI (53278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24194[0m
+[0;32mI (53768) Main: Ready for pairing[0m
+[0;32mI (53928) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47976[0m
+[0;32mI (54268) Main: Ready for pairing[0m
+[0;32mI (54288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19970[0m
+[0;32mI (54768) Main: Ready for pairing[0m
+[0;32mI (54818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60599[0m
+[0;32mI (55268) Main: Ready for pairing[0m
+[0;32mI (55478) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59622[0m
+[0;32mI (55768) Main: Ready for pairing[0m
+[0;32mI (56078) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54303[0m
+[0;32mI (56268) Main: Ready for pairing[0m
+[0;32mI (56298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46544[0m
+[0;32mI (56768) Main: Ready for pairing[0m
+[0;32mI (56768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44198[0m
+[0;32mI (57268) Main: Ready for pairing[0m
+[0;32mI (57268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18707[0m
+[0;32mI (57768) Main: Ready for pairing[0m
+[0;32mI (57818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36646[0m
+[0;32mI (58268) Main: Ready for pairing[0m
+[0;32mI (58428) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45647[0m
+[0;32mI (58768) Main: Ready for pairing[0m
+[0;32mI (58948) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13703[0m
+[0;32mI (59268) Main: Ready for pairing[0m
+[0;32mI (59558) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63515[0m
+[0;32mI (59768) Main: Ready for pairing[0m
+[0;32mI (59768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62159[0m
+[0;32mI (60268) Main: Ready for pairing[0m
+[0;32mI (60308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46469[0m
+[0;32mI (60768) Main: Ready for pairing[0m
+[0;32mI (61268) Main: Ready for pairing[0m
+[0;32mI (61298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34376[0m
+[0;32mI (61338) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46611[0m
+[0;32mI (61768) Main: Ready for pairing[0m
+[0;32mI (61848) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43285[0m
+[0;32mI (62268) Main: Ready for pairing[0m
+[0;32mI (62418) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47983[0m
+[0;32mI (62768) Main: Ready for pairing[0m
+[0;32mI (62778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18307[0m
+[0;32mI (63268) Main: Ready for pairing[0m
+[0;32mI (63498) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41300[0m
+[0;32mI (63768) Main: Ready for pairing[0m
+[0;32mI (63808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63685[0m
+[0;32mI (64268) Main: Ready for pairing[0m
+[0;32mI (64468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37278[0m
+[0;32mI (64768) Main: Ready for pairing[0m
+[0;32mI (64978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28785[0m
+[0;32mI (65268) Main: Ready for pairing[0m
+[0;32mI (65268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59665[0m
+[0;32mI (65768) Main: Ready for pairing[0m
+[0;32mI (65798) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63918[0m
+[0;32mI (66268) Main: Ready for pairing[0m
+[0;32mI (66318) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3070[0m
+[0;32mI (66768) Main: Ready for pairing[0m
+[0;32mI (67028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4833[0m
+[0;32mI (67268) Main: Ready for pairing[0m
+[0;32mI (67268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28319[0m
+[0;32mI (67768) Main: Ready for pairing[0m
+[0;32mI (68058) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1244[0m
+[0;32mI (68268) Main: Ready for pairing[0m
+[0;32mI (68268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19612[0m
+[0;32mI (68768) Main: Ready for pairing[0m
+[0;32mI (68978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3824[0m
+[0;32mI (69268) Main: Ready for pairing[0m
+[0;32mI (69488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29607[0m
+[0;32mI (69768) Main: Ready for pairing[0m
+[0;32mI (69798) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21534[0m
+[0;32mI (70268) Main: Ready for pairing[0m
+[0;32mI (70288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11637[0m
+[0;32mI (70768) Main: Ready for pairing[0m
+[0;32mI (71128) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29080[0m
+[0;32mI (71268) Main: Ready for pairing[0m
+[0;32mI (71308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13725[0m
+[0;32mI (71768) Main: Ready for pairing[0m
+[0;32mI (71948) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21905[0m
+[0;32mI (72268) Main: Ready for pairing[0m
+[0;32mI (72268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29920[0m
+[0;32mI (72768) Main: Ready for pairing[0m
+[0;32mI (72968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63213[0m
+[0;32mI (73268) Main: Ready for pairing[0m
+[0;32mI (73288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45545[0m
+[0;32mI (73768) Main: Ready for pairing[0m
+[0;32mI (73998) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34324[0m
+[0;32mI (74268) Main: Ready for pairing[0m
+[0;32mI (74298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23605[0m
+[0;32mI (74768) Main: Ready for pairing[0m
+[0;32mI (74818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57309[0m
+[0;32mI (75268) Main: Ready for pairing[0m
+[0;32mI (75268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40947[0m
+[0;32mI (75768) Main: Ready for pairing[0m
+[0;32mI (75768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52737[0m
+[0;32mI (76268) Main: Ready for pairing[0m
+[0;32mI (76448) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64162[0m
+[0;32mI (76768) Main: Ready for pairing[0m
+[0;32mI (76968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62018[0m
+[0;32mI (77268) Main: Ready for pairing[0m
+[0;32mI (77478) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31147[0m
+[0;32mI (77768) Main: Ready for pairing[0m
+[0;32mI (77988) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65386[0m
+[0;32mI (78268) Main: Ready for pairing[0m
+[0;32mI (78298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56105[0m
+[0;32mI (78768) Main: Ready for pairing[0m
+[0;32mI (78808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61319[0m
+[0;32mI (79268) Main: Ready for pairing[0m
+[0;32mI (79318) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34605[0m
+[0;32mI (79768) Main: Ready for pairing[0m
+[0;32mI (79938) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9775[0m
+[0;32mI (80268) Main: Ready for pairing[0m
+[0;32mI (80458) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12361[0m
+[0;32mI (80768) Main: Ready for pairing[0m
+[0;32mI (80808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58715[0m
+[0;32mI (81268) Main: Ready for pairing[0m
+[0;32mI (81488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21558[0m
+[0;32mI (81768) Main: Ready for pairing[0m
+[0;32mI (81798) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16208[0m
+[0;32mI (82268) Main: Ready for pairing[0m
+[0;32mI (82288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18012[0m
+[0;32mI (82768) Main: Ready for pairing[0m
+[0;32mI (82808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21649[0m
+[0;32mI (83268) Main: Ready for pairing[0m
+[0;32mI (83278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18935[0m
+[0;32mI (83768) Main: Ready for pairing[0m
+[0;32mI (83948) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29530[0m
+[0;32mI (84268) Main: Ready for pairing[0m
+[0;32mI (84268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9597[0m
+[0;32mI (84768) Main: Ready for pairing[0m
+[0;32mI (84808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4347[0m
+[0;32mI (85268) Main: Ready for pairing[0m
+[0;32mI (85568) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56603[0m
+[0;32mI (85768) Main: Ready for pairing[0m
+[0;32mI (85778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=800[0m
+[0;32mI (86268) Main: Ready for pairing[0m
+[0;32mI (86268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45429[0m
+[0;32mI (86768) Main: Ready for pairing[0m
+[0;32mI (86768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52519[0m
+[0;32mI (87268) Main: Ready for pairing[0m
+[0;32mI (87308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63882[0m
+[0;32mI (87768) Main: Ready for pairing[0m
+[0;32mI (87818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26063[0m
+[0;32mI (88268) Main: Ready for pairing[0m
+[0;32mI (88478) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2942[0m
+[0;32mI (88768) Main: Ready for pairing[0m
+[0;32mI (88948) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4421[0m
+[0;32mI (89268) Main: Ready for pairing[0m
+[0;32mI (89458) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11305[0m
+[0;32mI (89768) Main: Ready for pairing[0m
+[0;32mI (89968) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23015[0m
+[0;32mI (90268) Main: Ready for pairing[0m
+[0;32mI (90278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19933[0m
+[0;32mI (90768) Main: Ready for pairing[0m
+[0;32mI (90788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19571[0m
+[0;32mI (91268) Main: Ready for pairing[0m
+[0;32mI (91278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3779[0m
+[0;32mI (91768) Main: Ready for pairing[0m
+[0;32mI (92018) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3445[0m
+[0;32mI (92268) Main: Ready for pairing[0m
+[0;32mI (92278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49294[0m
+[0;32mI (92768) Main: Ready for pairing[0m
+[0;32mI (92938) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1045[0m
+[0;32mI (93268) Main: Ready for pairing[0m
+[0;32mI (93448) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27363[0m
+[0;32mI (93768) Main: Ready for pairing[0m
+[0;32mI (94068) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26963[0m
+[0;32mI (94268) Main: Ready for pairing[0m
+[0;32mI (94268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3337[0m
+[0;32mI (94768) Main: Ready for pairing[0m
+[0;32mI (94988) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6111[0m
+[0;32mI (95268) Main: Ready for pairing[0m
+[0;32mI (95598) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34174[0m
+[0;32mI (95768) Main: Ready for pairing[0m
+[0;32mI (95808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9459[0m
+[0;32mI (96268) Main: Ready for pairing[0m
+[0;32mI (96318) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64550[0m
+[0;32mI (96768) Main: Ready for pairing[0m
+[0;32mI (96768) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17173[0m
+[0;32mI (97268) Main: Ready for pairing[0m
+[0;32mI (97448) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14963[0m
+[0;32mI (97768) Main: Ready for pairing[0m
+[0;32mI (97958) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9834[0m
+[0;32mI (98268) Main: Ready for pairing[0m
+[0;32mI (98468) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10493[0m
+[0;32mI (98768) Main: Ready for pairing[0m
+[0;32mI (98978) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5829[0m
+[0;32mI (99268) Main: Ready for pairing[0m
+[0;32mI (99488) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31752[0m
+[0;32mI (99768) Main: Ready for pairing[0m
+[0;32mI (99798) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50866[0m
+[0;32mI (100268) Main: Ready for pairing[0m
+[0;32mI (100308) MQTT: MQTT_EVENT_PUBLISHED, msg_id=435[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1713 (pxQueue->uxItemSize == 0)
+
+
+Backtrace: 0x40025602:0x3ffd6040 0x4002d585:0x3ffd6060 0x40035259:0x3ffd6080 0x4002e11a:0x3ffd61a0 0x4002e2aa:0x3ffd61e0 0x400267f5:0x3ffd6200 0x400268fd:0x3ffd6230 0x400872b7:0x3ffd6250 0x400882b5:0x3ffd6270 0x401049da:0x3ffd6290 0x40087bed:0x3ffd62b0 0x400882b5:0x3ffd62d0 0x4001a193:0x3ffd62f0 0x4001a6c5:0x3ffd6310 0x40001b0e:0x3ffd6330 0x40001b94:0x3ffd6350 0x40103d69:0x3ffd6380 0x4010b653:0x3ffd63b0 0x4010b031:0x3ffd63d0 0x40104135:0x3ffd66f0 0x4011a139:0x3ffd6720 0x40033bbd:0x3ffd6750 0x40088e0c:0x3ffd67a0 0x4002e3e5:0x3ffd67c0
+
+
+
+
+ELF file SHA256: 8df29810d
+
+Rebooting...
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x400255ea
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x186c
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xb08
+load:0x4004e000,len:0x3228
+entry 0x4004a1cc
+[0;32mI (26) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Aug  1 2024 15:21:10[0m
+[0;32mI (26) boot: chip revision: v0.0[0m
+[0;32mI (29) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=26d4ch (159052) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=00036d74 vaddr=3ff9e040 size=00004h (     4) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=00036d80 vaddr=3ffcaae0 size=0392ch ( 14636) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=0003a6b4 vaddr=40024000 size=05964h ( 22884) load[0m
+[0;32mI (147) esp_image: segment 4: paddr=00040020 vaddr=40080020 size=9a194h (631188) map[0m
+[0;32mI (275) esp_image: segment 5: paddr=000da1bc vaddr=40029964 size=11178h ( 70008) load[0m
+[0;32mI (293) esp_image: segment 6: paddr=000eb33c vaddr=40070000 size=00040h (    64) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (316) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (316) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (322) cpu_start: Unicore app[0m
+[0;32mI (337) cpu_start: Pro cpu start user code[0m
+[0;32mI (337) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (337) app_init: Application information:[0m
+[0;32mI (342) app_init: Project name:     iot_sensor[0m
+[0;32mI (347) app_init: App version:      1[0m
+[0;32mI (352) app_init: Compile time:     Aug  1 2024 15:21:04[0m
+[0;32mI (358) app_init: ELF file SHA256:  8df29810d...[0m
+[0;32mI (363) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (367) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (372) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (377) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (382) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (389) heap_init: At 3FFD2D20 len 000292E0 (164 KiB): RAM[0m
+[0;32mI (395) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (401) heap_init: At 3FF9E044 len 00001FA4 (7 KiB): RTCRAM[0m
+[0;32mI (409) spi_flash: detected chip: generic[0m
+[0;32mI (412) spi_flash: flash io: dio[0m
+[0;33mW (416) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (434) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (444) Main: ESP_WIFI_MODE_STA[0m
+I (454) wifi:wifi driver task: 3ffdb7bc, prio:23, stack:6656, core=0
+I (454) wifi:wifi firmware version: 0caa81945
+I (454) wifi:wifi certification version: v7.0
+I (454) wifi:config NVS flash: enabled
+I (454) wifi:config nano formating: disabled
+I (464) wifi:Init data frame dynamic rx buffer num: 32
+I (464) wifi:Init static rx mgmt buffer num: 5
+I (474) wifi:Init management short buffer num: 32
+I (474) wifi:Init dynamic tx buffer num: 32
+I (474) wifi:Init static rx buffer size: 1600
+I (484) wifi:Init static rx buffer num: 10
+I (484) wifi:Init dynamic rx buffer num: 32
+[0;32mI (494) wifi_init: rx ba win: 6[0m
+[0;32mI (494) wifi_init: accept mbox: 6[0m
+[0;32mI (494) wifi_init: tcpip mbox: 32[0m
+[0;32mI (504) wifi_init: udp mbox: 6[0m
+[0;32mI (504) wifi_init: tcp mbox: 6[0m
+[0;32mI (514) wifi_init: tcp tx win: 5760[0m
+[0;32mI (514) wifi_init: tcp rx win: 5760[0m
+[0;32mI (514) wifi_init: tcp mss: 1440[0m
+[0;32mI (524) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (524) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (534) phy_init: phy_version 2600,6a8ccb9,Jun  4 2024,16:49:07[0m
+I (614) wifi:mode : sta (7c:df:a1:99:97:d0)
+I (614) wifi:enable tsf
+[0;32mI (624) WIFI: wifi_init_sta finished.[0m
+I (634) wifi:new:<10,2>, old:<1,0>, ap:<255,255>, sta:<10,2>, prof:1, snd_ch_cfg:0x0
+I (634) wifi:state: init -> auth (0xb0)
+I (634) wifi:state: auth -> assoc (0x0)
+I (654) wifi:state: assoc -> run (0x10)
+I (744) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)
+I (744) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)
+I (774) wifi:connected with BrNet.cz/Veveri39, aid = 8, channel 10, 40D, bssid = e4:c3:2a:4c:ee:e4
+I (774) wifi:security: WPA2-PSK, phy: bgn, rssi: -43
+I (774) wifi:pm start, type: 1
+
+I (774) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (794) wifi:<ba-add>idx:0 (ifx:0, e4:c3:2a:4c:ee:e4), tid:0, ssn:4, winSize:64
+I (834) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (2284) esp_netif_handlers: sta ip: 192.168.0.107, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2284) WIFI: got ip:192.168.0.107[0m
+[0;32mI (2284) WIFI: connected to ap SSID:BrNet.cz/Veveri39 password:64884233[0m
+[0;32mI (2294) MQTT: Other event id:7[0m
+[0;32mI (2784) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3294) Main: Opening Non-Volatile Storage (NVS) handle... [0m
+[0;32mI (3294) Main: The value is not initialized yet!
+[0m
+[0;32mI (3294) gpio: GPIO[9]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3304) gpio: GPIO[8]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3314) Main: Ready for pairing[0m
+[0;32mI (3504) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=52825[0m
+[0;32mI (3714) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33899[0m
+[0;32mI (3814) Main: Ready for pairing[0m
+[0;32mI (4014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1707[0m
+[0;32mI (4314) Main: Ready for pairing[0m
+[0;32mI (4624) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8914[0m
+[0;32mI (4814) Main: Ready for pairing[0m
+[0;32mI (4814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7966[0m
+[0;32mI (5314) Main: Ready for pairing[0m
+[0;32mI (5354) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46240[0m
+[0;32mI (5814) Main: Ready for pairing[0m
+[0;32mI (5854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19944[0m
+[0;32mI (6314) Main: Ready for pairing[0m
+[0;32mI (6814) Main: Ready for pairing[0m
+[0;32mI (7194) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34195[0m
+[0;32mI (7314) Main: Ready for pairing[0m
+[0;32mI (7394) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27468[0m
+[0;32mI (7614) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29353[0m
+[0;32mI (7814) Main: Ready for pairing[0m
+[0;32mI (8024) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55989[0m
+[0;32mI (8314) Main: Ready for pairing[0m
+[0;32mI (8544) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48719[0m
+[0;32mI (8814) Main: Ready for pairing[0m
+[0;32mI (9034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39369[0m
+[0;32mI (9314) Main: Ready for pairing[0m
+[0;32mI (9334) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53313[0m
+[0;32mI (9814) Main: Ready for pairing[0m
+[0;32mI (9854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37793[0m
+[0;32mI (10314) Main: Ready for pairing[0m
+[0;32mI (10364) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1218[0m
+[0;32mI (10814) Main: Ready for pairing[0m
+[0;32mI (10974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59500[0m
+[0;32mI (11314) Main: Ready for pairing[0m
+[0;32mI (11484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29610[0m
+[0;32mI (11814) Main: Ready for pairing[0m
+[0;32mI (11814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39297[0m
+[0;32mI (12314) Main: Ready for pairing[0m
+[0;32mI (12314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26034[0m
+[0;32mI (12814) Main: Ready for pairing[0m
+[0;32mI (12824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53976[0m
+[0;32mI (13314) Main: Ready for pairing[0m
+[0;32mI (13584) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40869[0m
+[0;32mI (13814) Main: Ready for pairing[0m
+[0;32mI (13884) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37176[0m
+[0;32mI (14314) Main: Ready for pairing[0m
+[0;32mI (14314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29590[0m
+[0;32mI (14814) Main: Ready for pairing[0m
+[0;32mI (14874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6589[0m
+[0;32mI (15314) Main: Ready for pairing[0m
+[0;32mI (15534) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54803[0m
+[0;32mI (15814) Main: Ready for pairing[0m
+[0;32mI (16304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8153[0m
+[0;32mI (16314) Main: Ready for pairing[0m
+[0;32mI (16314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55234[0m
+[0;32mI (16814) Main: Ready for pairing[0m
+[0;32mI (17014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52746[0m
+[0;32mI (17314) Main: Ready for pairing[0m
+[0;32mI (17314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45082[0m
+[0;32mI (17814) Main: Ready for pairing[0m
+[0;32mI (17834) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48609[0m
+[0;32mI (18314) Main: Ready for pairing[0m
+[0;32mI (18554) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33311[0m
+[0;32mI (18814) Main: Ready for pairing[0m
+[0;32mI (18814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25453[0m
+[0;32mI (19314) Main: Ready for pairing[0m
+[0;32mI (19574) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33410[0m
+[0;32mI (19814) Main: Ready for pairing[0m
+[0;32mI (19984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29237[0m
+[0;32mI (20314) Main: Ready for pairing[0m
+[0;32mI (20504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22825[0m
+[0;32mI (20814) Main: Ready for pairing[0m
+[0;32mI (21014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48537[0m
+[0;32mI (21314) Main: Ready for pairing[0m
+[0;32mI (21524) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19495[0m
+[0;32mI (21814) Main: Ready for pairing[0m
+[0;32mI (22034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50627[0m
+[0;32mI (22314) Main: Ready for pairing[0m
+[0;32mI (22314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24333[0m
+[0;32mI (22814) Main: Ready for pairing[0m
+[0;32mI (22864) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47557[0m
+[0;32mI (23314) Main: Ready for pairing[0m
+[0;32mI (23464) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39143[0m
+[0;32mI (23814) Main: Ready for pairing[0m
+[0;32mI (23984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39639[0m
+[0;32mI (24314) Main: Ready for pairing[0m
+[0;32mI (24494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8054[0m
+[0;32mI (24814) Main: Ready for pairing[0m
+[0;32mI (25004) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20033[0m
+[0;32mI (25314) Main: Ready for pairing[0m
+[0;32mI (25324) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46078[0m
+[0;32mI (25814) Main: Ready for pairing[0m
+[0;32mI (25824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59882[0m
+[0;32mI (26314) Main: Ready for pairing[0m
+[0;32mI (26324) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11939[0m
+[0;32mI (26814) Main: Ready for pairing[0m
+[0;32mI (26844) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1365[0m
+[0;32mI (27314) Main: Ready for pairing[0m
+[0;32mI (27364) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13945[0m
+[0;32mI (27814) Main: Ready for pairing[0m
+[0;32mI (27814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60021[0m
+[0;32mI (28314) Main: Ready for pairing[0m
+[0;32mI (28484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48464[0m
+[0;32mI (28814) Main: Ready for pairing[0m
+[0;32mI (29004) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10547[0m
+[0;32mI (29314) Main: Ready for pairing[0m
+[0;32mI (29514) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34072[0m
+[0;32mI (29814) Main: Ready for pairing[0m
+[0;32mI (29824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24614[0m
+[0;32mI (30314) Main: Ready for pairing[0m
+[0;32mI (30544) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40108[0m
+[0;32mI (30814) Main: Ready for pairing[0m
+[0;32mI (30854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50054[0m
+[0;32mI (31314) Main: Ready for pairing[0m
+[0;32mI (31354) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21381[0m
+[0;32mI (31814) Main: Ready for pairing[0m
+[0;32mI (31814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53851[0m
+[0;32mI (32314) Main: Ready for pairing[0m
+[0;32mI (32484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50050[0m
+[0;32mI (32814) Main: Ready for pairing[0m
+[0;32mI (32814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38271[0m
+[0;32mI (33314) Main: Ready for pairing[0m
+[0;32mI (33504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35668[0m
+[0;32mI (33814) Main: Ready for pairing[0m
+[0;32mI (34014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45243[0m
+[0;32mI (34314) Main: Ready for pairing[0m
+[0;32mI (34324) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6049[0m
+[0;32mI (34814) Main: Ready for pairing[0m
+[0;32mI (35064) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10141[0m
+[0;32mI (35314) Main: Ready for pairing[0m
+[0;32mI (35324) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47385[0m
+[0;32mI (35814) Main: Ready for pairing[0m
+[0;32mI (35814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41571[0m
+[0;32mI (36314) Main: Ready for pairing[0m
+[0;32mI (36314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63423[0m
+[0;32mI (36814) Main: Ready for pairing[0m
+[0;32mI (36984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12222[0m
+[0;32mI (37314) Main: Ready for pairing[0m
+[0;32mI (37494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1116[0m
+[0;32mI (37814) Main: Ready for pairing[0m
+[0;32mI (37814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60208[0m
+[0;32mI (38314) Main: Ready for pairing[0m
+[0;32mI (38364) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5024[0m
+[0;32mI (38814) Main: Ready for pairing[0m
+[0;32mI (39134) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22265[0m
+[0;32mI (39314) Main: Ready for pairing[0m
+[0;32mI (39314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2085[0m
+[0;32mI (39814) Main: Ready for pairing[0m
+[0;32mI (39854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2657[0m
+[0;32mI (40314) Main: Ready for pairing[0m
+[0;32mI (40314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60644[0m
+[0;32mI (40814) Main: Ready for pairing[0m
+[0;32mI (40974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20118[0m
+[0;32mI (41314) Main: Ready for pairing[0m
+[0;32mI (41494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32010[0m
+[0;32mI (41814) Main: Ready for pairing[0m
+[0;32mI (42004) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62825[0m
+[0;32mI (42314) Main: Ready for pairing[0m
+[0;32mI (42314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5694[0m
+[0;32mI (42814) Main: Ready for pairing[0m
+[0;32mI (43164) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60184[0m
+[0;32mI (43314) Main: Ready for pairing[0m
+[0;32mI (43314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42542[0m
+[0;32mI (43814) Main: Ready for pairing[0m
+[0;32mI (43844) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28391[0m
+[0;32mI (44314) Main: Ready for pairing[0m
+[0;32mI (44314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35692[0m
+[0;32mI (44814) Main: Ready for pairing[0m
+[0;32mI (44974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50611[0m
+[0;32mI (45314) Main: Ready for pairing[0m
+[0;32mI (45484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19756[0m
+[0;32mI (45814) Main: Ready for pairing[0m
+[0;32mI (45994) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46774[0m
+[0;32mI (46314) Main: Ready for pairing[0m
+[0;32mI (46504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33027[0m
+[0;32mI (46814) Main: Ready for pairing[0m
+[0;32mI (47124) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11113[0m
+[0;32mI (47314) Main: Ready for pairing[0m
+[0;32mI (47314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39836[0m
+[0;32mI (47814) Main: Ready for pairing[0m
+[0;32mI (48044) MQTT: MQTT_EVENT_PUBLISHED, msg_id=592[0m
+[0;32mI (48314) Main: Ready for pairing[0m
+[0;32mI (48454) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54584[0m
+[0;32mI (48814) Main: Ready for pairing[0m
+[0;32mI (48814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11208[0m
+[0;32mI (49314) Main: Ready for pairing[0m
+[0;32mI (49584) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9360[0m
+[0;32mI (49814) Main: Ready for pairing[0m
+[0;32mI (50314) Main: Ready for pairing[0m
+[0;32mI (50404) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13442[0m
+[0;32mI (50414) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58258[0m
+[0;32mI (50814) Main: Ready for pairing[0m
+[0;32mI (51014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13938[0m
+[0;32mI (51314) Main: Ready for pairing[0m
+[0;32mI (51524) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8594[0m
+[0;32mI (51814) Main: Ready for pairing[0m
+[0;32mI (52034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55817[0m
+[0;32mI (52314) Main: Ready for pairing[0m
+[0;32mI (52314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=99[0m
+[0;32mI (52814) Main: Ready for pairing[0m
+[0;32mI (53064) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40951[0m
+[0;32mI (53314) Main: Ready for pairing[0m
+[0;32mI (53574) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36116[0m
+[0;32mI (53814) Main: Ready for pairing[0m
+[0;32mI (53814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19078[0m
+[0;32mI (54314) Main: Ready for pairing[0m
+[0;32mI (54494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49151[0m
+[0;32mI (54814) Main: Ready for pairing[0m
+[0;32mI (54814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51932[0m
+[0;32mI (55314) Main: Ready for pairing[0m
+[0;32mI (55524) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41179[0m
+[0;32mI (55814) Main: Ready for pairing[0m
+[0;32mI (56044) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59040[0m
+[0;32mI (56314) Main: Ready for pairing[0m
+[0;32mI (56544) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55145[0m
+[0;32mI (56814) Main: Ready for pairing[0m
+[0;32mI (56824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59184[0m
+[0;32mI (57314) Main: Ready for pairing[0m
+[0;32mI (57484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30473[0m
+[0;32mI (57814) Main: Ready for pairing[0m
+[0;32mI (57994) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20597[0m
+[0;32mI (58314) Main: Ready for pairing[0m
+[0;32mI (58504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61814[0m
+[0;32mI (58814) Main: Ready for pairing[0m
+[0;32mI (59004) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13315[0m
+[0;32mI (59314) Main: Ready for pairing[0m
+[0;32mI (59314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62133[0m
+[0;32mI (59814) Main: Ready for pairing[0m
+[0;32mI (60054) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62158[0m
+[0;32mI (60314) Main: Ready for pairing[0m
+[0;32mI (60314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34765[0m
+[0;32mI (60814) Main: Ready for pairing[0m
+[0;32mI (60974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40958[0m
+[0;32mI (61314) Main: Ready for pairing[0m
+[0;32mI (61484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60680[0m
+[0;32mI (61814) Main: Ready for pairing[0m
+[0;32mI (62004) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33363[0m
+[0;32mI (62314) Main: Ready for pairing[0m
+[0;32mI (62514) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24938[0m
+[0;32mI (62814) Main: Ready for pairing[0m
+[0;32mI (63034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20635[0m
+[0;32mI (63314) Main: Ready for pairing[0m
+[0;32mI (63314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43186[0m
+[0;32mI (63814) Main: Ready for pairing[0m
+[0;32mI (64064) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47358[0m
+[0;32mI (64314) Main: Ready for pairing[0m
+[0;32mI (64314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60147[0m
+[0;32mI (64814) Main: Ready for pairing[0m
+[0;32mI (64834) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42591[0m
+[0;32mI (65314) Main: Ready for pairing[0m
+[0;32mI (65394) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25490[0m
+[0;32mI (65814) Main: Ready for pairing[0m
+[0;32mI (65864) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44100[0m
+[0;32mI (66314) Main: Ready for pairing[0m
+[0;32mI (66574) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21206[0m
+[0;32mI (66814) Main: Ready for pairing[0m
+[0;32mI (67094) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14911[0m
+[0;32mI (67314) Main: Ready for pairing[0m
+[0;32mI (67504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29366[0m
+[0;32mI (67814) Main: Ready for pairing[0m
+[0;32mI (68014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20532[0m
+[0;32mI (68314) Main: Ready for pairing[0m
+[0;32mI (68324) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35177[0m
+[0;32mI (68814) Main: Ready for pairing[0m
+[0;32mI (69034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42676[0m
+[0;32mI (69314) Main: Ready for pairing[0m
+[0;32mI (69344) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8251[0m
+[0;32mI (69814) Main: Ready for pairing[0m
+[0;32mI (69814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63961[0m
+[0;32mI (70314) Main: Ready for pairing[0m
+[0;32mI (70464) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7743[0m
+[0;32mI (70814) Main: Ready for pairing[0m
+[0;32mI (70984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65406[0m
+[0;32mI (71314) Main: Ready for pairing[0m
+[0;32mI (71314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12935[0m
+[0;32mI (71814) Main: Ready for pairing[0m
+[0;32mI (72004) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57309[0m
+[0;32mI (72314) Main: Ready for pairing[0m
+[0;32mI (72514) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14573[0m
+[0;32mI (72814) Main: Ready for pairing[0m
+[0;32mI (73134) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64656[0m
+[0;32mI (73314) Main: Ready for pairing[0m
+[0;32mI (73334) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27398[0m
+[0;32mI (73814) Main: Ready for pairing[0m
+[0;32mI (73854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42788[0m
+[0;32mI (74314) Main: Ready for pairing[0m
+[0;32mI (74464) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37903[0m
+[0;32mI (74814) Main: Ready for pairing[0m
+[0;32mI (74854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52933[0m
+[0;32mI (75314) Main: Ready for pairing[0m
+[0;32mI (75584) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5232[0m
+[0;32mI (75814) Main: Ready for pairing[0m
+[0;32mI (75814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15987[0m
+[0;32mI (76314) Main: Ready for pairing[0m
+[0;32mI (76614) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33729[0m
+[0;32mI (76814) Main: Ready for pairing[0m
+[0;32mI (76814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63556[0m
+[0;32mI (77314) Main: Ready for pairing[0m
+[0;32mI (77534) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7825[0m
+[0;32mI (77814) Main: Ready for pairing[0m
+[0;32mI (77814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16019[0m
+[0;32mI (78314) Main: Ready for pairing[0m
+[0;32mI (78354) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31483[0m
+[0;32mI (78814) Main: Ready for pairing[0m
+[0;32mI (78964) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22241[0m
+[0;32mI (79314) Main: Ready for pairing[0m
+[0;32mI (79484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50179[0m
+[0;32mI (79814) Main: Ready for pairing[0m
+[0;32mI (79814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32245[0m
+[0;32mI (80314) Main: Ready for pairing[0m
+[0;32mI (80314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11992[0m
+[0;32mI (80814) Main: Ready for pairing[0m
+[0;32mI (81124) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57671[0m
+[0;32mI (81314) Main: Ready for pairing[0m
+[0;32mI (81334) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62979[0m
+[0;32mI (81814) Main: Ready for pairing[0m
+[0;32mI (81844) MQTT: MQTT_EVENT_PUBLISHED, msg_id=515[0m
+[0;32mI (82314) Main: Ready for pairing[0m
+[0;32mI (82314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33764[0m
+[0;32mI (82814) Main: Ready for pairing[0m
+[0;32mI (82824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46679[0m
+[0;32mI (83314) Main: Ready for pairing[0m
+[0;32mI (83314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40304[0m
+[0;32mI (83814) Main: Ready for pairing[0m
+[0;32mI (83984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59613[0m
+[0;32mI (84314) Main: Ready for pairing[0m
+[0;32mI (84494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13305[0m
+[0;32mI (84814) Main: Ready for pairing[0m
+[0;32mI (85014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16722[0m
+[0;32mI (85314) Main: Ready for pairing[0m
+[0;32mI (85324) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2541[0m
+[0;32mI (85814) Main: Ready for pairing[0m
+[0;32mI (86034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57245[0m
+[0;32mI (86314) Main: Ready for pairing[0m
+[0;32mI (86364) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2604[0m
+[0;32mI (86814) Main: Ready for pairing[0m
+[0;32mI (86854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12532[0m
+[0;32mI (87314) Main: Ready for pairing[0m
+[0;32mI (87374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64897[0m
+[0;32mI (87814) Main: Ready for pairing[0m
+[0;32mI (88014) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47762[0m
+[0;32mI (88314) Main: Ready for pairing[0m
+[0;32mI (88524) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41373[0m
+[0;32mI (88814) Main: Ready for pairing[0m
+[0;32mI (89044) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49707[0m
+[0;32mI (89314) Main: Ready for pairing[0m
+[0;32mI (89354) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6481[0m
+[0;32mI (89814) Main: Ready for pairing[0m
+[0;32mI (89824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42526[0m
+[0;32mI (90314) Main: Ready for pairing[0m
+[0;32mI (90544) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64828[0m
+[0;32mI (90814) Main: Ready for pairing[0m
+[0;32mI (90814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65480[0m
+[0;32mI (91314) Main: Ready for pairing[0m
+[0;32mI (91504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43079[0m
+[0;32mI (91814) Main: Ready for pairing[0m
+[0;32mI (92174) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44978[0m
+[0;32mI (92314) Main: Ready for pairing[0m
+[0;32mI (92484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30363[0m
+[0;32mI (92814) Main: Ready for pairing[0m
+[0;32mI (92844) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51188[0m
+[0;32mI (93314) Main: Ready for pairing[0m
+[0;32mI (93504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44693[0m
+[0;32mI (93814) Main: Ready for pairing[0m
+[0;32mI (93834) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36875[0m
+[0;32mI (94314) Main: Ready for pairing[0m
+[0;32mI (94314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27781[0m
+[0;32mI (94814) Main: Ready for pairing[0m
+[0;32mI (94854) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36041[0m
+[0;32mI (95314) Main: Ready for pairing[0m
+[0;32mI (95354) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43297[0m
+[0;32mI (95814) Main: Ready for pairing[0m
+[0;32mI (95834) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62733[0m
+[0;32mI (96314) Main: Ready for pairing[0m
+[0;32mI (96584) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3988[0m
+[0;32mI (96814) Main: Ready for pairing[0m
+[0;32mI (96994) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25812[0m
+[0;32mI (97314) Main: Ready for pairing[0m
+[0;32mI (97504) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62817[0m
+[0;32mI (97814) Main: Ready for pairing[0m
+[0;32mI (98114) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33015[0m
+[0;32mI (98314) Main: Ready for pairing[0m
+[0;32mI (98524) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28270[0m
+[0;32mI (98814) Main: Ready for pairing[0m
+[0;32mI (98814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57313[0m
+[0;32mI (99314) Main: Ready for pairing[0m
+[0;32mI (99314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48240[0m
+[0;32mI (99814) Main: Ready for pairing[0m
+[0;32mI (99844) MQTT: MQTT_EVENT_PUBLISHED, msg_id=440[0m
+[0;32mI (100314) Main: Ready for pairing[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1713 (pxQueue->uxItemSize == 0)
+
+
+Backtrace: 0x40025602:0x3ffd6040 0x4002d585:0x3ffd6060 0x40035259:0x3ffd6080 0x4002e11a:0x3ffd61a0 0x4002e2aa:0x3ffd61e0 0x400267f5:0x3ffd6200 0x400268fd:0x3ffd6230 0x400872b7:0x3ffd6250 0x400882b5:0x3ffd6270 0x401049da:0x3ffd6290 0x40087bed:0x3ffd62b0 0x400882b5:0x3ffd62d0 0x4001a193:0x3ffd62f0 0x4001a6c5:0x3ffd6310 0x40001b0e:0x3ffd6330 0x40001b94:0x3ffd6350 0x40103d69:0x3ffd6380 0x4010b653:0x3ffd63b0 0x4010b031:0x3ffd63d0 0x40104135:0x3ffd66f0 0x4011a139:0x3ffd6720 0x40033bbd:0x3ffd6750 0x40088e0c:0x3ffd67a0 0x4002e3e5:0x3ffd67c0
+
+
+
+
+ELF file SHA256: 8df29810d
+
+Rebooting...
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x400255ea
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x186c
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xb08
+load:0x4004e000,len:0x3228
+entry 0x4004a1cc
+[0;32mI (26) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Aug  1 2024 15:21:10[0m
+[0;32mI (26) boot: chip revision: v0.0[0m
+[0;32mI (29) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=26d4ch (159052) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=00036d74 vaddr=3ff9e040 size=00004h (     4) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=00036d80 vaddr=3ffcaae0 size=0392ch ( 14636) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=0003a6b4 vaddr=40024000 size=05964h ( 22884) load[0m
+[0;32mI (147) esp_image: segment 4: paddr=00040020 vaddr=40080020 size=9a194h (631188) map[0m
+[0;32mI (275) esp_image: segment 5: paddr=000da1bc vaddr=40029964 size=11178h ( 70008) load[0m
+[0;32mI (293) esp_image: segment 6: paddr=000eb33c vaddr=40070000 size=00040h (    64) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (316) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (316) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (322) cpu_start: Unicore app[0m
+[0;32mI (337) cpu_start: Pro cpu start user code[0m
+[0;32mI (337) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (337) app_init: Application information:[0m
+[0;32mI (342) app_init: Project name:     iot_sensor[0m
+[0;32mI (347) app_init: App version:      1[0m
+[0;32mI (352) app_init: Compile time:     Aug  1 2024 15:21:04[0m
+[0;32mI (358) app_init: ELF file SHA256:  8df29810d...[0m
+[0;32mI (363) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (367) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (372) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (377) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (382) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (389) heap_init: At 3FFD2D20 len 000292E0 (164 KiB): RAM[0m
+[0;32mI (395) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (401) heap_init: At 3FF9E044 len 00001FA4 (7 KiB): RTCRAM[0m
+[0;32mI (409) spi_flash: detected chip: generic[0m
+[0;32mI (412) spi_flash: flash io: dio[0m
+[0;33mW (416) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (434) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (444) Main: ESP_WIFI_MODE_STA[0m
+I (454) wifi:wifi driver task: 3ffdb7bc, prio:23, stack:6656, core=0
+I (454) wifi:wifi firmware version: 0caa81945
+I (454) wifi:wifi certification version: v7.0
+I (454) wifi:config NVS flash: enabled
+I (454) wifi:config nano formating: disabled
+I (464) wifi:Init data frame dynamic rx buffer num: 32
+I (464) wifi:Init static rx mgmt buffer num: 5
+I (474) wifi:Init management short buffer num: 32
+I (474) wifi:Init dynamic tx buffer num: 32
+I (474) wifi:Init static rx buffer size: 1600
+I (484) wifi:Init static rx buffer num: 10
+I (484) wifi:Init dynamic rx buffer num: 32
+[0;32mI (494) wifi_init: rx ba win: 6[0m
+[0;32mI (494) wifi_init: accept mbox: 6[0m
+[0;32mI (494) wifi_init: tcpip mbox: 32[0m
+[0;32mI (504) wifi_init: udp mbox: 6[0m
+[0;32mI (504) wifi_init: tcp mbox: 6[0m
+[0;32mI (514) wifi_init: tcp tx win: 5760[0m
+[0;32mI (514) wifi_init: tcp rx win: 5760[0m
+[0;32mI (514) wifi_init: tcp mss: 1440[0m
+[0;32mI (524) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (524) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (534) phy_init: phy_version 2600,6a8ccb9,Jun  4 2024,16:49:07[0m
+I (574) wifi:mode : sta (7c:df:a1:99:97:d0)
+I (574) wifi:enable tsf
+[0;32mI (584) WIFI: wifi_init_sta finished.[0m
+I (594) wifi:new:<10,2>, old:<1,0>, ap:<255,255>, sta:<10,2>, prof:1, snd_ch_cfg:0x0
+I (594) wifi:state: init -> auth (0xb0)
+I (594) wifi:state: auth -> assoc (0x0)
+I (604) wifi:state: assoc -> run (0x10)
+I (704) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)
+I (704) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)
+I (724) wifi:connected with BrNet.cz/Veveri39, aid = 8, channel 10, 40D, bssid = e4:c3:2a:4c:ee:e4
+I (724) wifi:security: WPA2-PSK, phy: bgn, rssi: -44
+I (724) wifi:pm start, type: 1
+
+I (724) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (744) wifi:<ba-add>idx:0 (ifx:0, e4:c3:2a:4c:ee:e4), tid:0, ssn:4, winSize:64
+I (794) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (2234) esp_netif_handlers: sta ip: 192.168.0.107, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2234) WIFI: got ip:192.168.0.107[0m
+[0;32mI (2234) WIFI: connected to ap SSID:BrNet.cz/Veveri39 password:64884233[0m
+[0;32mI (2244) MQTT: Other event id:7[0m
+[0;32mI (3244) Main: Opening Non-Volatile Storage (NVS) handle... [0m
+[0;32mI (3244) Main: The value is not initialized yet!
+[0m
+[0;31mE (3244) mqtt_client: Client has not connected[0m
+[0;32mI (3244) gpio: GPIO[9]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3254) gpio: GPIO[8]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3874) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3874) Main: Ready for pairing[0m
+[0;32mI (4174) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33937[0m
+[0;32mI (4374) Main: Ready for pairing[0m
+[0;32mI (4384) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16830[0m
+[0;32mI (4874) Main: Ready for pairing[0m
+[0;32mI (4924) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55707[0m
+[0;32mI (5374) Main: Ready for pairing[0m
+[0;32mI (5414) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33722[0m
+[0;32mI (5874) Main: Ready for pairing[0m
+[0;32mI (5884) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15414[0m
+[0;32mI (6374) Main: Ready for pairing[0m
+[0;32mI (6534) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47035[0m
+[0;32mI (6874) Main: Ready for pairing[0m
+[0;32mI (6884) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44430[0m
+[0;32mI (7374) Main: Ready for pairing[0m
+[0;32mI (7564) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10569[0m
+[0;32mI (7874) Main: Ready for pairing[0m
+[0;32mI (7874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4061[0m
+[0;32mI (8374) Main: Ready for pairing[0m
+[0;32mI (8684) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21383[0m
+[0;32mI (8874) Main: Ready for pairing[0m
+[0;32mI (8904) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51626[0m
+[0;32mI (9374) Main: Ready for pairing[0m
+[0;32mI (9424) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47105[0m
+[0;32mI (9874) Main: Ready for pairing[0m
+[0;32mI (9874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31361[0m
+[0;32mI (10374) Main: Ready for pairing[0m
+[0;32mI (10374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16500[0m
+[0;32mI (10874) Main: Ready for pairing[0m
+[0;32mI (10914) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1106[0m
+[0;32mI (11374) Main: Ready for pairing[0m
+[0;32mI (11384) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10373[0m
+[0;32mI (11874) Main: Ready for pairing[0m
+[0;32mI (12364) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59681[0m
+[0;32mI (12374) Main: Ready for pairing[0m
+[0;32mI (12374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7447[0m
+[0;32mI (12874) Main: Ready for pairing[0m
+[0;32mI (13084) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61722[0m
+[0;32mI (13374) Main: Ready for pairing[0m
+[0;32mI (13374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24708[0m
+[0;32mI (13874) Main: Ready for pairing[0m
+[0;32mI (13904) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15664[0m
+[0;32mI (14374) Main: Ready for pairing[0m
+[0;32mI (14374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52583[0m
+[0;32mI (14874) Main: Ready for pairing[0m
+[0;32mI (15034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9647[0m
+[0;32mI (15374) Main: Ready for pairing[0m
+[0;32mI (15384) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4500[0m
+[0;32mI (15874) Main: Ready for pairing[0m
+[0;32mI (16054) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30331[0m
+[0;32mI (16374) Main: Ready for pairing[0m
+[0;32mI (16414) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27231[0m
+[0;32mI (16874) Main: Ready for pairing[0m
+[0;32mI (16924) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29274[0m
+[0;32mI (17374) Main: Ready for pairing[0m
+[0;32mI (17594) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18414[0m
+[0;32mI (17874) Main: Ready for pairing[0m
+[0;32mI (17874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6802[0m
+[0;32mI (18374) Main: Ready for pairing[0m
+[0;32mI (18414) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58749[0m
+[0;32mI (18874) Main: Ready for pairing[0m
+[0;32mI (19124) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61528[0m
+[0;32mI (19374) Main: Ready for pairing[0m
+[0;32mI (19394) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24894[0m
+[0;32mI (19874) Main: Ready for pairing[0m
+[0;32mI (20054) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58723[0m
+[0;32mI (20374) Main: Ready for pairing[0m
+[0;32mI (20374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46908[0m
+[0;32mI (20874) Main: Ready for pairing[0m
+[0;32mI (20914) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38258[0m
+[0;32mI (21374) Main: Ready for pairing[0m
+[0;32mI (21594) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49367[0m
+[0;32mI (21874) Main: Ready for pairing[0m
+[0;32mI (21874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11040[0m
+[0;32mI (22374) Main: Ready for pairing[0m
+[0;32mI (22404) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39010[0m
+[0;32mI (22874) Main: Ready for pairing[0m
+[0;32mI (22874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37474[0m
+[0;32mI (23374) Main: Ready for pairing[0m
+[0;32mI (23534) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34902[0m
+[0;32mI (23874) Main: Ready for pairing[0m
+[0;32mI (24044) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16002[0m
+[0;32mI (24374) Main: Ready for pairing[0m
+[0;32mI (24374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2946[0m
+[0;32mI (24874) Main: Ready for pairing[0m
+[0;32mI (24874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13907[0m
+[0;32mI (25374) Main: Ready for pairing[0m
+[0;32mI (25584) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63663[0m
+[0;32mI (25874) Main: Ready for pairing[0m
+[0;32mI (25874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40269[0m
+[0;32mI (26374) Main: Ready for pairing[0m
+[0;32mI (26394) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7508[0m
+[0;32mI (26874) Main: Ready for pairing[0m
+[0;32mI (26874) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32322[0m
+[0;32mI (27374) Main: Ready for pairing[0m
+[0;32mI (27424) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42513[0m
+[0;32mI (27874) Main: Ready for pairing[0m
+[0;32mI (28034) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63275[0m
+[0;32mI (28374) Main: Ready for pairing[0m
+[0;32mI (28874) Main: Ready for pairing[0m
+[0;32mI (29274) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49084[0m
+[0;32mI (29374) Main: Ready for pairing[0m
+[0;32mI (29474) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16254[0m
+[0;32mI (29474) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6331[0m
+[0;32mI (29874) Main: Ready for pairing[0m
+[0;32mI (30084) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40645[0m
+[0;32mI (30374) Main: Ready for pairing[0m
+[0;32mI (30394) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35102[0m
+[0;32mI (30874) Main: Ready for pairing[0m
+[0;32mI (30914) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15771[0m
+[0;32mI (31374) Main: Ready for pairing[0m
+[0;32mI (31414) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43853[0m
+[0;32mI (31874) Main: Ready for pairing[0m
+[0;32mI (31914) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40009[0m
+[0;32mI (32374) Main: Ready for pairing[0m
+[0;32mI (32374) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32629[0m
+[0;32mI (32874) Main: Ready for pairing[0m
+[0;32mI (33054) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11246[0m
+[0;32mI (33374) Main: Ready for pairing[0m
+[0;32mI (33574) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24844[0m
+[0;32mI (33874) Main: Ready for pairing[0m
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x186c
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xb08
+load:0x4004e000,len:0x3228
+entry 0x4004a1cc
+[0;32mI (23) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug  1 2024 15:21:10[0m
+[0;32mI (24) boot: chip revision: v0.0[0m
+[0;32mI (27) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (80) boot: End of partition table[0m
+[0;32mI (84) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=26d4ch (159052) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=00036d74 vaddr=3ff9e040 size=00004h (     4) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=00036d80 vaddr=3ffcaae0 size=0392ch ( 14636) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=0003a6b4 vaddr=40024000 size=05964h ( 22884) load[0m
+[0;32mI (144) esp_image: segment 4: paddr=00040020 vaddr=40080020 size=9a194h (631188) map[0m
+[0;32mI (273) esp_image: segment 5: paddr=000da1bc vaddr=40029964 size=11178h ( 70008) load[0m
+[0;32mI (290) esp_image: segment 6: paddr=000eb33c vaddr=40070000 size=00040h (    64) load[0m
+[0;32mI (302) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (302) boot: Disabling RNG early entropy source...[0m
+[0;32mI (314) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (314) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (320) cpu_start: Unicore app[0m
+[0;32mI (344) cpu_start: Pro cpu start user code[0m
+[0;32mI (344) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (344) app_init: Application information:[0m
+[0;32mI (347) app_init: Project name:     iot_sensor[0m
+[0;32mI (352) app_init: App version:      1[0m
+[0;32mI (356) app_init: Compile time:     Aug  1 2024 15:21:04[0m
+[0;32mI (362) app_init: ELF file SHA256:  8df29810d...[0m
+[0;32mI (368) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (372) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (377) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (382) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (387) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (394) heap_init: At 3FFD2D20 len 000292E0 (164 KiB): RAM[0m
+[0;32mI (400) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (406) heap_init: At 3FF9E044 len 00001FA4 (7 KiB): RTCRAM[0m
+[0;32mI (413) spi_flash: detected chip: generic[0m
+[0;32mI (417) spi_flash: flash io: dio[0m
+[0;33mW (421) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (438) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (448) Main: ESP_WIFI_MODE_STA[0m
+I (458) wifi:wifi driver task: 3ffdb7bc, prio:23, stack:6656, core=0
+I (458) wifi:wifi firmware version: 0caa81945
+I (458) wifi:wifi certification version: v7.0
+I (458) wifi:config NVS flash: enabled
+I (458) wifi:config nano formating: disabled
+I (468) wifi:Init data frame dynamic rx buffer num: 32
+I (468) wifi:Init static rx mgmt buffer num: 5
+I (478) wifi:Init management short buffer num: 32
+I (478) wifi:Init dynamic tx buffer num: 32
+I (478) wifi:Init static rx buffer size: 1600
+I (488) wifi:Init static rx buffer num: 10
+I (488) wifi:Init dynamic rx buffer num: 32
+[0;32mI (498) wifi_init: rx ba win: 6[0m
+[0;32mI (498) wifi_init: accept mbox: 6[0m
+[0;32mI (498) wifi_init: tcpip mbox: 32[0m
+[0;32mI (508) wifi_init: udp mbox: 6[0m
+[0;32mI (508) wifi_init: tcp mbox: 6[0m
+[0;32mI (518) wifi_init: tcp tx win: 5760[0m
+[0;32mI (518) wifi_init: tcp rx win: 5760[0m
+[0;32mI (518) wifi_init: tcp mss: 1440[0m
+[0;32mI (528) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (528) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (538) phy_init: phy_version 2600,6a8ccb9,Jun  4 2024,16:49:07[0m
+I (588) wifi:mode : sta (7c:df:a1:99:97:d0)
+I (588) wifi:enable tsf
+[0;32mI (588) WIFI: wifi_init_sta finished.[0m
+I (598) wifi:new:<10,2>, old:<1,0>, ap:<255,255>, sta:<10,2>, prof:1, snd_ch_cfg:0x0
+I (598) wifi:state: init -> auth (0xb0)
+I (608) wifi:state: auth -> assoc (0x0)
+I (618) wifi:state: assoc -> run (0x10)
+I (728) wifi:connected with BrNet.cz/Veveri39, aid = 8, channel 10, 40D, bssid = e4:c3:2a:4c:ee:e4
+I (728) wifi:security: WPA2-PSK, phy: bgn, rssi: -53
+I (738) wifi:pm start, type: 1
+
+I (738) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (758) wifi:<ba-add>idx:0 (ifx:0, e4:c3:2a:4c:ee:e4), tid:0, ssn:2, winSize:64
+I (808) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (2248) esp_netif_handlers: sta ip: 192.168.0.107, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2248) WIFI: got ip:192.168.0.107[0m
+[0;32mI (2248) WIFI: connected to ap SSID:BrNet.cz/Veveri39 password:64884233[0m
+[0;32mI (2258) MQTT: Other event id:7[0m
+[0;32mI (3258) Main: Opening Non-Volatile Storage (NVS) handle... [0m
+[0;32mI (3258) Main: The value is not initialized yet!
+[0m
+[0;31mE (3258) mqtt_client: Client has not connected[0m
+[0;32mI (3258) gpio: GPIO[9]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3268) gpio: GPIO[8]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3518) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3528) Main: Ready for pairing[0m
+[0;32mI (3528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41998[0m
+[0;32mI (4028) Main: Ready for pairing[0m
+[0;32mI (4038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7269[0m
+[0;32mI (4528) Main: Ready for pairing[0m
+[0;32mI (4708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21566[0m
+[0;32mI (5028) Main: Ready for pairing[0m
+[0;32mI (5228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43417[0m
+[0;32mI (5528) Main: Ready for pairing[0m
+[0;32mI (6028) Main: Ready for pairing[0m
+[0;32mI (6148) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38633[0m
+[0;32mI (6148) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30297[0m
+[0;32mI (6528) Main: Ready for pairing[0m
+[0;32mI (6528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50691[0m
+[0;32mI (7028) Main: Ready for pairing[0m
+[0;32mI (7208) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19723[0m
+[0;32mI (7528) Main: Ready for pairing[0m
+[0;32mI (7578) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27854[0m
+[0;32mI (8028) Main: Ready for pairing[0m
+[0;32mI (8028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7059[0m
+[0;32mI (8528) Main: Ready for pairing[0m
+[0;32mI (8548) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40414[0m
+[0;32mI (9028) Main: Ready for pairing[0m
+[0;32mI (9028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34178[0m
+[0;32mI (9528) Main: Ready for pairing[0m
+[0;32mI (9828) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62130[0m
+[0;32mI (10028) Main: Ready for pairing[0m
+[0;32mI (10038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43030[0m
+[0;32mI (10528) Main: Ready for pairing[0m
+[0;32mI (10848) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18753[0m
+[0;32mI (11028) Main: Ready for pairing[0m
+[0;32mI (11058) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35245[0m
+[0;32mI (11528) Main: Ready for pairing[0m
+[0;32mI (11568) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34104[0m
+[0;32mI (12028) Main: Ready for pairing[0m
+[0;32mI (12078) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38541[0m
+[0;32mI (12528) Main: Ready for pairing[0m
+[0;32mI (12548) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53883[0m
+[0;32mI (13028) Main: Ready for pairing[0m
+[0;32mI (13028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49288[0m
+[0;32mI (13528) Main: Ready for pairing[0m
+[0;32mI (13718) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3865[0m
+[0;32mI (14028) Main: Ready for pairing[0m
+[0;32mI (14038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11787[0m
+[0;32mI (14528) Main: Ready for pairing[0m
+[0;32mI (14748) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31645[0m
+[0;32mI (15028) Main: Ready for pairing[0m
+[0;32mI (15028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37953[0m
+[0;32mI (15528) Main: Ready for pairing[0m
+[0;32mI (15578) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31545[0m
+[0;32mI (16028) Main: Ready for pairing[0m
+[0;32mI (16068) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58189[0m
+[0;32mI (16528) Main: Ready for pairing[0m
+[0;32mI (16688) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16430[0m
+[0;32mI (17028) Main: Ready for pairing[0m
+[0;32mI (17198) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22060[0m
+[0;32mI (17528) Main: Ready for pairing[0m
+[0;32mI (17708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54249[0m
+[0;32mI (18028) Main: Ready for pairing[0m
+[0;32mI (18028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61234[0m
+[0;32mI (18528) Main: Ready for pairing[0m
+[0;32mI (18838) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3099[0m
+[0;32mI (19028) Main: Ready for pairing[0m
+[0;32mI (19028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38214[0m
+[0;32mI (19528) Main: Ready for pairing[0m
+[0;32mI (19548) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15280[0m
+[0;32mI (20028) Main: Ready for pairing[0m
+[0;32mI (20028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12646[0m
+[0;32mI (20528) Main: Ready for pairing[0m
+[0;32mI (20788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45300[0m
+[0;32mI (21028) Main: Ready for pairing[0m
+[0;32mI (21028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47358[0m
+[0;32mI (21528) Main: Ready for pairing[0m
+[0;32mI (21698) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42760[0m
+[0;32mI (22028) Main: Ready for pairing[0m
+[0;32mI (22218) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59425[0m
+[0;32mI (22528) Main: Ready for pairing[0m
+[0;32mI (22568) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50167[0m
+[0;32mI (23028) Main: Ready for pairing[0m
+[0;32mI (23038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35440[0m
+[0;32mI (23528) Main: Ready for pairing[0m
+[0;32mI (23528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46439[0m
+[0;32mI (24028) Main: Ready for pairing[0m
+[0;32mI (24028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41404[0m
+[0;32mI (24528) Main: Ready for pairing[0m
+[0;32mI (24528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50647[0m
+[0;32mI (25028) Main: Ready for pairing[0m
+[0;32mI (25028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33046[0m
+[0;32mI (25528) Main: Ready for pairing[0m
+[0;32mI (25708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40932[0m
+[0;32mI (26028) Main: Ready for pairing[0m
+[0;32mI (26228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13528[0m
+[0;32mI (26528) Main: Ready for pairing[0m
+[0;32mI (26828) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17912[0m
+[0;32mI (27028) Main: Ready for pairing[0m
+[0;32mI (27238) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30477[0m
+[0;32mI (27528) Main: Ready for pairing[0m
+[0;32mI (27528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60921[0m
+[0;32mI (28028) Main: Ready for pairing[0m
+[0;32mI (28028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42154[0m
+[0;32mI (28528) Main: Ready for pairing[0m
+[0;32mI (28618) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14105[0m
+[0;32mI (29028) Main: Ready for pairing[0m
+[0;32mI (29038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20248[0m
+[0;32mI (29528) Main: Ready for pairing[0m
+[0;32mI (29528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26162[0m
+[0;32mI (30028) Main: Ready for pairing[0m
+[0;32mI (30038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43184[0m
+[0;32mI (30528) Main: Ready for pairing[0m
+[0;32mI (30748) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7308[0m
+[0;32mI (31028) Main: Ready for pairing[0m
+[0;32mI (31228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61669[0m
+[0;32mI (31528) Main: Ready for pairing[0m
+[0;32mI (31538) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16191[0m
+[0;32mI (32028) Main: Ready for pairing[0m
+[0;32mI (32248) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59736[0m
+[0;32mI (32528) Main: Ready for pairing[0m
+[0;32mI (32758) MQTT: MQTT_EVENT_PUBLISHED, msg_id=453[0m
+[0;32mI (33028) Main: Ready for pairing[0m
+[0;32mI (33028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64976[0m
+[0;32mI (33528) Main: Ready for pairing[0m
+[0;32mI (33528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25804[0m
+[0;32mI (34028) Main: Ready for pairing[0m
+[0;32mI (34038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62877[0m
+[0;32mI (34528) Main: Ready for pairing[0m
+[0;32mI (34708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64913[0m
+[0;32mI (35028) Main: Ready for pairing[0m
+[0;32mI (35028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4385[0m
+[0;32mI (35528) Main: Ready for pairing[0m
+[0;32mI (35738) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60502[0m
+[0;32mI (36028) Main: Ready for pairing[0m
+[0;32mI (36038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9709[0m
+[0;32mI (36528) Main: Ready for pairing[0m
+[0;32mI (36858) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49875[0m
+[0;32mI (37028) Main: Ready for pairing[0m
+[0;32mI (37028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25176[0m
+[0;32mI (37528) Main: Ready for pairing[0m
+[0;32mI (37888) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44116[0m
+[0;32mI (38028) Main: Ready for pairing[0m
+[0;32mI (38048) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2918[0m
+[0;32mI (38528) Main: Ready for pairing[0m
+[0;32mI (38808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2089[0m
+[0;32mI (39028) Main: Ready for pairing[0m
+[0;32mI (39078) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1728[0m
+[0;32mI (39528) Main: Ready for pairing[0m
+[0;32mI (39728) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12259[0m
+[0;32mI (40028) Main: Ready for pairing[0m
+[0;32mI (40038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7072[0m
+[0;32mI (40528) Main: Ready for pairing[0m
+[0;32mI (40748) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6469[0m
+[0;32mI (41028) Main: Ready for pairing[0m
+[0;32mI (41058) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26830[0m
+[0;32mI (41528) Main: Ready for pairing[0m
+[0;32mI (41568) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5549[0m
+[0;32mI (42028) Main: Ready for pairing[0m
+[0;32mI (42288) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57210[0m
+[0;32mI (42528) Main: Ready for pairing[0m
+[0;32mI (42698) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41679[0m
+[0;32mI (43028) Main: Ready for pairing[0m
+[0;32mI (43208) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53880[0m
+[0;32mI (43528) Main: Ready for pairing[0m
+[0;32mI (43718) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55403[0m
+[0;32mI (44028) Main: Ready for pairing[0m
+[0;32mI (44328) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55529[0m
+[0;32mI (44528) Main: Ready for pairing[0m
+[0;32mI (44538) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60155[0m
+[0;32mI (45028) Main: Ready for pairing[0m
+[0;32mI (45028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62192[0m
+[0;32mI (45528) Main: Ready for pairing[0m
+[0;32mI (45528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31810[0m
+[0;32mI (46028) Main: Ready for pairing[0m
+[0;32mI (46038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28665[0m
+[0;32mI (46528) Main: Ready for pairing[0m
+[0;32mI (46788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56557[0m
+[0;32mI (47028) Main: Ready for pairing[0m
+[0;32mI (47198) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50473[0m
+[0;32mI (47528) Main: Ready for pairing[0m
+[0;32mI (47708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=339[0m
+[0;32mI (48028) Main: Ready for pairing[0m
+[0;32mI (48228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58180[0m
+[0;32mI (48528) Main: Ready for pairing[0m
+[0;32mI (48738) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57628[0m
+[0;32mI (49028) Main: Ready for pairing[0m
+[0;32mI (49248) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27553[0m
+[0;32mI (49528) Main: Ready for pairing[0m
+[0;32mI (49558) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32230[0m
+[0;32mI (50028) Main: Ready for pairing[0m
+[0;32mI (50078) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38082[0m
+[0;32mI (50528) Main: Ready for pairing[0m
+[0;32mI (50528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64488[0m
+[0;32mI (51028) Main: Ready for pairing[0m
+[0;32mI (51038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45439[0m
+[0;32mI (51528) Main: Ready for pairing[0m
+[0;32mI (51708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41985[0m
+[0;32mI (52028) Main: Ready for pairing[0m
+[0;32mI (52238) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43600[0m
+[0;32mI (52528) Main: Ready for pairing[0m
+[0;32mI (52938) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3718[0m
+[0;32mI (53028) Main: Ready for pairing[0m
+[0;32mI (53058) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29159[0m
+[0;32mI (53528) Main: Ready for pairing[0m
+[0;32mI (53778) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15186[0m
+[0;32mI (54028) Main: Ready for pairing[0m
+[0;32mI (54268) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49212[0m
+[0;32mI (54528) Main: Ready for pairing[0m
+[0;32mI (54528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62554[0m
+[0;32mI (55028) Main: Ready for pairing[0m
+[0;32mI (55028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57380[0m
+[0;32mI (55528) Main: Ready for pairing[0m
+[0;32mI (55578) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42310[0m
+[0;32mI (56028) Main: Ready for pairing[0m
+[0;32mI (56028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61131[0m
+[0;32mI (56528) Main: Ready for pairing[0m
+[0;32mI (56758) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58256[0m
+[0;32mI (57028) Main: Ready for pairing[0m
+[0;32mI (57028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=24902[0m
+[0;32mI (57528) Main: Ready for pairing[0m
+[0;32mI (57528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9292[0m
+[0;32mI (58028) Main: Ready for pairing[0m
+[0;32mI (58198) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41581[0m
+[0;32mI (58528) Main: Ready for pairing[0m
+[0;32mI (58568) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23403[0m
+[0;32mI (59028) Main: Ready for pairing[0m
+[0;32mI (59228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15762[0m
+[0;32mI (59528) Main: Ready for pairing[0m
+[0;32mI (59698) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41044[0m
+[0;32mI (60028) Main: Ready for pairing[0m
+[0;32mI (60028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12766[0m
+[0;32mI (60528) Main: Ready for pairing[0m
+[0;32mI (60818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15407[0m
+[0;32mI (61028) Main: Ready for pairing[0m
+[0;32mI (61028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40089[0m
+[0;32mI (61528) Main: Ready for pairing[0m
+[0;32mI (61738) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34962[0m
+[0;32mI (62028) Main: Ready for pairing[0m
+[0;32mI (62358) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22230[0m
+[0;32mI (62528) Main: Ready for pairing[0m
+[0;32mI (62568) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57164[0m
+[0;32mI (63028) Main: Ready for pairing[0m
+[0;32mI (63278) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10853[0m
+[0;32mI (63528) Main: Ready for pairing[0m
+[0;32mI (63528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28395[0m
+[0;32mI (64028) Main: Ready for pairing[0m
+[0;32mI (64028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37947[0m
+[0;32mI (64528) Main: Ready for pairing[0m
+[0;32mI (64818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47256[0m
+[0;32mI (65028) Main: Ready for pairing[0m
+[0;32mI (65028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34921[0m
+[0;32mI (65528) Main: Ready for pairing[0m
+[0;32mI (65738) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3962[0m
+[0;32mI (66028) Main: Ready for pairing[0m
+[0;32mI (66028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30032[0m
+[0;32mI (66528) Main: Ready for pairing[0m
+[0;32mI (66528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35188[0m
+[0;32mI (67028) Main: Ready for pairing[0m
+[0;32mI (67028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8347[0m
+[0;32mI (67528) Main: Ready for pairing[0m
+[0;32mI (67578) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56015[0m
+[0;32mI (68028) Main: Ready for pairing[0m
+[0;32mI (68298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5241[0m
+[0;32mI (68528) Main: Ready for pairing[0m
+[0;32mI (68808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61969[0m
+[0;32mI (69028) Main: Ready for pairing[0m
+[0;32mI (69218) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13241[0m
+[0;32mI (69528) Main: Ready for pairing[0m
+[0;32mI (69828) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35212[0m
+[0;32mI (70028) Main: Ready for pairing[0m
+[0;32mI (70238) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28270[0m
+[0;32mI (70528) Main: Ready for pairing[0m
+[0;32mI (70858) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17895[0m
+[0;32mI (71028) Main: Ready for pairing[0m
+[0;32mI (71038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38235[0m
+[0;32mI (71528) Main: Ready for pairing[0m
+[0;32mI (71528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49581[0m
+[0;32mI (72028) Main: Ready for pairing[0m
+[0;32mI (72028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15955[0m
+[0;32mI (72528) Main: Ready for pairing[0m
+[0;32mI (72698) MQTT: MQTT_EVENT_PUBLISHED, msg_id=7950[0m
+[0;32mI (73028) Main: Ready for pairing[0m
+[0;32mI (73208) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32285[0m
+[0;32mI (73528) Main: Ready for pairing[0m
+[0;32mI (73718) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30251[0m
+[0;32mI (74028) Main: Ready for pairing[0m
+[0;32mI (74238) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18892[0m
+[0;32mI (74528) Main: Ready for pairing[0m
+[0;32mI (74548) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16019[0m
+[0;32mI (75028) Main: Ready for pairing[0m
+[0;32mI (75058) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63783[0m
+[0;32mI (75528) Main: Ready for pairing[0m
+[0;32mI (75538) MQTT: MQTT_EVENT_PUBLISHED, msg_id=2467[0m
+[0;32mI (76028) Main: Ready for pairing[0m
+[0;32mI (76038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37921[0m
+[0;32mI (76528) Main: Ready for pairing[0m
+[0;32mI (76808) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63199[0m
+[0;32mI (77028) Main: Ready for pairing[0m
+[0;32mI (77028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41621[0m
+[0;32mI (77528) Main: Ready for pairing[0m
+[0;32mI (77728) MQTT: MQTT_EVENT_PUBLISHED, msg_id=58115[0m
+[0;32mI (78028) Main: Ready for pairing[0m
+[0;32mI (78228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61335[0m
+[0;32mI (78528) Main: Ready for pairing[0m
+[0;32mI (78848) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62579[0m
+[0;32mI (79028) Main: Ready for pairing[0m
+[0;32mI (79028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=61354[0m
+[0;32mI (79528) Main: Ready for pairing[0m
+[0;32mI (79688) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19264[0m
+[0;32mI (80028) Main: Ready for pairing[0m
+[0;32mI (80298) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46931[0m
+[0;32mI (80528) Main: Ready for pairing[0m
+[0;32mI (80718) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43774[0m
+[0;32mI (81028) Main: Ready for pairing[0m
+[0;32mI (81028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26299[0m
+[0;32mI (81528) Main: Ready for pairing[0m
+[0;32mI (81708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=35226[0m
+[0;32mI (82028) Main: Ready for pairing[0m
+[0;32mI (82038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22828[0m
+[0;32mI (82528) Main: Ready for pairing[0m
+[0;32mI (82728) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14178[0m
+[0;32mI (83028) Main: Ready for pairing[0m
+[0;32mI (83248) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5673[0m
+[0;32mI (83528) Main: Ready for pairing[0m
+[0;32mI (83528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51969[0m
+[0;32mI (84028) Main: Ready for pairing[0m
+[0;32mI (84068) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60527[0m
+[0;32mI (84528) Main: Ready for pairing[0m
+[0;32mI (84578) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3445[0m
+[0;32mI (85028) Main: Ready for pairing[0m
+[0;32mI (85028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18743[0m
+[0;32mI (85528) Main: Ready for pairing[0m
+[0;32mI (85748) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42211[0m
+[0;32mI (86028) Main: Ready for pairing[0m
+[0;32mI (86218) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53599[0m
+[0;32mI (86528) Main: Ready for pairing[0m
+[0;32mI (86528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1431[0m
+[0;32mI (87028) Main: Ready for pairing[0m
+[0;32mI (87048) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10580[0m
+[0;32mI (87528) Main: Ready for pairing[0m
+[0;32mI (87528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19295[0m
+[0;32mI (88028) Main: Ready for pairing[0m
+[0;32mI (88028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22584[0m
+[0;32mI (88528) Main: Ready for pairing[0m
+[0;32mI (88528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38634[0m
+[0;32mI (89028) Main: Ready for pairing[0m
+[0;32mI (89038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28671[0m
+[0;32mI (89528) Main: Ready for pairing[0m
+[0;32mI (89528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30357[0m
+[0;32mI (90028) Main: Ready for pairing[0m
+[0;32mI (90318) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63997[0m
+[0;32mI (90528) Main: Ready for pairing[0m
+[0;32mI (90528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41561[0m
+[0;32mI (91028) Main: Ready for pairing[0m
+[0;32mI (91228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5480[0m
+[0;32mI (91528) Main: Ready for pairing[0m
+[0;32mI (91528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11139[0m
+[0;32mI (92028) Main: Ready for pairing[0m
+[0;32mI (92028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8771[0m
+[0;32mI (92528) Main: Ready for pairing[0m
+[0;32mI (92538) MQTT: MQTT_EVENT_PUBLISHED, msg_id=25646[0m
+[0;32mI (93028) Main: Ready for pairing[0m
+[0;32mI (93038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=20084[0m
+[0;32mI (93528) Main: Ready for pairing[0m
+[0;32mI (93528) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9950[0m
+[0;32mI (94028) Main: Ready for pairing[0m
+[0;32mI (94198) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50001[0m
+[0;32mI (94528) Main: Ready for pairing[0m
+[0;32mI (94818) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21853[0m
+[0;32mI (95028) Main: Ready for pairing[0m
+[0;32mI (95228) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53594[0m
+[0;32mI (95528) Main: Ready for pairing[0m
+[0;32mI (95738) MQTT: MQTT_EVENT_PUBLISHED, msg_id=33415[0m
+[0;32mI (96028) Main: Ready for pairing[0m
+[0;32mI (96038) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43873[0m
+[0;32mI (96528) Main: Ready for pairing[0m
+[0;32mI (96548) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44369[0m
+[0;32mI (97028) Main: Ready for pairing[0m
+[0;32mI (97028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=59065[0m
+[0;32mI (97528) Main: Ready for pairing[0m
+[0;32mI (97788) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65415[0m
+[0;32mI (98028) Main: Ready for pairing[0m
+[0;32mI (98028) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63806[0m
+[0;32mI (98528) Main: Ready for pairing[0m
+[0;32mI (98708) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22013[0m
+[0;32mI (99028) Main: Ready for pairing[0m
+[0;32mI (99218) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4644[0m
+[0;32mI (99528) Main: Ready for pairing[0m
+[0;32mI (99738) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14883[0m
+[0;32mI (100028) Main: Ready for pairing[0m
+[0;32mI (100248) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31246[0m
+
+assert failed: xQueueSemaphoreTake queue.c:1713 (pxQueue->uxItemSize == 0)
+
+
+Backtrace: 0x40025602:0x3ffd6040 0x4002d585:0x3ffd6060 0x40035259:0x3ffd6080 0x4002e11a:0x3ffd61a0 0x4002e2aa:0x3ffd61e0 0x400267f5:0x3ffd6200 0x400268fd:0x3ffd6230 0x400872b7:0x3ffd6250 0x400882b5:0x3ffd6270 0x401049da:0x3ffd6290 0x40087bed:0x3ffd62b0 0x400882b5:0x3ffd62d0 0x4001a193:0x3ffd62f0 0x4001a6c5:0x3ffd6310 0x40001b0e:0x3ffd6330 0x40001b94:0x3ffd6350 0x40103d69:0x3ffd6380 0x4010b653:0x3ffd63b0 0x4010b031:0x3ffd63d0 0x40104135:0x3ffd66f0 0x4011a139:0x3ffd6720 0x40033bbd:0x3ffd6750 0x40088e0c:0x3ffd67a0 0x4002e3e5:0x3ffd67c0
+
+
+
+
+ELF file SHA256: 8df29810d
+
+Rebooting...
+ESP-ROM:esp32s2-rc4-20191025
+Build:Oct 25 2019
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x400255ea
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3ffe5110,len:0x186c
+load:0x4004a000,len:0x4
+load:0x4004a004,len:0xb08
+load:0x4004e000,len:0x3228
+entry 0x4004a1cc
+[0;32mI (26) boot: ESP-IDF v5.3 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Aug  1 2024 15:21:10[0m
+[0;32mI (26) boot: chip revision: v0.0[0m
+[0;32mI (29) boot.esp32s2: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32s2: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s2: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (53) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3f000020 size=26d4ch (159052) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=00036d74 vaddr=3ff9e040 size=00004h (     4) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=00036d80 vaddr=3ffcaae0 size=0392ch ( 14636) load[0m
+[0;32mI (136) esp_image: segment 3: paddr=0003a6b4 vaddr=40024000 size=05964h ( 22884) load[0m
+[0;32mI (147) esp_image: segment 4: paddr=00040020 vaddr=40080020 size=9a194h (631188) map[0m
+[0;32mI (275) esp_image: segment 5: paddr=000da1bc vaddr=40029964 size=11178h ( 70008) load[0m
+[0;32mI (293) esp_image: segment 6: paddr=000eb33c vaddr=40070000 size=00040h (    64) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (316) cache: Instruction cache 	: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (316) cache: Data cache 		: size 8KB, 4Ways, cache line size 32Byte[0m
+[0;32mI (322) cpu_start: Unicore app[0m
+[0;32mI (337) cpu_start: Pro cpu start user code[0m
+[0;32mI (337) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (337) app_init: Application information:[0m
+[0;32mI (342) app_init: Project name:     iot_sensor[0m
+[0;32mI (347) app_init: App version:      1[0m
+[0;32mI (352) app_init: Compile time:     Aug  1 2024 15:21:04[0m
+[0;32mI (358) app_init: ELF file SHA256:  8df29810d...[0m
+[0;32mI (363) app_init: ESP-IDF:          v5.3[0m
+[0;32mI (367) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (372) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (377) efuse_init: Chip rev:         v0.0[0m
+[0;32mI (382) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (389) heap_init: At 3FFD2D20 len 000292E0 (164 KiB): RAM[0m
+[0;32mI (395) heap_init: At 3FFFC000 len 00003A10 (14 KiB): RAM[0m
+[0;32mI (401) heap_init: At 3FF9E044 len 00001FA4 (7 KiB): RTCRAM[0m
+[0;32mI (409) spi_flash: detected chip: generic[0m
+[0;32mI (412) spi_flash: flash io: dio[0m
+[0;33mW (416) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (434) main_task: Started on CPU0[0m
+[0;32mI (434) main_task: Calling app_main()[0m
+[0;32mI (444) Main: ESP_WIFI_MODE_STA[0m
+I (454) wifi:wifi driver task: 3ffdb7bc, prio:23, stack:6656, core=0
+I (454) wifi:wifi firmware version: 0caa81945
+I (454) wifi:wifi certification version: v7.0
+I (454) wifi:config NVS flash: enabled
+I (454) wifi:config nano formating: disabled
+I (464) wifi:Init data frame dynamic rx buffer num: 32
+I (464) wifi:Init static rx mgmt buffer num: 5
+I (474) wifi:Init management short buffer num: 32
+I (474) wifi:Init dynamic tx buffer num: 32
+I (474) wifi:Init static rx buffer size: 1600
+I (484) wifi:Init static rx buffer num: 10
+I (484) wifi:Init dynamic rx buffer num: 32
+[0;32mI (494) wifi_init: rx ba win: 6[0m
+[0;32mI (494) wifi_init: accept mbox: 6[0m
+[0;32mI (494) wifi_init: tcpip mbox: 32[0m
+[0;32mI (504) wifi_init: udp mbox: 6[0m
+[0;32mI (504) wifi_init: tcp mbox: 6[0m
+[0;32mI (514) wifi_init: tcp tx win: 5760[0m
+[0;32mI (514) wifi_init: tcp rx win: 5760[0m
+[0;32mI (514) wifi_init: tcp mss: 1440[0m
+[0;32mI (524) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (524) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (534) phy_init: phy_version 2600,6a8ccb9,Jun  4 2024,16:49:07[0m
+I (574) wifi:mode : sta (7c:df:a1:99:97:d0)
+I (574) wifi:enable tsf
+[0;32mI (584) WIFI: wifi_init_sta finished.[0m
+I (594) wifi:new:<10,2>, old:<1,0>, ap:<255,255>, sta:<10,2>, prof:1, snd_ch_cfg:0x0
+I (594) wifi:state: init -> auth (0xb0)
+I (594) wifi:state: auth -> assoc (0x0)
+I (604) wifi:state: assoc -> run (0x10)
+I (704) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:1(originator)
+I (704) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)
+I (714) wifi:connected with BrNet.cz/Veveri39, aid = 8, channel 10, 40D, bssid = e4:c3:2a:4c:ee:e4
+I (714) wifi:security: WPA2-PSK, phy: bgn, rssi: -48
+I (724) wifi:pm start, type: 1
+
+I (724) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (744) wifi:<ba-add>idx:0 (ifx:0, e4:c3:2a:4c:ee:e4), tid:0, ssn:3, winSize:64
+I (764) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (2234) esp_netif_handlers: sta ip: 192.168.0.107, mask: 255.255.255.0, gw: 192.168.0.1[0m
+[0;32mI (2234) WIFI: got ip:192.168.0.107[0m
+[0;32mI (2234) WIFI: connected to ap SSID:BrNet.cz/Veveri39 password:64884233[0m
+[0;32mI (2244) MQTT: Other event id:7[0m
+[0;32mI (2424) MQTT: MQTT_EVENT_CONNECTED[0m
+[0;32mI (3244) Main: Opening Non-Volatile Storage (NVS) handle... [0m
+[0;32mI (3244) Main: The value is not initialized yet!
+[0m
+[0;32mI (3244) gpio: GPIO[9]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3254) gpio: GPIO[8]| InputEn: 1| OutputEn: 1| OpenDrain: 1| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (3264) Main: Ready for pairing[0m
+[0;32mI (3434) MQTT: MQTT_EVENT_SUBSCRIBED, msg_id=29591[0m
+[0;32mI (3634) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34753[0m
+[0;32mI (3764) Main: Ready for pairing[0m
+[0;32mI (3944) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6720[0m
+[0;32mI (4264) Main: Ready for pairing[0m
+[0;32mI (4444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=40241[0m
+[0;32mI (4764) Main: Ready for pairing[0m
+[0;32mI (4974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37092[0m
+[0;32mI (5264) Main: Ready for pairing[0m
+[0;32mI (5444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39701[0m
+[0;32mI (5764) Main: Ready for pairing[0m
+[0;32mI (5764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13355[0m
+[0;32mI (6264) Main: Ready for pairing[0m
+[0;32mI (6434) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22236[0m
+[0;32mI (6764) Main: Ready for pairing[0m
+[0;32mI (6814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6028[0m
+[0;32mI (7264) Main: Ready for pairing[0m
+[0;32mI (7424) MQTT: MQTT_EVENT_PUBLISHED, msg_id=21268[0m
+[0;32mI (7764) Main: Ready for pairing[0m
+[0;32mI (7764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47322[0m
+[0;32mI (8264) Main: Ready for pairing[0m
+[0;32mI (8484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31639[0m
+[0;32mI (8764) Main: Ready for pairing[0m
+[0;32mI (8964) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15181[0m
+[0;32mI (9264) Main: Ready for pairing[0m
+[0;32mI (9474) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56334[0m
+[0;32mI (9764) Main: Ready for pairing[0m
+[0;32mI (9984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=843[0m
+[0;32mI (10264) Main: Ready for pairing[0m
+[0;32mI (10294) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43082[0m
+[0;32mI (10764) Main: Ready for pairing[0m
+[0;32mI (10814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9084[0m
+[0;32mI (11264) Main: Ready for pairing[0m
+[0;32mI (11424) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39271[0m
+[0;32mI (11764) Main: Ready for pairing[0m
+[0;32mI (11764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45380[0m
+[0;32mI (12264) Main: Ready for pairing[0m
+[0;32mI (12444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36312[0m
+[0;32mI (12764) Main: Ready for pairing[0m
+[0;32mI (12954) MQTT: MQTT_EVENT_PUBLISHED, msg_id=55785[0m
+[0;32mI (13264) Main: Ready for pairing[0m
+[0;32mI (13264) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42976[0m
+[0;32mI (13764) Main: Ready for pairing[0m
+[0;32mI (13764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62729[0m
+[0;32mI (14264) Main: Ready for pairing[0m
+[0;32mI (14264) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65277[0m
+[0;32mI (14764) Main: Ready for pairing[0m
+[0;32mI (14804) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22799[0m
+[0;32mI (15264) Main: Ready for pairing[0m
+[0;32mI (15274) MQTT: MQTT_EVENT_PUBLISHED, msg_id=57472[0m
+[0;32mI (15764) Main: Ready for pairing[0m
+[0;32mI (15924) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44221[0m
+[0;32mI (16264) Main: Ready for pairing[0m
+[0;32mI (16434) MQTT: MQTT_EVENT_PUBLISHED, msg_id=31556[0m
+[0;32mI (16764) Main: Ready for pairing[0m
+[0;32mI (17054) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29333[0m
+[0;32mI (17264) Main: Ready for pairing[0m
+[0;32mI (17354) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43715[0m
+[0;32mI (17764) Main: Ready for pairing[0m
+[0;32mI (17974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14823[0m
+[0;32mI (18264) Main: Ready for pairing[0m
+[0;32mI (18264) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60006[0m
+[0;32mI (18764) Main: Ready for pairing[0m
+[0;32mI (18794) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26534[0m
+[0;32mI (19264) Main: Ready for pairing[0m
+[0;32mI (19314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13053[0m
+[0;32mI (19764) Main: Ready for pairing[0m
+[0;32mI (19924) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17978[0m
+[0;32mI (20264) Main: Ready for pairing[0m
+[0;32mI (20534) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60491[0m
+[0;32mI (20764) Main: Ready for pairing[0m
+[0;32mI (20944) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64000[0m
+[0;32mI (21264) Main: Ready for pairing[0m
+[0;32mI (21454) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51424[0m
+[0;32mI (21764) Main: Ready for pairing[0m
+[0;32mI (21964) MQTT: MQTT_EVENT_PUBLISHED, msg_id=44926[0m
+[0;32mI (22264) Main: Ready for pairing[0m
+[0;32mI (22264) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54003[0m
+[0;32mI (22764) Main: Ready for pairing[0m
+[0;32mI (22784) MQTT: MQTT_EVENT_PUBLISHED, msg_id=13074[0m
+[0;32mI (23264) Main: Ready for pairing[0m
+[0;32mI (23304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52143[0m
+[0;32mI (23764) Main: Ready for pairing[0m
+[0;32mI (23774) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30378[0m
+[0;32mI (24264) Main: Ready for pairing[0m
+[0;32mI (24424) MQTT: MQTT_EVENT_PUBLISHED, msg_id=19168[0m
+[0;32mI (24764) Main: Ready for pairing[0m
+[0;32mI (25044) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32678[0m
+[0;32mI (25264) Main: Ready for pairing[0m
+[0;32mI (25454) MQTT: MQTT_EVENT_PUBLISHED, msg_id=27065[0m
+[0;32mI (25764) Main: Ready for pairing[0m
+[0;32mI (25964) MQTT: MQTT_EVENT_PUBLISHED, msg_id=60044[0m
+[0;32mI (26264) Main: Ready for pairing[0m
+[0;32mI (26474) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4618[0m
+[0;32mI (26764) Main: Ready for pairing[0m
+[0;32mI (26784) MQTT: MQTT_EVENT_PUBLISHED, msg_id=16264[0m
+[0;32mI (27264) Main: Ready for pairing[0m
+[0;32mI (27304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=36121[0m
+[0;32mI (27764) Main: Ready for pairing[0m
+[0;32mI (27914) MQTT: MQTT_EVENT_PUBLISHED, msg_id=14664[0m
+[0;32mI (28264) Main: Ready for pairing[0m
+[0;32mI (28434) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47383[0m
+[0;32mI (28764) Main: Ready for pairing[0m
+[0;32mI (28774) MQTT: MQTT_EVENT_PUBLISHED, msg_id=41877[0m
+[0;32mI (29264) Main: Ready for pairing[0m
+[0;32mI (29444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63951[0m
+[0;32mI (29764) Main: Ready for pairing[0m
+[0;32mI (29954) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26176[0m
+[0;32mI (30264) Main: Ready for pairing[0m
+[0;32mI (30574) MQTT: MQTT_EVENT_PUBLISHED, msg_id=673[0m
+[0;32mI (30764) Main: Ready for pairing[0m
+[0;32mI (30794) MQTT: MQTT_EVENT_PUBLISHED, msg_id=38955[0m
+[0;32mI (31264) Main: Ready for pairing[0m
+[0;32mI (31494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3127[0m
+[0;32mI (31764) Main: Ready for pairing[0m
+[0;32mI (31824) MQTT: MQTT_EVENT_PUBLISHED, msg_id=47052[0m
+[0;32mI (32264) Main: Ready for pairing[0m
+[0;32mI (32444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=5999[0m
+[0;32mI (32764) Main: Ready for pairing[0m
+[0;32mI (32954) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3675[0m
+[0;32mI (33264) Main: Ready for pairing[0m
+[0;32mI (33474) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53357[0m
+[0;32mI (33764) Main: Ready for pairing[0m
+[0;32mI (33954) MQTT: MQTT_EVENT_PUBLISHED, msg_id=9186[0m
+[0;32mI (34264) Main: Ready for pairing[0m
+[0;32mI (34264) MQTT: MQTT_EVENT_PUBLISHED, msg_id=8759[0m
+[0;32mI (34764) Main: Ready for pairing[0m
+[0;32mI (35074) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49954[0m
+[0;32mI (35264) Main: Ready for pairing[0m
+[0;32mI (35264) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12107[0m
+[0;32mI (35764) Main: Ready for pairing[0m
+[0;32mI (35794) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23605[0m
+[0;32mI (36264) Main: Ready for pairing[0m
+[0;32mI (36304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28375[0m
+[0;32mI (36764) Main: Ready for pairing[0m
+[0;32mI (36964) MQTT: MQTT_EVENT_PUBLISHED, msg_id=11396[0m
+[0;32mI (37264) Main: Ready for pairing[0m
+[0;32mI (37474) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49503[0m
+[0;32mI (37764) Main: Ready for pairing[0m
+[0;32mI (37784) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3979[0m
+[0;32mI (38264) Main: Ready for pairing[0m
+[0;32mI (38454) MQTT: MQTT_EVENT_PUBLISHED, msg_id=10714[0m
+[0;32mI (38764) Main: Ready for pairing[0m
+[0;32mI (38764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=3282[0m
+[0;32mI (39264) Main: Ready for pairing[0m
+[0;32mI (39484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=65079[0m
+[0;32mI (39764) Main: Ready for pairing[0m
+[0;32mI (39994) MQTT: MQTT_EVENT_PUBLISHED, msg_id=50709[0m
+[0;32mI (40264) Main: Ready for pairing[0m
+[0;32mI (40304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=29540[0m
+[0;32mI (40764) Main: Ready for pairing[0m
+[0;32mI (40814) MQTT: MQTT_EVENT_PUBLISHED, msg_id=37220[0m
+[0;32mI (41264) Main: Ready for pairing[0m
+[0;32mI (41524) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51899[0m
+[0;32mI (41764) Main: Ready for pairing[0m
+[0;32mI (41794) MQTT: MQTT_EVENT_PUBLISHED, msg_id=51694[0m
+[0;32mI (42264) Main: Ready for pairing[0m
+[0;32mI (42314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=12047[0m
+[0;32mI (42764) Main: Ready for pairing[0m
+[0;32mI (42954) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49267[0m
+[0;32mI (43264) Main: Ready for pairing[0m
+[0;32mI (43274) MQTT: MQTT_EVENT_PUBLISHED, msg_id=39401[0m
+[0;32mI (43764) Main: Ready for pairing[0m
+[0;32mI (43984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63054[0m
+[0;32mI (44264) Main: Ready for pairing[0m
+[0;32mI (44494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=34819[0m
+[0;32mI (44764) Main: Ready for pairing[0m
+[0;32mI (44764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=54229[0m
+[0;32mI (45264) Main: Ready for pairing[0m
+[0;32mI (45314) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17217[0m
+[0;32mI (45764) Main: Ready for pairing[0m
+[0;32mI (45924) MQTT: MQTT_EVENT_PUBLISHED, msg_id=1579[0m
+[0;32mI (46264) Main: Ready for pairing[0m
+[0;32mI (46444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=53082[0m
+[0;32mI (46764) Main: Ready for pairing[0m
+[0;32mI (46954) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56017[0m
+[0;32mI (47264) Main: Ready for pairing[0m
+[0;32mI (47464) MQTT: MQTT_EVENT_PUBLISHED, msg_id=63479[0m
+[0;32mI (47764) Main: Ready for pairing[0m
+[0;32mI (47984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=49680[0m
+[0;32mI (48264) Main: Ready for pairing[0m
+[0;32mI (48494) MQTT: MQTT_EVENT_PUBLISHED, msg_id=6329[0m
+[0;32mI (48764) Main: Ready for pairing[0m
+[0;32mI (48794) MQTT: MQTT_EVENT_PUBLISHED, msg_id=30548[0m
+[0;32mI (49264) Main: Ready for pairing[0m
+[0;32mI (49304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=45324[0m
+[0;32mI (49764) Main: Ready for pairing[0m
+[0;32mI (49764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=62202[0m
+[0;32mI (50264) Main: Ready for pairing[0m
+[0;32mI (50434) MQTT: MQTT_EVENT_PUBLISHED, msg_id=46652[0m
+[0;32mI (50764) Main: Ready for pairing[0m
+[0;32mI (50944) MQTT: MQTT_EVENT_PUBLISHED, msg_id=22766[0m
+[0;32mI (51264) Main: Ready for pairing[0m
+[0;32mI (51464) MQTT: MQTT_EVENT_PUBLISHED, msg_id=26663[0m
+[0;32mI (51764) Main: Ready for pairing[0m
+[0;32mI (51974) MQTT: MQTT_EVENT_PUBLISHED, msg_id=52041[0m
+[0;32mI (52264) Main: Ready for pairing[0m
+[0;32mI (52484) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48568[0m
+[0;32mI (52764) Main: Ready for pairing[0m
+[0;32mI (52804) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48639[0m
+[0;32mI (53264) Main: Ready for pairing[0m
+[0;32mI (53304) MQTT: MQTT_EVENT_PUBLISHED, msg_id=42234[0m
+[0;32mI (53764) Main: Ready for pairing[0m
+[0;32mI (53774) MQTT: MQTT_EVENT_PUBLISHED, msg_id=4345[0m
+[0;32mI (54264) Main: Ready for pairing[0m
+[0;32mI (54444) MQTT: MQTT_EVENT_PUBLISHED, msg_id=18470[0m
+[0;32mI (54764) Main: Ready for pairing[0m
+[0;32mI (54764) MQTT: MQTT_EVENT_PUBLISHED, msg_id=64919[0m
+[0;32mI (55264) Main: Ready for pairing[0m
+[0;32mI (55284) MQTT: MQTT_EVENT_PUBLISHED, msg_id=23700[0m
+[0;32mI (55764) Main: Ready for pairing[0m
+[0;32mI (55984) MQTT: MQTT_EVENT_PUBLISHED, msg_id=32920[0m
+[0;32mI (56264) Main: Ready for pairing[0m
+[0;32mI (56574) MQTT: MQTT_EVENT_PUBLISHED, msg_id=43871[0m
+[0;32mI (56764) Main: Ready for pairing[0m
+[0;32mI (56784) MQTT: MQTT_EVENT_PUBLISHED, msg_id=28653[0m
+[0;32mI (57264) Main: Ready for pairing[0m
+[0;32mI (57424) MQTT: MQTT_EVENT_PUBLISHED, msg_id=15122[0m
+[0;32mI (57524) MQTT: MQTT_EVENT_DATA[0m
+[0;32mI (57524) MQTT: Creating scene[0m
+[0;32mI (57524) MQTT: Opening Non-Volatile Storage (NVS) handle... [0m
+[0;32mI (57524) MQTT: Committing updates in NVS ... [0m
+[0;32mI (57544) MQTT: MQTT_EVENT_PUBLISHED, msg_id=56417[0m
+[0;32mI (57774) Main: Hum: 47.0 Tmp: 29.0
+[0m
+[0;32mI (57774) Main: Sending data from task DHT22[0m
+[0;32mI (57774) Main: Publishing to mqtt.[0m
+[0;32mI (57784) Main: Publishing to mqtt.[0m
+[0;32mI (57834) MQTT: MQTT_EVENT_PUBLISHED, msg_id=48197[0m
+[0;32mI (57844) MQTT: MQTT_EVENT_PUBLISHED, msg_id=17326[0m
+[0;32mI (62784) Main: Going to sleep[0m

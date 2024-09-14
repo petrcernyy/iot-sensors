@@ -7,6 +7,11 @@
 
     <script src="/socket.io/socket.io.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
     <style>
         body, html {
             font-family: Arial, sans-serif;
@@ -366,6 +371,21 @@
             background-color: #3a0712;
         }
 
+        .graph-content {
+            display: none;
+            width: 70%;
+            margin-left: 5%;
+            margin-top: 5%;
+            margin-bottom: 10%;
+        }
+
+        .graph-container {
+            border: 2px solid black;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 90%;
@@ -504,6 +524,41 @@
                 width: 35px; 
                 height: 35px;
             }
+            .settings-content {
+                display: none;
+                text-align: center;
+            }
+
+            .settings-container {
+                transform: translate(0, 0);
+            }
+
+            .graph-content {
+                display: none;
+                width: 90%;
+                height: 90%;
+                margin-left: 5%;
+                margin-top: 5%;
+                margin-bottom: 10%;
+            }
+
+            .graph-container {
+                border: 2px solid black;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .graph-heigh {
+                transform: rotate(90deg); /* Rotate the graph */
+            }
+
+            canvas {
+                width: fit-content;
+            }
         }
     </style>
 </head>
@@ -518,8 +573,12 @@
                 <img src="./settings.svg" alt="Settings icon" class="option-icon">
                 <span class="option-text">Settings</span>
             </button>
+            <button class="option" onclick="showGraph()">
+                <img src="./graph.svg" alt="Graph icon" class="option-icon">
+                <span class="option-text">Graph</span>
+            </button>
         </div>
-        <div class="content">
+        <div class="content" id="mainContent">
             <div class="top-row">
                 <div class="main-window">
                     <div class="picture-container">
@@ -586,7 +645,7 @@
                 </div>
             </div>
         </div>
-        <div class="settings-content" style="display: none;">
+        <div class="settings-content" id="settingsContent">
             <div class="settings-container">
                 <h3>Settings</h3>
                 <input type="text" id="user-name" placeholder="Enter your name">
@@ -609,11 +668,335 @@
                 </div>
             </div>
         </div>
+        <div class="graph-content" id="graphContent">
+            <div class="graph-container">
+                <canvas class="graph-heigh" id="TempChart"></canvas>
+                <canvas class="graph-heigh" id="HumChart" style="display: none;"></canvas>
+            </div>
+            <button onclick="clearGraph()">Clear</button>
+            <button onclick="resetZoom()">Reset</button>
+            <button onclick="changeGraph()">Change graph</button>
+        </div>
     </div>
 </body>
 <script>
 
     updateDate();
+
+    let Tempctx = document.getElementById('TempChart').getContext('2d');
+    let Humctx = document.getElementById('HumChart').getContext('2d');
+
+    let xyValues = [];                              /*!< Empty variable for storing datasets to display in graph */
+
+    let TempChart = new Chart(Tempctx, {                    // Create new graph using chartjs 
+        type: "line",                               // Specify line graph
+        data: {
+            datasets: []                            // No data yet 
+        },
+        options: {
+            responsive: true,                       // Resizes the graph automatically when new data arrive 
+            maintainAspectRatio: true,              // Maintains constant scale width:height 
+            animation: {                            // Animation for new data when they appear 
+                duration: 1000,
+                easing: 'easeOutBounce',
+            },
+            scales: {
+                x: {
+                    type: 'time',                   // X axis is displayed in time format 
+                    time: {
+                        unit: 'second',             // Default unit is second 
+                        displayFormats: {
+                            second: 'HH:mm:ss'      // Format of each tick in axis displayed 
+                        }
+                    },
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Time [HH:MM:SS]',    // Text of label 
+                        font: {                     // Font size and weight of text 
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    ticks: {                        
+                        autoSkip: true,             // If true, automatically calculates how many labels can be shown and hides labels accordingly 
+                        maxTicksLimit: 10           // Maximum number of ticks and gridlines to show 
+                    },
+                },
+                y: {
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Temperature [°C]',   // Text of label 
+                        font: {                     // Font size and weight of text
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                zoom: {                             // Allow zooming in graph 
+                    zoom: {                         // Allow zooming with mouse wheel 
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true
+                        },
+                        mode: 'xy',                 // Allow moving in both directions with mouse wheel 
+                        speed: 0.1
+                    },
+                    pan: {                          // Allow zooming with mouse click 
+                        enabled: true,
+                        mode: 'xy',                 // Allow moving in both directions with mouse click 
+                        speed: 0.1
+                    }
+                },
+                legend: {
+                    display: true,                  // Display legend 
+                    position: 'bottom',             // Position of legend is below the graph
+                    labels: {
+                        font: {
+                            weight: 'bold'          // Make legends label font
+                        },
+                        usePointStyle: true         // Display the style of point in graph next to legend label
+                    }
+                }
+            }
+        }
+    });
+
+    let HumChart = new Chart(Humctx, {                    // Create new graph using chartjs 
+        type: "line",                               // Specify line graph
+        data: {
+            datasets: []                            // No data yet 
+        },
+        options: {
+            responsive: true,                       // Resizes the graph automatically when new data arrive 
+            maintainAspectRatio: true,              // Maintains constant scale width:height 
+            animation: {                            // Animation for new data when they appear 
+                duration: 1000,
+                easing: 'easeOutBounce',
+            },
+            scales: {
+                x: {
+                    type: 'time',                   // X axis is displayed in time format 
+                    time: {
+                        unit: 'second',             // Default unit is second 
+                        displayFormats: {
+                            second: 'HH:mm:ss'      // Format of each tick in axis displayed 
+                        }
+                    },
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Time [HH:MM:SS]',    // Text of label 
+                        font: {                     // Font size and weight of text 
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    ticks: {                        
+                        autoSkip: true,             // If true, automatically calculates how many labels can be shown and hides labels accordingly 
+                        maxTicksLimit: 10           // Maximum number of ticks and gridlines to show 
+                    },
+                },
+                y: {
+                    title: {
+                        display: true,              // Display label of axis 
+                        text: 'Humidity [%]',   // Text of label 
+                        font: {                     // Font size and weight of text
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            plugins: {
+                zoom: {                             // Allow zooming in graph 
+                    zoom: {                         // Allow zooming with mouse wheel 
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true
+                        },
+                        mode: 'xy',                 // Allow moving in both directions with mouse wheel 
+                        speed: 0.1
+                    },
+                    pan: {                          // Allow zooming with mouse click 
+                        enabled: true,
+                        mode: 'xy',                 // Allow moving in both directions with mouse click 
+                        speed: 0.1
+                    }
+                },
+                legend: {
+                    display: true,                  // Display legend 
+                    position: 'bottom',             // Position of legend is below the graph
+                    labels: {
+                        font: {
+                            weight: 'bold'          // Make legends label font
+                        },
+                        usePointStyle: true         // Display the style of point in graph next to legend label
+                    }
+                }
+            }
+        }
+    });
+
+    function updateGraph(name, temperature, humidity) {
+        let datasetFound = false;
+        let tempDataset = TempChart.data.datasets;
+        let humDataset = HumChart.data.datasets;
+
+        // Iterate through each dataset in graph and check if passed color is created, if yes then update this dataset
+        // if not then create new dataset.
+        for (let dataset of tempDataset) {
+            if (dataset.label === name) {
+                dataset.data.push({
+                    x: new Date(),
+                    y: temperature
+                });
+                datasetFound = true;
+                break;
+            }
+        }
+
+        for (let dataset of humDataset) {
+            if (dataset.label === name) {
+                dataset.data.push({
+                    x: new Date(),
+                    y: humidity
+                });
+                datasetFound = true;
+                break;
+            }
+        }
+
+        if (!datasetFound) {
+            let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+            tempDataset.push({                              // Create new dataset
+                label: name, 
+                borderColor: color,
+                backgroundColor: 'rgba(0,0,0,0)',
+                pointRadius: 10,
+                pointStyle: 'crossRot',
+                pointBackgroundColor: color,
+                data: [{
+                    x: new Date(),
+                    y: temperature
+                }],
+                fill: false,
+                showLine: true
+            });
+
+            humDataset.push({                              // Create new dataset
+                label: name, 
+                borderColor: color,
+                backgroundColor: 'rgba(0,0,0,0)',
+                pointRadius: 10,
+                pointStyle: 'crossRot',
+                pointBackgroundColor: color,
+                data: [{
+                    x: new Date(),
+                    y: humidity
+                }],
+                fill: false,
+                showLine: true
+            });
+        }
+
+
+        TempChart.update();
+        HumChart.update();
+    }
+
+    function initGraph(name, temperature, temp_time, humidity, hum_time)
+    {
+        let tempDataset = TempChart.data.datasets;
+        let humDataset = HumChart.data.datasets;
+
+        let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        tempDataset.push({                              // Create new dataset
+            label: name, 
+            borderColor: color,
+            backgroundColor: 'rgba(0,0,0,0)',
+            pointRadius: 10,
+            pointStyle: 'crossRot',
+            pointBackgroundColor: color,
+            data: [{
+                x: temp_time[0],
+                y: temperature[0]
+            }],
+            fill: false,
+            showLine: true
+        });
+
+        for (let dataset of tempDataset) {
+            if (dataset.label === name) {
+                for (let i = 1; i < temperature.length; i++) {
+                    dataset.data.push({
+                        x: temp_time[i],
+                        y: temperature[i]
+                    });
+                }
+            }
+        }
+
+        let colorhum = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        humDataset.push({                              // Create new dataset
+            label: name, 
+            borderColor: colorhum,
+            backgroundColor: 'rgba(0,0,0,0)',
+            pointRadius: 10,
+            pointStyle: 'crossRot',
+            pointBackgroundColor: color,
+            data: [{
+                x: hum_time[0],
+                y: humidity[0]
+            }],
+            fill: false,
+            showLine: true
+        });
+
+        for (let dataset of humDataset) {
+            if (dataset.label === name) {
+                for (let i = 1; i < humidity.length; i++) {
+                    dataset.data.push({
+                        x: hum_time[i],
+                        y: humidity[i]
+                    });
+                }
+            }
+        }
+
+        TempChart.update();
+        HumChart.update();
+
+    }
+
+
+    function resetZoom()
+    {
+        chart.resetZoom();
+    }
+
+    function clearGraph() {
+        chart.data.datasets = []; 
+        chart.update();
+    }
+
+    function changeGraph() {
+        if (document.getElementById('TempChart').style.display == 'none') {
+            document.getElementById('TempChart').style.display = 'block'
+        } else {
+            document.getElementById('TempChart').style.display = 'none'
+        }
+        if (document.getElementById('HumChart').style.display == 'none') {
+            document.getElementById('HumChart').style.display = 'block'
+        } else {
+            document.getElementById('HumChart').style.display = 'none'
+        }
+    }
+
 
     const socket = io();
 
@@ -639,14 +1022,13 @@
         socket.emit('data/getDataInit');
     };
 
-    socket.on('data/ready', function() {
-        socket.emit('data/getData')
-    })
-
     socket.on('data/returnData', function(scenesNew) {
         scenes = scenesNew;
-        updateTemperature(scenes[activeSceneNumber].temperature);
-        updateHumidity(scenes[activeSceneNumber].humidity);
+        for (let i = 0; i < scenesNew.length; i++) {
+            updateGraph(scenes[i].name, scenes[i].temperature.slice(-1), scenes[i].humidity.slice(-1));
+        }
+        updateTemperature(scenes[activeSceneNumber].temperature.slice(-1));
+        updateHumidity(scenes[activeSceneNumber].humidity.slice(-1));
     })
 
     socket.on('/ready', function() {
@@ -681,6 +1063,7 @@
                 document.getElementById('newSceneContent').style.display = 'none';
 
                 scenesNumber = scenesNumber + 1;
+                initGraph(scenesNew[i].name, scenesNew[i].temperature, scenesNew[i].timestampsTemp, scenesNew[i].humidity, scenesNew[i].timestampsHum);
             }
             scenes = scenesNew;
         }
@@ -705,15 +1088,21 @@
     }
 
     function showSettings() {
-        document.querySelector('.content').classList.add('hidden');
-        document.querySelector('.settings-content').style.display = 'block';
-        highlightMenuOption('settings');
+        document.getElementById('mainContent').classList.add('hidden');
+        document.getElementById('settingsContent').style.display = 'block';
+        document.getElementById('graphContent').style.display = 'none';
     }
 
     function showDashboard() {
-        document.querySelector('.content').classList.remove('hidden');
+        document.getElementById('mainContent').classList.remove('hidden');
+        document.getElementById('settingsContent').style.display = 'none';
+        document.getElementById('graphContent').style.display = 'none';
+    }
+
+    function showGraph() {
+        document.getElementById('mainContent').classList.add('hidden');
         document.querySelector('.settings-content').style.display = 'none';
-        highlightMenuOption('dashboard');
+        document.querySelector('.graph-content').style.display = 'block';
     }
 
     function saveName() {
@@ -736,6 +1125,25 @@
         document.getElementById('newSceneContent').style.display = 'none';
     }
 
+
+    class Scene {
+        temperature = [];
+        humidity = [];
+        timestampsTemp = [];
+        timestampsHum = [];
+        name;
+        idx;
+        icon;
+
+        constructor(Name, IDX, Icon)
+        {
+            this.name = Name;
+            this.idx = IDX;
+            this.icon = Icon;
+        }
+
+    }
+
     function createScene() {
         const sceneName = document.getElementById('scene-name').value;
         if (sceneName) {
@@ -750,16 +1158,13 @@
 
             buttonElement.appendChild(iconElement);
 
-            const sceneData = {
-                name: sceneName,
-                temperature: 0,
-                humidity: 0,
-                icon: iconElement.src,
-                idx: scenesNumber
-            };
-            scenes.push(sceneData);
+            let icon = iconElement.src;
+            const scene = new Scene(sceneName, scenesNumber, icon);
 
-            socket.emit('scenes/saveScene', sceneData);
+
+            scenes.push(scene);
+
+            socket.emit('scenes/saveScene', scene);
 
             let currentIndex = scenesNumber;
 

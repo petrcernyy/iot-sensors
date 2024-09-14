@@ -16,6 +16,21 @@ Scene* MyMQTT::getScene(int index)
     return scenes[index];
 }
 
+void MyMQTT::setHostname(const QString &newHostname)
+{
+    m_client->setHostname(newHostname);
+}
+
+void MyMQTT::setPort(const int newPort)
+{
+    m_client->setPort(newPort);
+}
+
+void MyMQTT::connect()
+{
+    m_client->connectToHost();
+}
+
 int MyMQTT::index() const
 {
     return m_index;
@@ -78,14 +93,14 @@ void MyMQTT::handleMessage(const QByteArray &message, const QMqttTopicName &topi
         QString temp = "/" + scenes[i]->name() + "/temperature";
         QString hum = "/" + scenes[i]->name() + "/humidity";
         if (topic.name() == temp) {
-            qInfo() << "Setting temperature in " << scenes[i]->name() << " to " << QString::number(message.toDouble());
-            scenes[i]->setTemperature(QString::number(message.toDouble()));
+            qInfo() << "Setting temperature in " << scenes[i]->name() << " to " << QString::number(message.toDouble(), 'g', 4);
+            scenes[i]->setTemperature(QString::number(message.toDouble(), 'g', 4));
             setCurrentIndex(i);
             emit temperatureChanged();
         }
         else if (topic.name() == hum) {
-            qInfo() << "Setting humidity in " << scenes[i]->name() << " to " << QString::number(message.toDouble());
-            scenes[i]->setHumidity(QString::number(message.toDouble()));
+            qInfo() << "Setting humidity in " << scenes[i]->name() << " to " << QString::number(message.toDouble(), 'g', 4);
+            scenes[i]->setHumidity(QString::number(message.toDouble(), 'g', 4));
             setCurrentIndex(i);
             emit humidityChanged();
         }

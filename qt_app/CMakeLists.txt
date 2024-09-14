@@ -24,6 +24,7 @@ qt_add_qml_module(appuntitled
         RESOURCES waterdrop.svg
         SOURCES mymqtt.h mymqtt.cpp
         SOURCES scene.h scene.cpp
+        QML_FILES SettingsPage.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

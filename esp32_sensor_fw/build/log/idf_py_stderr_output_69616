@@ -1,0 +1,87 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40025602: panic_abort at /home/petr/esp/esp-idf/components/esp_system/panic.c:463
+0x4002d585: esp_system_abort at /home/petr/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40035259: __assert_func at /home/petr/esp/esp-idf/components/newlib/assert.c:80
+0x4002e11a: xQueueSemaphoreTake at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1713 (discriminator 1)
+0x4002e2aa: xQueueTakeMutexRecursive at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x400267f5: lock_acquire_generic at /home/petr/esp/esp-idf/components/newlib/locks.c:146
+0x400268fd: _lock_acquire_recursive at /home/petr/esp/esp-idf/components/newlib/locks.c:162
+0x400872b7: uart_write at /home/petr/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:214
+0x400882b5: esp_vfs_write at /home/petr/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x401049da: write at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c:11 (discriminator 1)
+0x40087bed: console_write at /home/petr/esp/esp-idf/components/esp_vfs_console/vfs_console.c:67
+0x400882b5: esp_vfs_write at /home/petr/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x4001a193: _write_r in ROM
+0x4001a6c5: __swrite in ROM
+0x40001b0e: __sflush_r in ROM
+0x40001b94: _fflush_r in ROM
+0x40103d69: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x4010b653: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfiprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x4010b031: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x40104135: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4011a139: esp_log_writev at /home/petr/esp/esp-idf/components/log/log.c:210
+0x40033bbd: esp_log_write at /home/petr/esp/esp-idf/components/log/log.c:220
+0x40088e0c: watchDog at /home/petr/esp/iot_sensor/main/iot_sensor.c:63 (discriminator 1)
+0x4002e3e5: vPortTaskWrapper at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x400255ea: esp_restart_noos at /home/petr/esp/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c:117
+[0m
+[0;33m0x40025602: panic_abort at /home/petr/esp/esp-idf/components/esp_system/panic.c:463
+0x4002d585: esp_system_abort at /home/petr/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40035259: __assert_func at /home/petr/esp/esp-idf/components/newlib/assert.c:80
+0x4002e11a: xQueueSemaphoreTake at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1713 (discriminator 1)
+0x4002e2aa: xQueueTakeMutexRecursive at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x400267f5: lock_acquire_generic at /home/petr/esp/esp-idf/components/newlib/locks.c:146
+0x400268fd: _lock_acquire_recursive at /home/petr/esp/esp-idf/components/newlib/locks.c:162
+0x400872b7: uart_write at /home/petr/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:214
+0x400882b5: esp_vfs_write at /home/petr/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x401049da: write at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c:11 (discriminator 1)
+0x40087bed: console_write at /home/petr/esp/esp-idf/components/esp_vfs_console/vfs_console.c:67
+0x400882b5: esp_vfs_write at /home/petr/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x4001a193: _write_r in ROM
+0x4001a6c5: __swrite in ROM
+0x40001b0e: __sflush_r in ROM
+0x40001b94: _fflush_r in ROM
+0x40103d69: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x4010b653: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfiprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x4010b031: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x40104135: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4011a139: esp_log_writev at /home/petr/esp/esp-idf/components/log/log.c:210
+0x40033bbd: esp_log_write at /home/petr/esp/esp-idf/components/log/log.c:220
+0x40088e0c: watchDog at /home/petr/esp/iot_sensor/main/iot_sensor.c:63 (discriminator 1)
+0x4002e3e5: vPortTaskWrapper at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x400255ea: esp_restart_noos at /home/petr/esp/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c:117
+[0m
+[0;33m0x40025602: panic_abort at /home/petr/esp/esp-idf/components/esp_system/panic.c:463
+0x4002d585: esp_system_abort at /home/petr/esp/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40035259: __assert_func at /home/petr/esp/esp-idf/components/newlib/assert.c:80
+0x4002e11a: xQueueSemaphoreTake at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1713 (discriminator 1)
+0x4002e2aa: xQueueTakeMutexRecursive at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:835
+0x400267f5: lock_acquire_generic at /home/petr/esp/esp-idf/components/newlib/locks.c:146
+0x400268fd: _lock_acquire_recursive at /home/petr/esp/esp-idf/components/newlib/locks.c:162
+0x400872b7: uart_write at /home/petr/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:214
+0x400882b5: esp_vfs_write at /home/petr/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x401049da: write at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c:11 (discriminator 1)
+0x40087bed: console_write at /home/petr/esp/esp-idf/components/esp_vfs_console/vfs_console.c:67
+0x400882b5: esp_vfs_write at /home/petr/esp/esp-idf/components/vfs/vfs.c:502 (discriminator 4)
+0x4001a193: _write_r in ROM
+0x4001a6c5: __swrite in ROM
+0x40001b0e: __sflush_r in ROM
+0x40001b94: _fflush_r in ROM
+0x40103d69: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+0x4010b653: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfiprintf.c:429
+ (inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+0x4010b031: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774 (discriminator 1)
+0x40104135: vprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4011a139: esp_log_writev at /home/petr/esp/esp-idf/components/log/log.c:210
+0x40033bbd: esp_log_write at /home/petr/esp/esp-idf/components/log/log.c:220
+0x40088e0c: watchDog at /home/petr/esp/iot_sensor/main/iot_sensor.c:63 (discriminator 1)
+0x4002e3e5: vPortTaskWrapper at /home/petr/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x400255ea: esp_restart_noos at /home/petr/esp/esp-idf/components/esp_system/port/soc/esp32s2/system_internal.c:117
+[0m
+[0m

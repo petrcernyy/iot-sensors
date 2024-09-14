@@ -41,6 +41,10 @@ public:
 
     Q_INVOKABLE Scene* getScene(int index);
 
+    Q_INVOKABLE void setHostname(const QString &newHostname);
+    Q_INVOKABLE void setPort(const int newPort);
+    Q_INVOKABLE void connect(void);
+
 public slots:
     void handleMessage(const QByteArray &message, const QMqttTopicName &topic);
     void changeState(QMqttClient::ClientState state);
