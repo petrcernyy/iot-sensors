@@ -9,9 +9,6 @@ This project consists of an IoT system for monitoring temperature using ESP32 an
 
 The ESP32 measures the temperature and communicates over MQTT with the Raspberry Pi, which acts as a server. The Raspberry Pi also hosts the Node.js web application and tunnels its localhost to allow remote access.
 
-## Architecture Overview
-![System Architecture](./images/system_architecture.png)
-
 ### Components
 
 1. **ESP32 Firmware**  
