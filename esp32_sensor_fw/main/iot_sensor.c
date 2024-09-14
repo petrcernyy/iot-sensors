@@ -26,11 +26,11 @@
 #define I2C_PORT 0
 #define I2C_SPEED 10000
 
-#define EXAMPLE_ESP_WIFI_SSID      "BrNet.cz/Veveri39"
-#define EXAMPLE_ESP_WIFI_PASS      "64884233"
+#define EXAMPLE_ESP_WIFI_SSID      "SSID"
+#define EXAMPLE_ESP_WIFI_PASS      "PASS"
 #define EXAMPLE_ESP_MAXIMUM_RETRY  5
 
-#define MQTT_ADDRESS                "mqtt://192.168.0.104:1883"
+#define MQTT_ADDRESS                "mqtt://xxx.xxx.x.xx:xxxx"
 
 #define ESP_WIFI_SAE_MODE WPA3_SAE_PWE_BOTH
 #define EXAMPLE_H2E_IDENTIFIER ""
