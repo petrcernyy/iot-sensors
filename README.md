@@ -23,7 +23,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
    - Enables adding new sensor. When a sensor is first connected it will display a add button for creating a new room
    - Displays graph of temperature and humidity
    - Works also on phone
-(./images/nodejsweb.png)
+![Nodejs Web application](./images/nodejsweb.png)
 
 3. **Yocto Layer**  
    - Builds a custom distribution for the Raspberry Pi.
@@ -31,7 +31,7 @@ The ESP32 measures the temperature and communicates over MQTT with the Raspberry
 
 4. **Qt Application**  
    - Displays the temperature data in real time on the Raspberry Pi.
-(./images/qtapp.png)
+![Qt application](./images/qtapp.png)
 
 
 ## Setup Instructions
